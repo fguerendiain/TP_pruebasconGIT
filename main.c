@@ -20,7 +20,7 @@ que contenga las funciones para realizar las 4 operaciones.
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "funciones.h"
+#include "operaciones.h"
 
 int main()
 {
@@ -28,11 +28,15 @@ int main()
     int opcion=0;
     float operandoNum1;
     float operandoNum2;
-
+    float resultadoSuma;
+    float resultadoResta;
+    float resultadoDivision;
+    float resultadoMultiplicacion;
+    float resultadoFactorial;
 
     while(seguir=='s')
     {
-        printf("1- Ingresar 1er operando (A=x)\n");
+        printf("\n1- Ingresar 1er operando (A=x)\n");
         printf("2- Ingresar 2do operando (B=y)\n");
         printf("3- Calcular la suma (A+B)\n");
         printf("4- Calcular la resta (A-B)\n");
@@ -42,20 +46,25 @@ int main()
         printf("8- Calcular todas las operacione\n");
         printf("9- Salir\n");
 
-        printf("Elija una opcion\n")
+        printf("Elija una opcion\n");
         scanf("%d",&opcion);
 
         switch(opcion)
         {
             case 1:
-                printf("Ingrese el 1er operando");
+                system("cls");
+                printf("Ingrese el 1er operando\n");
                 scanf("%d",&operandoNum1);
                 break;
             case 2:
-                printf("Ingrese el 2do operando");
+                system("cls");
+                printf("Ingrese el 2do operando\n");
                 scanf("%d",&operandoNum2);
                 break;
             case 3: //FUNCION SUMA
+                system("cls");
+                resultadoSuma = suma(&operandoNum1, &operandoNum2);
+                printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
                 break;
             case 4: //FUNCION RESTA
                 break;
@@ -72,7 +81,8 @@ int main()
                 break;
         }
 
-
+    }
     return 0;
 }
+
 

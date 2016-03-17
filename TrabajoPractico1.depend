@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1458238785 source:d:\develop\codeblocks\1er cuatrimiestre\laboratorio1-prgramacion1\trabajos practicos\trabajopractico1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"operaciones.h"
+
+1458238449 d:\develop\codeblocks\1er cuatrimiestre\laboratorio1-prgramacion1\trabajos practicos\trabajopractico1\operaciones.h
+
