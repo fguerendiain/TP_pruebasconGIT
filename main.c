@@ -52,17 +52,17 @@ int main()
         switch(opcion)
         {
             case 1:
-                system("cls");
+                system("clear");
                 printf("Ingrese el 1er operando\n");
                 scanf("%d",&operandoNum1);
                 break;
             case 2:
-                system("cls");
+                system("clear");
                 printf("Ingrese el 2do operando\n");
                 scanf("%d",&operandoNum2);
                 break;
             case 3: //FUNCION SUMA
-                system("cls");
+                system("clear");
                 resultadoSuma = suma(&operandoNum1, &operandoNum2);
                 printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
                 break;
