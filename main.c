@@ -42,6 +42,7 @@ int main()
     float resultadoDivision;
     float resultadoMultiplicacion;
     float resultadoFactorial;
+    char limpiaPantalla[7] = "cls";  // "cls" para windows | "clear" para linux
 
     while(seguir=='s')
     {
@@ -61,40 +62,40 @@ int main()
         switch(opcion)
         {
             case OPER1 :
-                system("clear");
+                system(limpiaPantalla);
                 printf("Ingrese el 1er operando\n");
                 scanf("%f",&operandoNum1);
                 break;
             case OPER2:
-                system("clear");
+                system(limpiaPantalla);
                 printf("Ingrese el 2do operando\n");
                 scanf("%f",&operandoNum2);
                 break;
             case SUMA:
-                system("clear");
-                resultadoSuma = suma(&operandoNum1,&operandoNum2);
+                system(limpiaPantalla);
+                resultadoSuma = suma(operandoNum1,operandoNum2);
                 printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
                 break;
             case RESTA :
-                system("clear");
-                resultadoResta = resta(&operandoNum1, &operandoNum2);
+                system(limpiaPantalla);
+                resultadoResta = resta(operandoNum1, operandoNum2);
                 printf("\n%.2f - %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoResta);
                 break;
             case DIVISION:
-                system("clear");
-                resultadoDivision = division(&operandoNum1, &operandoNum2);
+                system(limpiaPantalla);
+                resultadoDivision = division(operandoNum1, operandoNum2);
                 printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
                 break;
             case MULTIPLICACION :
-                system("clear");
-                resultadoMultiplicacion = multiplicacion(&operandoNum1, &operandoNum2);
+                system(limpiaPantalla);
+                resultadoMultiplicacion = multiplicacion(operandoNum1, operandoNum2);
                 printf("\n%.2f X %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
                 break;
             case FACTORIAL :
-                system("clear");
+                system(limpiaPantalla);
                 break;
             case ALLOPERACIONES :
-                system("clear");
+                system(limpiaPantalla);
                 break;
             case 9:
                 seguir = 'n';
