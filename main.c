@@ -14,7 +14,7 @@ que contenga las funciones para realizar las 4 operaciones.
 • En el menú deberán aparecer los valores actuales cargados en los operandos A y B
 (donde dice “x” e “y” en el ejemplo, se debe mostrar el número cargado)
 • Deberán contemplarse los casos de error (división por cero, etc)
-• Documentar todas las funciones
+• Documentar todas las funciones!!
 */
 
 
@@ -22,12 +22,21 @@ que contenga las funciones para realizar las 4 operaciones.
 #include <stdlib.h>
 #include "operaciones.h"
 
+#define OPER1 1
+#define OPER2 2
+#define SUMA 3
+#define RESTA 4
+#define DIVISION 5
+#define MULTIPLICACION 6
+#define FACTORIAL 7
+#define ALLOPERACIONES 8
+
 int main()
 {
     char seguir='s';
     int opcion=0;
-    float operandoNum1;
-    float operandoNum2;
+    float operandoNum1=0;
+    float operandoNum2=0;
     float resultadoSuma;
     float resultadoResta;
     float resultadoDivision;
@@ -51,30 +60,41 @@ int main()
 
         switch(opcion)
         {
-            case 1:
+            case OPER1 :
                 system("clear");
                 printf("Ingrese el 1er operando\n");
-                scanf("%d",&operandoNum1);
+                scanf("%f",&operandoNum1);
                 break;
-            case 2:
+            case OPER2:
                 system("clear");
                 printf("Ingrese el 2do operando\n");
-                scanf("%d",&operandoNum2);
+                scanf("%f",&operandoNum2);
                 break;
-            case 3: //FUNCION SUMA
+            case SUMA:
                 system("clear");
-                resultadoSuma = suma(&operandoNum1, &operandoNum2);
+                resultadoSuma = suma(&operandoNum1,&operandoNum2);
                 printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
                 break;
-            case 4: //FUNCION RESTA
+            case RESTA :
+                system("clear");
+                resultadoResta = resta(&operandoNum1, &operandoNum2);
+                printf("\n%.2f - %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoResta);
                 break;
-            case 5: //FUNCION DIVISION
+            case DIVISION:
+                system("clear");
+                resultadoDivision = division(&operandoNum1, &operandoNum2);
+                printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
                 break;
-            case 6: //FUNCION MULTIPLICACION
+            case MULTIPLICACION :
+                system("clear");
+                resultadoMultiplicacion = multiplicacion(&operandoNum1, &operandoNum2);
+                printf("\n%.2f X %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
                 break;
-            case 7: //FUNCION FACTORIAL
+            case FACTORIAL :
+                system("clear");
                 break;
-            case 8: //TODAS LAS ANTERIORES
+            case ALLOPERACIONES :
+                system("clear");
                 break;
             case 9:
                 seguir = 'n';
