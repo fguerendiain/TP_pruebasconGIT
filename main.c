@@ -31,22 +31,26 @@ que contenga las funciones para realizar las 4 operaciones.
 #define FACTORIAL 7
 #define ALLOPERACIONES 8
 #define EXIT 9
+#define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
 
 int main()
 {
+
+    //VARIABLES DEL MENU
     char seguir='s';
-
     int opcion = 0;
-    int operInt1 = 0;
 
+    //VARIABLES DE ENTRADA
     float operandoNum1 = 0;
     float operandoNum2 = 0;
+
+    //VARIABLES DE SALIDA
     float resultadoSuma;
     float resultadoResta;
     float resultadoDivision;
     float resultadoMultiplicacion;
     int resultadoFactorial;
-    char limpiaPantalla[7] = "cls";  // "cls" para windows | "clear" para linux
+
 
     while(seguir=='s')
     {
@@ -66,65 +70,64 @@ int main()
         switch(opcion)
         {
             case OPER1 :
-                system(limpiaPantalla);
+                system(LIMPIARPANTALLA);
                 printf("Ingrese el 1er operando\n");
                 scanf("%f",&operandoNum1);
                 break;
 
             case OPER2:
-                system(limpiaPantalla);
+                system(LIMPIARPANTALLA);
                 printf("Ingrese el 2do operando\n");
                 scanf("%f",&operandoNum2);
                 break;
 
             case SUMA:
-                system(limpiaPantalla);
+                system(LIMPIARPANTALLA);
                 resultadoSuma = suma(operandoNum1,operandoNum2);
                 printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
                 break;
 
             case RESTA :
-                system(limpiaPantalla);
+                system(LIMPIARPANTALLA);
                 resultadoResta = resta(operandoNum1, operandoNum2);
                 printf("\n%.2f - %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoResta);
                 break;
 
             case DIVISION:
-                if(operandoNum1<1 || operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
-                    system(limpiaPantalla);
-                    printf("Por favor ingrese valores mayores a 0 para realizar una division\n\n");
+                if(operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
+                    system(LIMPIARPANTALLA);
+                    printf("Por favor ingrese un divisor mayor a 0 para realizar la operacion\n\n");
                     break;
                 }else{
 
                     //A REVISAR: SI UN NUMERO ES DIVIDIDO POR OTRO MAS GRANDE EL RESULTADO DA 0
 
-                    system(limpiaPantalla);
+                    system(LIMPIARPANTALLA);
                     resultadoDivision = division(operandoNum1, operandoNum2);
                     printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
                     break;
                 }
 
             case MULTIPLICACION :
-                system(limpiaPantalla);
+                system(LIMPIARPANTALLA);
                 resultadoMultiplicacion = multiplicacion(operandoNum1, operandoNum2);
                 printf("\n%.2f x %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
                 break;
 
             case FACTORIAL :
-                system(limpiaPantalla);
-                operInt1 = (int)operandoNum1;                          /*SE CASTEA EL FLOAT INGRESADO POR EL USUARIO*/
-                resultadoFactorial = factorial(operInt1);              /*A UN INT PARA UTILIZAR EN LA FUNCION*/
-                printf("\n%d! = %d\n", operInt1, resultadoFactorial);
+                system(LIMPIARPANTALLA);
+                resultadoFactorial = factorial(operandoNum1);
+                printf("\n%d! = %d\n", (int)operandoNum1, resultadoFactorial);
                 break;
 
             case ALLOPERACIONES :
-                system(limpiaPantalla);
-                if(operandoNum1<1 || operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
-                    system(limpiaPantalla);
-                    printf("Por favor ingrese valores mayores a 0 para realizar una division\n\n");
+                system(LIMPIARPANTALLA);
+                if(operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
+                    system(LIMPIARPANTALLA);
+                    printf("Por favor ingrese un divisor mayor a 0 para realizar todas las operaciones\n\n");
                     break;
                 }else{
-                    system(limpiaPantalla);
+                    system(LIMPIARPANTALLA);
 
                     resultadoSuma = suma(operandoNum1,operandoNum2);
                     printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
@@ -138,9 +141,8 @@ int main()
                     resultadoMultiplicacion = multiplicacion(operandoNum1, operandoNum2);
                     printf("\n%.2f x %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
 
-                    operInt1 = (int)operandoNum1;
-                    resultadoFactorial = factorial(operInt1);
-                    printf("\n%d! = %d\n", operInt1, resultadoFactorial);
+                    resultadoFactorial = factorial(operandoNum1);
+                    printf("\n%d! = %d\n", (int)operandoNum1, resultadoFactorial);
 
                     break;
                 }

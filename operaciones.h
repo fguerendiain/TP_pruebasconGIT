@@ -38,16 +38,14 @@ long division(long operador1, long operador2){      //FUNCION PARA CALCULAR DIVI
     return resultado;
 }
 
-int factorial (int operador1){      //FUNCION PARA CALCULAR FACTORIAL
+int factorial (long operador1){      //FUNCION PARA CALCULAR FACTORIAL
 
     int contador;
-    int resultado = 1;
-    if (operador1 == 0){  //CASO DE ERROR CALCULAR FACTORIAL DE 0
-        resultado=0;
-    }
-    for (contador = 1; contador<= operador1 ; contador++){
+    int operInt1 = (int)operador1; // SE CASTEA EL FLOAT INGRESADO POR EL USUARIO A UN INT PARA SER EVALUADO POR LA FUNCION
+    int resultado = 1; // POR CONVENCION, 0! = 1
+
+    for (contador = 1; contador<= operInt1 ; contador++){
         resultado*=contador;
     }
     return resultado;
 }
-
