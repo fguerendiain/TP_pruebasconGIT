@@ -70,9 +70,13 @@ int main()
         switch(opcion)
         {
             case OPER1 :
-                system(LIMPIARPANTALLA);
-                printf("Ingrese el 1er operando\n");
-                scanf("%f",&operandoNum1);
+                do{
+                    int flag;
+                    flag = 1;
+                    system(LIMPIARPANTALLA);
+                    printf("Ingrese el 1er operando\n");
+                    flag = scanf("%f",&operandoNum1);
+                }while(flag == 0);
                 break;
 
             case OPER2:
@@ -94,17 +98,17 @@ int main()
                 break;
 
             case DIVISION:
-                if(operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
-                    system(LIMPIARPANTALLA);
-                    printf("Por favor ingrese un divisor mayor a 0 para realizar la operacion\n\n");
-                    break;
-                }else{
+                if(operandoNum2!=0){ //CASO DE ERROR DIVISION POR 0
 
                     //A REVISAR: SI UN NUMERO ES DIVIDIDO POR OTRO MAS GRANDE EL RESULTADO DA 0
 
                     system(LIMPIARPANTALLA);
                     resultadoDivision = division(operandoNum1, operandoNum2);
                     printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
+                    break;
+                }else{
+                    system(LIMPIARPANTALLA);
+                    printf("Por favor ingrese un divisor mayor a 0 para realizar la operacion\n\n");
                     break;
                 }
 
@@ -122,11 +126,8 @@ int main()
 
             case ALLOPERACIONES :
                 system(LIMPIARPANTALLA);
-                if(operandoNum2<1){ //CASO DE ERROR DIVISION POR 0
-                    system(LIMPIARPANTALLA);
-                    printf("Por favor ingrese un divisor mayor a 0 para realizar todas las operaciones\n\n");
-                    break;
-                }else{
+                if(operandoNum2!=0){ //CASO DE ERROR DIVISION POR 0
+
                     system(LIMPIARPANTALLA);
 
                     resultadoSuma = suma(operandoNum1,operandoNum2);
@@ -145,10 +146,20 @@ int main()
                     printf("\n%d! = %d\n", (int)operandoNum1, resultadoFactorial);
 
                     break;
+
+                }else{
+                    system(LIMPIARPANTALLA);
+                    printf("Por favor ingrese un divisor mayor a 0 para realizar todas las operaciones\n\n");
+                    break;
                 }
+
             case EXIT :
                 seguir = 'n';
                 break;
+
+            case default :                      //CASO DE ERROR, SE INGRESA UNA OPCION DISTINTA A LAS POSIBLES
+                system(LIMPIARPANTALLA);
+                printf("Ingrese una opcion valida");
         }
 
     }
