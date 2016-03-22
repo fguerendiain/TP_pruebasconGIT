@@ -51,6 +51,10 @@ int main()
     float resultadoMultiplicacion;
     int resultadoFactorial;
 
+    //VARIABLES DE CONTROL
+    int flagValidarOperando;
+    int contador=0;
+
 
     while(seguir=='s')
     {
@@ -64,25 +68,51 @@ int main()
         printf("8- Calcular todas las operacione\n");
         printf("9- Salir\n");
 
-        printf("Elija una opcion\n");
-        scanf("%d",&opcion);
+        contador=0;
+        do{                                 //EVALUA QUE SE INGRESE UNA OCION VALIDA
+            flagValidarOperando = 1;
+            if( contador ==0){
+                printf("\nElija una opcion :\n");
+            }else{
+                printf("\nPor favor Ingrese una opcion valida :\n");
+            }
+            flagValidarOperando = scanf("%d",&opcion);
+            fflush(stdin);
+            contador++;
+        }while(flagValidarOperando == 0);
 
         switch(opcion)
         {
             case OPER1 :
-                do{
-                    int flag;
-                    flag = 1;
+                contador=0;
+                do{                                 //EVALUA QUE SE INGRESE UN VALOR PARA OPERAR
+                    flagValidarOperando = 1;
                     system(LIMPIARPANTALLA);
-                    printf("Ingrese el 1er operando\n");
-                    flag = scanf("%f",&operandoNum1);
-                }while(flag == 0);
+                    if (contador==0){
+                        printf("Ingrese el 1er operando\n");
+                    }else{
+                        printf("Por favor ingrese un numero valido\n");
+                    }
+                    flagValidarOperando = scanf("%f",&operandoNum1);
+                    fflush(stdin);
+                    contador++;
+                }while(flagValidarOperando == 0);
                 break;
 
             case OPER2:
-                system(LIMPIARPANTALLA);
-                printf("Ingrese el 2do operando\n");
-                scanf("%f",&operandoNum2);
+                contador=0;
+                do{                             //EVALUA QUE SE INGRESE UN VALOR PARA OPERAR
+                    flagValidarOperando = 1;
+                    system(LIMPIARPANTALLA);
+                    if (contador==0){
+                        printf("Ingrese el 2do operando\n");
+                    }else{
+                        printf("Por favor ingrese un numero valido\n");
+                    }
+                    flagValidarOperando = scanf("%f",&operandoNum2);
+                    fflush(stdin);
+                    contador++;
+                }while(flagValidarOperando == 0);
                 break;
 
             case SUMA:
@@ -157,9 +187,11 @@ int main()
                 seguir = 'n';
                 break;
 
-            case default :                      //CASO DE ERROR, SE INGRESA UNA OPCION DISTINTA A LAS POSIBLES
+            default :                      //CASO DE ERROR, SE INGRESA UNA OPCION DISTINTA A LAS POSIBLES
                 system(LIMPIARPANTALLA);
-                printf("Ingrese una opcion valida");
+                printf("Ingrese una opcion valida\n");
+                fflush(stdin);
+                break;
         }
 
     }
