@@ -34,7 +34,7 @@ que contenga las funciones para realizar las 4 operaciones.
 #define EXIT 9
 #define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
 #define MENURANKS 9  // cantidad de opciones del menu
-#define INTENTOS 3 // cantidad permitida de ingresos fallidos por parte del usuario
+#define ATTEMPTS 3 // cantidad permitida de ingresos fallidos por parte del usuario
 
 
 int main()
@@ -60,28 +60,16 @@ int main()
     int contador=0;
 */
 
-    char* menu = "\n1- Ingresar 1er operando (A = %.2f)\n2- Ingresar 2do operando (B = %.2f)\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n";
+    int menuRanks = MENURANKS;
+    int userAttempts = ATTEMPTS;
+
+    char* menu = "1- Ingresar 1er operando (A = )\n2- Ingresar 2do operando (B = )\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n";
     char* welcomeMessege = "Ingrese una opcion";
 
-    int printMenu(menu,welcomeMessege);
+    int printMenu(menu, welcomeMessege, menuRanks, userAttempts);
 /*
     while(seguir=='s')
     {
-
-
-        contador=0;
-        do{                                 //EVALUA QUE SE INGRESE UNA OCION VALIDA
-            flagValidarOperando = 1;
-            if( contador ==0){
-                printf("\nElija una opcion :\n");
-            }else{
-                printf("\nPor favor Ingrese una opcion valida :\n");
-            }
-            flagValidarOperando = scanf("%d",&opcion);
-            fflush(stdin);
-            contador++;
-        }while(flagValidarOperando == 0);
-
         switch(opcion)
         {
             case OPER1 :

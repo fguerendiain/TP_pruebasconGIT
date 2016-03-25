@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
 
 /** \brief
@@ -17,10 +19,10 @@ int printMenu(char* optionMenu, char* welcomeMessege, int ranks, int userAttempt
     int validateInteger =0;
     int errAttempts =0;
 
-    printf("%c",optionMenu);
-    printf("%c",welcomeMessege);
+    printf("%s",optionMenu);
+    printf("%s",welcomeMessege);
 
-    validateInteger = scanf("%d",userDecision);
+    validateInteger = scanf("%d",&userDecision);
 
     if (validateInteger == 0 )
     {
@@ -28,22 +30,18 @@ int printMenu(char* optionMenu, char* welcomeMessege, int ranks, int userAttempt
         {
             errAttempts++;
             printf("Por favor ingrese una opcion del 1 al %d\n",ranks);
-            validateInteger = scanf("%d",userDecision);
+            validateInteger = scanf("%d",&userDecision);
         }
         while(validateInteger == 0 || errAttempts != userAttempts || userDecision > ranks || userDecision < 1);
 
         if (validateInteger == 0)
         {
             system(LIMPIARPANTALLA);
-            printf("Usted realizo %d intentos fallidos. Por favor cierre el programa e intente de nuevo");
+            printf("Usted realizo %d intentos fallidos. Por favor cierre el programa e intente de nuevo",userAttempts);
             exit(0);
         }
     }
-    else
-    {
-        return userDecision;
-    }
-
+    return userDecision;
 }
 /*
 
