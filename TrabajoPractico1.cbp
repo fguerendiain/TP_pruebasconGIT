@@ -36,9 +36,16 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="operaciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="operaciones.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="validations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validations.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

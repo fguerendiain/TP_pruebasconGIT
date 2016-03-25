@@ -21,6 +21,7 @@ que contenga las funciones para realizar las 4 operaciones.
 #include <stdio.h>
 #include <stdlib.h>
 #include "operaciones.h"
+#include "validations.h"
 
 #define OPER1 1
 #define OPER2 2
@@ -31,12 +32,15 @@ que contenga las funciones para realizar las 4 operaciones.
 #define FACTORIAL 7
 #define ALLOPERACIONES 8
 #define EXIT 9
-#define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
+#define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
+#define MENURANKS 9  // cantidad de opciones del menu
+#define INTENTOS 3 // cantidad permitida de ingresos fallidos por parte del usuario
+
 
 int main()
 {
 
-    //VARIABLES DEL MENU
+/*    //VARIABLES DEL MENU
     char seguir='s';
     int opcion = 0;
 
@@ -54,19 +58,16 @@ int main()
     //VARIABLES DE CONTROL
     int flagValidarOperando;
     int contador=0;
+*/
 
+    char* menu = "\n1- Ingresar 1er operando (A = %.2f)\n2- Ingresar 2do operando (B = %.2f)\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n";
+    char* welcomeMessege = "Ingrese una opcion";
 
+    int printMenu(menu,welcomeMessege);
+/*
     while(seguir=='s')
     {
-        printf("\n1- Ingresar 1er operando (A = %.2f)\n",operandoNum1);
-        printf("2- Ingresar 2do operando (B = %.2f)\n", operandoNum2);
-        printf("3- Calcular la suma (A+B)\n");
-        printf("4- Calcular la resta (A-B)\n");
-        printf("5- Calcular la division (A/B)\n");
-        printf("6- Calcular la multiplicacion (A*B)\n");
-        printf("7- Calcular el factorial (A!)\n");
-        printf("8- Calcular todas las operacione\n");
-        printf("9- Salir\n");
+
 
         contador=0;
         do{                                 //EVALUA QUE SE INGRESE UNA OCION VALIDA
@@ -194,7 +195,7 @@ int main()
                 break;
         }
 
-    }
+    }*/
     return 0;
 }
 
