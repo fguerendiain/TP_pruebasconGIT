@@ -17,174 +17,22 @@ que contenga las funciones para realizar las 4 operaciones.
 • Documentar todas las funciones!!
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
 #include "operaciones.h"
 #include "validations.h"
-
-#define OPER1 1
-#define OPER2 2
-#define SUMA 3
-#define RESTA 4
-#define DIVISION 5
-#define MULTIPLICACION 6
-#define FACTORIAL 7
-#define ALLOPERACIONES 8
-#define EXIT 9
 #define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
-#define MENURANKS 9  // cantidad de opciones del menu
-#define ATTEMPTS 3 // cantidad permitida de ingresos fallidos por parte del usuario
 
+int main(){
+    float valueA = 0;
+    float valueB = 0;
 
-int main()
-{
-
-/*    //VARIABLES DEL MENU
-    char seguir='s';
-    int opcion = 0;
-
-    //VARIABLES DE ENTRADA
-    float operandoNum1 = 0;
-    float operandoNum2 = 0;
-
-    //VARIABLES DE SALIDA
-    float resultadoSuma;
-    float resultadoResta;
-    float resultadoDivision;
-    float resultadoMultiplicacion;
-    int resultadoFactorial;
-
-    //VARIABLES DE CONTROL
-    int flagValidarOperando;
-    int contador=0;
-*/
-
-    int menuRanks = MENURANKS;
-    int userAttempts = ATTEMPTS;
-
-    char* menu = "1- Ingresar 1er operando (A = )\n2- Ingresar 2do operando (B = )\n3- Calcular la suma (A+B)\n4- Calcular la resta (A-B)\n5- Calcular la division (A/B)\n6- Calcular la multiplicacion (A*B)\n7- Calcular el factorial (A!)\n8- Calcular todas las operacione\n9- Salir\n";
-    char* welcomeMessege = "Ingrese una opcion";
-
-    int printMenu(menu, welcomeMessege, menuRanks, userAttempts);
-/*
-    while(seguir=='s')
-    {
-        switch(opcion)
-        {
-            case OPER1 :
-                contador=0;
-                do{                                 //EVALUA QUE SE INGRESE UN VALOR PARA OPERAR
-                    flagValidarOperando = 1;
-                    system(LIMPIARPANTALLA);
-                    if (contador==0){
-                        printf("Ingrese el 1er operando\n");
-                    }else{
-                        printf("Por favor ingrese un numero valido\n");
-                    }
-                    flagValidarOperando = scanf("%f",&operandoNum1);
-                    fflush(stdin);
-                    contador++;
-                }while(flagValidarOperando == 0);
-                break;
-
-            case OPER2:
-                contador=0;
-                do{                             //EVALUA QUE SE INGRESE UN VALOR PARA OPERAR
-                    flagValidarOperando = 1;
-                    system(LIMPIARPANTALLA);
-                    if (contador==0){
-                        printf("Ingrese el 2do operando\n");
-                    }else{
-                        printf("Por favor ingrese un numero valido\n");
-                    }
-                    flagValidarOperando = scanf("%f",&operandoNum2);
-                    fflush(stdin);
-                    contador++;
-                }while(flagValidarOperando == 0);
-                break;
-
-            case SUMA:
-                system(LIMPIARPANTALLA);
-                resultadoSuma = suma(operandoNum1,operandoNum2);
-                printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
-                break;
-
-            case RESTA :
-                system(LIMPIARPANTALLA);
-                resultadoResta = resta(operandoNum1, operandoNum2);
-                printf("\n%.2f - %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoResta);
-                break;
-
-            case DIVISION:
-                if(operandoNum2!=0){ //CASO DE ERROR DIVISION POR 0
-
-                    //A REVISAR: SI UN NUMERO ES DIVIDIDO POR OTRO MAS GRANDE EL RESULTADO DA 0
-
-                    system(LIMPIARPANTALLA);
-                    resultadoDivision = division(operandoNum1, operandoNum2);
-                    printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
-                    break;
-                }else{
-                    system(LIMPIARPANTALLA);
-                    printf("Por favor ingrese un divisor mayor a 0 para realizar la operacion\n\n");
-                    break;
-                }
-
-            case MULTIPLICACION :
-                system(LIMPIARPANTALLA);
-                resultadoMultiplicacion = multiplicacion(operandoNum1, operandoNum2);
-                printf("\n%.2f x %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
-                break;
-
-            case FACTORIAL :
-                system(LIMPIARPANTALLA);
-                resultadoFactorial = factorial(operandoNum1);
-                printf("\n%d! = %d\n", (int)operandoNum1, resultadoFactorial);
-                break;
-
-            case ALLOPERACIONES :
-                system(LIMPIARPANTALLA);
-                if(operandoNum2!=0){ //CASO DE ERROR DIVISION POR 0
-
-                    system(LIMPIARPANTALLA);
-
-                    resultadoSuma = suma(operandoNum1,operandoNum2);
-                    printf("\n%.2f + %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoSuma);
-
-                    resultadoResta = resta(operandoNum1, operandoNum2);
-                    printf("\n%.2f - %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoResta);
-
-                    resultadoDivision = division(operandoNum1, operandoNum2);
-                    printf("\n%.2f : %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoDivision);
-
-                    resultadoMultiplicacion = multiplicacion(operandoNum1, operandoNum2);
-                    printf("\n%.2f x %.2f = %.2f\n", operandoNum1, operandoNum2, resultadoMultiplicacion);
-
-                    resultadoFactorial = factorial(operandoNum1);
-                    printf("\n%d! = %d\n", (int)operandoNum1, resultadoFactorial);
-
-                    break;
-
-                }else{
-                    system(LIMPIARPANTALLA);
-                    printf("Por favor ingrese un divisor mayor a 0 para realizar todas las operaciones\n\n");
-                    break;
-                }
-
-            case EXIT :
-                seguir = 'n';
-                break;
-
-            default :                      //CASO DE ERROR, SE INGRESA UNA OPCION DISTINTA A LAS POSIBLES
-                system(LIMPIARPANTALLA);
-                printf("Ingrese una opcion valida\n");
-                fflush(stdin);
-                break;
-        }
-
-    }*/
-    return 0;
+    while (1==1){
+        printMenu(valueA, valueB);
+        int chosenOption = getMenuInputFromUser();
+        runFunction(chosenOption, &valueA, &valueB);
+        printf("Dale a cualquiera pa seguir");
+        scanf("%s");
+        system(LIMPIARPANTALLA);
+    }
 }
 
 
