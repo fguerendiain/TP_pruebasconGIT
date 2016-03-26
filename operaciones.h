@@ -1,17 +1,18 @@
 #ifndef OPERACIONES_H_INCLUDED
 #define OPERACIONES_H_INCLUDED
 
-
-
 #endif // OPERACIONES_H_INCLUDED
+/*-------------------------------------------------------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------------------------------------------------------------*/
+void runFunction(int userMenuInput,float valueA,float valueB);   /**< Ejecuta la operacion seleccionada por el usuario */
 
-long suma(long operador1, long operador2);  //CALCULA SUMA
+float addFloat(float operator1, float operator2);    /**< Realiza la suma de dos numeros de tipo float */
 
-long resta(long operador1, long operador2); //CALCULA RESTA
+float subtractFloat(float operator1, float operator2);   /**< Realiza la resta de dos numeros de tipo float */
 
-long multiplicacion(long operador1, long operador2); //CALCULA MULTIPLICACION
+float multiplyFloat(float operator1, float operator2);   /**< Realiza la multiplicacion de dos numeros de tipo float */
 
-long division(long operador1, long operador2); //CALCULA DIVISION
+float divideFloat(float operator1, float operator2); /**< Realiza la division de dos numeros de tipo float */
 
-int factorial (long operador1); //CALCULA FACTORIAL
+float factorialFloat (float operator1);  /**< Calcula el factorial de un numero de tipo float */
