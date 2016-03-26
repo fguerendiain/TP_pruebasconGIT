@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "operaciones.h"
 
-#define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
-
 #define OPERATOR1 1
 #define OPERATOR2 2
 #define ADD 3
@@ -24,48 +22,62 @@
  * \return void imprime en pantalla el resultado de la operacion solicitada
  *
  */
-void runFunction(int userMenuInput,float valueA,float valueB)   /**< Ejecuta la operacion seleccionada por el usuario */
+void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta la operacion seleccionada por el usuario */
 {
-    float result;
+    float result = 0;
+    float oper1 = 0;
+    float oper2 = 0;
+
     switch(userMenuInput)
     {
         case OPERATOR1 :
-
+            oper1 = getUserNumberInput(1);
+            *valueA = oper1;
         break;
+
         case OPERATOR2 :
-
+            oper2 = getUserNumberInput(2);
+            *valueB = oper2;
         break;
+
         case ADD :
-                result = addFloat(valueA,valueB);
-                system(LIMPIARPANTALLA);
-                printf("%2.f + %2.f = %2.f\n\n",valueA, valueB, result);
+            result = addFloat(oper1,oper2);
+            cleanScreen();
+            printf("%2.f + %2.f = %2.f\n\n",oper1, oper2, result);
         break;
-        case SUBTRACT :
-                result = subtractFloat(valueA,valueB);
-                system(LIMPIARPANTALLA);
-                printf("%2.f - %2.f = %2.f\n\n",valueA, valueB, result);
-        break;
-        case DIVISION :
 
+        case SUBTRACT :
+            result = subtractFloat(oper1,oper2);
+            cleanScreen();
+            printf("%2.f - %2.f = %2.f\n\n",oper1, oper2, result);
         break;
+
+        case DIVISION :
+            result = divideFloat(oper1,oper2);
+            cleanScreen();
+            printf("%2.f / %2.f = %2.f\n\n",oper1, oper2, result);
+        break;
+
         case MULTIPLICATION :
-                result = multiplyFloat(valueA,valueB);
-                system(LIMPIARPANTALLA);
-                printf("%2.f x %2.f = %2.f\n\n",valueA, valueB, result);
+            result = multiplyFloat(oper1,oper2);
+            cleanScreen();
+            printf("%2.f x %2.f = %2.f\n\n",oper1, oper2, result);
         break;
+
         case FACTORIAL :
-                result = factorialFloat(valueA);
-                system(LIMPIARPANTALLA);
-                printf("%1.f! = %1.f\n\n",valueA, result);
+            result = factorialFloat(oper1);
+            cleanScreen();
+            printf("%1.f! = %1.f\n\n",oper1, result);
         break;
+
         case ALLOPERATIONS :
 
         break;
+
         case EXIT :
             exit(0);
         break;
     }
-    return;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief Realiza la suma de dos numeros de tipo float

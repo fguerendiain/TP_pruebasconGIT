@@ -32,8 +32,8 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 void main(void)
 {
-    float  valueA = 5;
-    float  valueB = 30;
+    float valueA = 10;
+    float valueB = 5;
     int userMenuInput = 0;
     int userWillToContinue = 0;
 
@@ -41,7 +41,7 @@ void main(void)
     {
         printMenu(valueA, valueB);
         userMenuInput = getMenuUserInput();  //REVISAR POR QUE LOOPEA LA FUNCION CUANDO SE INGRESA ALGO QUE NO SEA UN INT
-        runFunction(userMenuInput,valueA,valueB);
+        runFunction(userMenuInput, &valueA, &valueB);
         userWillToContinue = getUserConfirmToContinue(); //REVISAR POR QUE LOOPEA LA FUNCION CUANDO SE INGRESA ALGO QUE NO SEA UN INT
     }
     while(userWillToContinue == 1);

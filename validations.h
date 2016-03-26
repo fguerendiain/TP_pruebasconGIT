@@ -5,6 +5,10 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------------------*/
+void cleanScreen(); /**< Limpia la pantalla */
+
+float getUserNumberInput(int order); /**< Solicita al usuario ingresar un numero de tipo float */
+
 void printMenu(float valueA, float valueB); /**< imprime el menu en pantalla */
 
 int getMenuUserInput(); /**< Solicita ingresar una opcion del menu validando la misma */

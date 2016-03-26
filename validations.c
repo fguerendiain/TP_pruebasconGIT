@@ -5,6 +5,52 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------------------*/
+/** \brief Limpia la pantalla
+ *
+ * \return void
+ *
+ */
+
+void cleanScreen() /**< Limpia la pantalla */
+{
+    system(LIMPIARPANTALLA);
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/** \brief Solicita al usuario ingresar un numero de tipo float
+ *
+ * \return Devuelve el valor ingresado por el usuario previamente validado
+ *
+ */
+
+float getUserNumberInput(int order) /**< Solicita al usuario ingresar un numero de tipo float */
+{
+    float userFloatInput =0;
+    int valideUserInput = 0;
+    int flagFirstInput = 0;
+
+    do
+    {
+        if(flagFirstInput == 0)
+        {
+            if(order == 1)
+            {
+                printf("Ingrese el 1er operando: ");
+            }
+            else
+            {
+                printf("Ingrese el 2do operando: ");
+            }
+        }
+        else
+        {
+            printf("Por favor ingrese un valor numerico: ");
+        }
+        valideUserInput = scanf("%f",&userFloatInput);
+    }while(valideUserInput == 0);
+
+    return userFloatInput;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief imprime el menu en pantalla
  *
  * \param valueA recibe un float para mostrar en el menu como 1er operando
@@ -14,7 +60,7 @@
  */
 void printMenu(float valueA, float valueB)
 {
-    system(LIMPIARPANTALLA);
+    cleanScreen();
     printf("1- Ingresar 1er operando (A = %2.f)\n"
            "2- Ingresar 2do operando (B = %2.f)\n"
            "3- Calcular la suma (A+B)\n"
@@ -70,7 +116,7 @@ int getMenuUserInput()
 
 int getUserConfirmToContinue()
 {
-    int validateUserAnswer = -1;
+    int userAnswer = -1;
     int flagFirstInput = 0;
 
     do
@@ -85,21 +131,14 @@ int getUserConfirmToContinue()
             printf("Por favor, ingrese una opcion valida:\n\n1- continuar\n2- salir\n");
         }
         fflush(stdin);
-        scanf("%d",&validateUserAnswer);
+        scanf("%d",&userAnswer);
 
-        switch(validateUserAnswer)
+        if(userAnswer!=1 && userAnswer!=2)
         {
-            case 1 :
-                validateUserAnswer = 1;
-            break;
-            case 2 :
-                validateUserAnswer = 2;
-            break;
-            default :
-                validateUserAnswer = -1;
+            userAnswer = -1;
         }
     }
-    while(validateUserAnswer == -1);
+    while(userAnswer == -1);
 
-    return validateUserAnswer;
+    return userAnswer;
 }

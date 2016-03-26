@@ -20,19 +20,24 @@
 
 1458652554 d:\develop\proyectos\codeblocks\tp_laboratorio_1\operaciones.h
 
-1458939381 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/main.c
+1459025784 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/main.c
 	<stdio.h>
 	<stdlib.h>
 	"operaciones.h"
 	"validations.h"
 
-1458929866 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/operaciones.h
+1459025081 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/operaciones.h
 
-1458939137 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/validations.h
+1459025550 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/validations.h
 
-1458933391 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/operaciones.c
+1459025804 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/operaciones.c
+	<stdio.h>
+	<stdlib.h>
+	"operaciones.h"
 
-1458939520 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/validations.c
+1459025550 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/validations.c
+	<stdio.h>
+	<stdlib.h>
 
 1458968492 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/main.c
 	<stdio.h>

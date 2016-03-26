@@ -5,7 +5,7 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------------------*/
-void runFunction(int userMenuInput,float valueA,float valueB);   /**< Ejecuta la operacion seleccionada por el usuario */
+void runFunction(int userMenuInput,float *valueA,float *valueB);   /**< Ejecuta la operacion seleccionada por el usuario */
 
 float addFloat(float operator1, float operator2);    /**< Realiza la suma de dos numeros de tipo float */
 
