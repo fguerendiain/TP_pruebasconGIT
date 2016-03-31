@@ -61,8 +61,8 @@ float getUserNumberInput(int order) /**< Solicita al usuario ingresar un numero 
 void printMenu(float valueA, float valueB)
 {
     cleanScreen();
-    printf("1- Ingresar 1er operando (A = %2.f)\n"
-           "2- Ingresar 2do operando (B = %2.f)\n"
+    printf("1- Ingresar 1er operando (A = %.2f)\n"
+           "2- Ingresar 2do operando (B = %.2f)\n"
            "3- Calcular la suma (A+B)\n"
            "4- Calcular la resta (A-B)\n"
            "5- Calcular la division (A/B)\n"

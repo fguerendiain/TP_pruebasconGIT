@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "operaciones.h"
+#include "validations.h"
+
 
 #define OPERATOR1 1
 #define OPERATOR2 2
@@ -25,49 +27,46 @@
 void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta la operacion seleccionada por el usuario */
 {
     float result = 0;
-    float oper1 = 0;
-    float oper2 = 0;
+
 
     switch(userMenuInput)
     {
         case OPERATOR1 :
-            oper1 = getUserNumberInput(1);
-            *valueA = oper1;
+            *valueA = getUserNumberInput(1);
         break;
 
         case OPERATOR2 :
-            oper2 = getUserNumberInput(2);
-            *valueB = oper2;
+            *valueB = getUserNumberInput(2);
         break;
 
         case ADD :
-            result = addFloat(oper1,oper2);
+            result = addFloat(valueA,valueB);
             cleanScreen();
-            printf("%2.f + %2.f = %2.f\n\n",oper1, oper2, result);
+            printf("%.2f + %.2f = %.2f\n\n",valueA, valueB, result);
         break;
 
         case SUBTRACT :
-            result = subtractFloat(oper1,oper2);
+            result = subtractFloat(valueA,valueB);
             cleanScreen();
-            printf("%2.f - %2.f = %2.f\n\n",oper1, oper2, result);
+            printf("%.2f - %.2f = %.2f\n\n",valueA, valueB, result);
         break;
 
         case DIVISION :
-            result = divideFloat(oper1,oper2);
+            result = divideFloat(valueA,valueB);
             cleanScreen();
-            printf("%2.f / %2.f = %2.f\n\n",oper1, oper2, result);
+            printf("%.2f / %.2f = %.2f\n\n",valueA, valueB, result);
         break;
 
         case MULTIPLICATION :
-            result = multiplyFloat(oper1,oper2);
+            result = multiplyFloat(valueA,valueB);
             cleanScreen();
-            printf("%2.f x %2.f = %2.f\n\n",oper1, oper2, result);
+            printf("%.2f x %.2f = %.2f\n\n",valueA, valueB, result);
         break;
 
         case FACTORIAL :
-            result = factorialFloat(oper1);
+            result = factorialFloat(valueA);
             cleanScreen();
-            printf("%1.f! = %1.f\n\n",oper1, result);
+            printf("%.2f! = %.2f\n\n",valueA, result);
         break;
 
         case ALLOPERATIONS :
@@ -87,9 +86,9 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
  * \return result almacena y devuelve un resultado de tipo float
  *
  */
-float addFloat(float operator1, float operator2)    /**< Realiza la suma de dos numeros de tipo float */
+float addFloat(float *operator1, float *operator2)    /**< Realiza la suma de dos numeros de tipo float */
 {
-    float result = operator1 + operator2;
+    float result = *operator1 + *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -100,9 +99,9 @@ float addFloat(float operator1, float operator2)    /**< Realiza la suma de dos 
  * \return result almacena y devuelve un resultado de tipo float
  *
  */
-float subtractFloat(float operator1, float operator2)   /**< Realiza la resta de dos numeros de tipo float */
+float subtractFloat(float *operator1, float *operator2)   /**< Realiza la resta de dos numeros de tipo float */
 {
-    float result = operator1 - operator2;
+    float result = *operator1 - *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -113,9 +112,9 @@ float subtractFloat(float operator1, float operator2)   /**< Realiza la resta de
  * \return result almacena y devuelve un resultado de tipo float
  *
  */
-float multiplyFloat(float operator1, float operator2)   /**< Realiza la multiplicacion de dos numeros de tipo float */
+float multiplyFloat(float *operator1, float *operator2)   /**< Realiza la multiplicacion de dos numeros de tipo float */
 {
-    float result = operator1 * operator2;
+    float result = *operator1 * *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -126,9 +125,9 @@ float multiplyFloat(float operator1, float operator2)   /**< Realiza la multipli
  * \return result almacena y devuelve un resultado de tipo float
  *
  */
-float divideFloat(float operator1, float operator2) /**< Realiza la division de dos numeros de tipo float */
+float divideFloat(float *operator1, float *operator2) /**< Realiza la division de dos numeros de tipo float */
 {
-    float result = operator1 / operator2;
+    float result = *operator1 / *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -138,10 +137,10 @@ float divideFloat(float operator1, float operator2) /**< Realiza la division de 
  * \return result almacena y devuelve un resultado de tipo int
  *
  */
-float factorialFloat (float operator1)  /**< Calcula el factorial de un numero de tipo float */
+float factorialFloat (float *operator1)  /**< Calcula el factorial de un numero de tipo float */
 {
     int counter;
-    int operInt1 = (int)operator1; // SE CASTEA EL FLOAT INGRESADO POR EL USUARIO A UN INT PARA SER EVALUADO POR LA FUNCION
+    int operInt1 = (int)*operator1; // SE CASTEA EL FLOAT INGRESADO POR EL USUARIO A UN INT PARA SER EVALUADO POR LA FUNCION
     int result = 1; // POR CONVENCION, 0! = 1
     for (counter = 1; counter<= operInt1 ; counter++){
         result*=counter;
