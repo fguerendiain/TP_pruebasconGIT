@@ -32,8 +32,8 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 void main(void)
 {
-    float valueA = 10;
-    float valueB = 5;
+    float valueA = 0;
+    float valueB = 0;
     int userMenuInput = 0;
     int userWillToContinue = 0;
 

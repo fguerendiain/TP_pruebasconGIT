@@ -27,7 +27,7 @@
 void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta la operacion seleccionada por el usuario */
 {
     float result = 0;
-
+    long resultFactorial = 0;
 
     switch(userMenuInput)
     {
@@ -42,31 +42,31 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
         case ADD :
             result = addFloat(valueA,valueB);
             cleanScreen();
-            printf("%.2f + %.2f = %.2f\n\n",valueA, valueB, result);
+            printf("%.2f + %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case SUBTRACT :
             result = subtractFloat(valueA,valueB);
             cleanScreen();
-            printf("%.2f - %.2f = %.2f\n\n",valueA, valueB, result);
+            printf("%.2f - %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case DIVISION :
             result = divideFloat(valueA,valueB);
             cleanScreen();
-            printf("%.2f / %.2f = %.2f\n\n",valueA, valueB, result);
+            printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case MULTIPLICATION :
             result = multiplyFloat(valueA,valueB);
             cleanScreen();
-            printf("%.2f x %.2f = %.2f\n\n",valueA, valueB, result);
+            printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case FACTORIAL :
-            result = factorialFloat(valueA);
+            resultFactorial = factorialFloat(valueA);
             cleanScreen();
-            printf("%.2f! = %.2f\n\n",valueA, result);
+            printf("%.2f! = %.2ld\n\n",*valueA, resultFactorial);
         break;
 
         case ALLOPERATIONS :
@@ -137,13 +137,13 @@ float divideFloat(float *operator1, float *operator2) /**< Realiza la division d
  * \return result almacena y devuelve un resultado de tipo int
  *
  */
-float factorialFloat (float *operator1)  /**< Calcula el factorial de un numero de tipo float */
+long factorialFloat (float *operator1)  /**< Calcula el factorial de un numero de tipo float */
 {
     int counter;
     int operInt1 = (int)*operator1; // SE CASTEA EL FLOAT INGRESADO POR EL USUARIO A UN INT PARA SER EVALUADO POR LA FUNCION
-    int result = 1; // POR CONVENCION, 0! = 1
+    long result = 1; // POR CONVENCION, 0! = 1
     for (counter = 1; counter<= operInt1 ; counter++){
         result*=counter;
     }
-    return (float)result;
+    return result;
 }

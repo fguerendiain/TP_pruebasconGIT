@@ -15,4 +15,4 @@ float multiplyFloat(float *operator1, float *operator2);   /**< Realiza la multi
 
 float divideFloat(float *operator1, float *operator2); /**< Realiza la division de dos numeros de tipo float */
 
-float factorialFloat (float *operator1);  /**< Calcula el factorial de un numero de tipo float */
+long factorialFloat (float *operator1);  /**< Calcula el factorial de un numero de tipo float */
