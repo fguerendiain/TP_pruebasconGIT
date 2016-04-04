@@ -81,8 +81,15 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
             printf("%.2f + %.2f = %.2f\n\n",*valueA, *valueB, result);
             result = subtractFloat(valueA,valueB);
             printf("%.2f - %.2f = %.2f\n\n",*valueA, *valueB, result);
-            result = divideFloat(valueA,valueB);
-            printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
+            if(*valueB != 0)
+            {
+                result = divideFloat(valueA,valueB);
+                printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
+            }
+            else
+            {
+                printf("No se puede realizar la division por 0\n\n");
+            }
             result = multiplyFloat(valueA,valueB);
             printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
             resultFactorial = factorialFloat(valueA);
