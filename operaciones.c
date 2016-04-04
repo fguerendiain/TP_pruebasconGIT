@@ -3,7 +3,6 @@
 #include "operaciones.h"
 #include "validations.h"
 
-
 #define OPERATOR1 1
 #define OPERATOR2 2
 #define ADD 3
@@ -40,37 +39,54 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
         break;
 
         case ADD :
-            result = addFloat(valueA,valueB);
             cleanScreen();
+            result = addFloat(valueA,valueB);
             printf("%.2f + %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case SUBTRACT :
-            result = subtractFloat(valueA,valueB);
             cleanScreen();
+            result = subtractFloat(valueA,valueB);
             printf("%.2f - %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case DIVISION :
-            result = divideFloat(valueA,valueB);
             cleanScreen();
-            printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
-        break;
+            if(*valueB != 0)
+            {
+                result = divideFloat(valueA,valueB);
+                printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
+            }
+            else
+            {
+                printf("Por favor ingrese un divisor distinto de 0\n");
+            }
+       break;
 
         case MULTIPLICATION :
-            result = multiplyFloat(valueA,valueB);
             cleanScreen();
+            result = multiplyFloat(valueA,valueB);
             printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
         break;
 
         case FACTORIAL :
-            resultFactorial = factorialFloat(valueA);
             cleanScreen();
+            resultFactorial = factorialFloat(valueA);
             printf("%.2f! = %.2ld\n\n",*valueA, resultFactorial);
         break;
 
         case ALLOPERATIONS :
-
+            cleanScreen();
+            result = addFloat(valueA,valueB);
+            printf("%.2f + %.2f = %.2f\n\n",*valueA, *valueB, result);
+            result = subtractFloat(valueA,valueB);
+            printf("%.2f - %.2f = %.2f\n\n",*valueA, *valueB, result);
+            result = divideFloat(valueA,valueB);
+            printf("%.2f / %.2f = %.2f\n\n",*valueA, *valueB, result);
+            result = multiplyFloat(valueA,valueB);
+            printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
+            resultFactorial = factorialFloat(valueA);
+            printf("%.2f! = %.2ld\n\n",*valueA, resultFactorial);
         break;
 
         case EXIT :
@@ -118,17 +134,24 @@ float multiplyFloat(float *operator1, float *operator2)   /**< Realiza la multip
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Realiza la division de dos numeros de tipo float
+/** \brief Realiza la division de dos numeros de tipo float excepto cuando *operator2 sea igual a 0
  *
- * \param operator1 recibe un operador de tipo float
- * \param operator2 recibe un operador de tipo float
- * \return result almacena y devuelve un resultado de tipo float
+ * \param operator1 dividendo
+ * \param operator2 divisor
+ * \return La división de operator1 sobre operator2 o '0' cuando operator2 es igual a 0
  *
  */
-float divideFloat(float *operator1, float *operator2) /**< Realiza la division de dos numeros de tipo float */
+float divideFloat(float *operator1, float *operator2) /**<  Realiza la division de dos numeros de tipo float excepto cuando *operator2 sea igual a 0*/
 {
-    float result = *operator1 / *operator2;
-    return result;
+    if(*operator2!=0)
+    {
+        float result = *operator1 / *operator2;
+        return result;
+    }
+        else
+    {
+        return 0;
+    }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief Calcula el factorial de un numero de tipo float

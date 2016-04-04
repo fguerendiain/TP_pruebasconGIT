@@ -58,7 +58,7 @@ float getUserNumberInput(int order) /**< Solicita al usuario ingresar un numero 
  * \return void
  *
  */
-void printMenu(float valueA, float valueB)
+void printAwesomeMenu(float valueA, float valueB)
 {
     cleanScreen();
     printf("1- Ingresar 1er operando (A = %.2f)\n"
@@ -86,8 +86,6 @@ int getMenuUserInput()
 
     do
     {
-        fflush(stdin);
-        validateUserInput = 1;
         if(flagFirstInput == 0)
         {
             printf("\nIngrese una opcion: ");
@@ -97,11 +95,16 @@ int getMenuUserInput()
         {
             printf("\nPor favor, ingrese una opcion valida: ");
         }
-        validateUserInput = scanf("%d",&userInput);
-        if (validateUserInput == 0 || (userInput < 0 || userInput > 9))
+
+        validateUserInput = scanf("%d", &userInput);
+
+        if(validateUserInput == 0 || userInput < 0 || userInput > 9)
         {
             userInput = -1;
         }
+
+        erradicateStdin();
+
     }
     while(userInput == -1);
     return userInput;
@@ -115,6 +118,7 @@ int getMenuUserInput()
 
 int getUserConfirmToContinue()
 {
+/*-------------------------------------------------------------------------------------------------------------------*/
     int userAnswer = -1;
     int flagFirstInput = 0;
 
@@ -129,15 +133,29 @@ int getUserConfirmToContinue()
         {
             printf("Por favor, ingrese una opcion valida:\n\n1- continuar\n2- salir\n");
         }
-        fflush(stdin);
         scanf("%d",&userAnswer);
 
         if(userAnswer!=1 && userAnswer!=2)
         {
             userAnswer = -1;
         }
+
+        erradicateStdin();
+
     }
     while(userAnswer == -1);
 
     return userAnswer;
+}
+
+/** \brief Consume todo el stdin hasta encontrar un EOF o un "\n", se utiliza en reemplazo del fflush().
+ * \return void
+ */
+
+void erradicateStdin()
+{
+    char stdinBuffer;
+    while((stdinBuffer = getchar()) != '\n' && stdinBuffer != EOF);
+
+    return;
 }

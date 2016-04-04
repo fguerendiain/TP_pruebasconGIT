@@ -39,7 +39,7 @@ void main(void)
 
     do
     {
-        printMenu(valueA, valueB);
+        printAwesomeMenu(valueA, valueB);
         userMenuInput = getMenuUserInput();  //REVISAR POR QUE LOOPEA LA FUNCION CUANDO SE INGRESA ALGO QUE NO SEA UN INT
         runFunction(userMenuInput, &valueA, &valueB);
         userWillToContinue = getUserConfirmToContinue(); //REVISAR POR QUE LOOPEA LA FUNCION CUANDO SE INGRESA ALGO QUE NO SEA UN INT

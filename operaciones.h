@@ -13,6 +13,6 @@ float subtractFloat(float *operator1, float *operator2);   /**< Realiza la resta
 
 float multiplyFloat(float *operator1, float *operator2);   /**< Realiza la multiplicacion de dos numeros de tipo float */
 
-float divideFloat(float *operator1, float *operator2); /**< Realiza la division de dos numeros de tipo float */
+float divideFloat(float *operator1, float *operator2); /**<  Realiza la division de dos numeros de tipo float excepto cuando *operator2 sea igual a 0*/
 
 long factorialFloat (float *operator1);  /**< Calcula el factorial de un numero de tipo float */
