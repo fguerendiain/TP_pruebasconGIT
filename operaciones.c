@@ -18,8 +18,8 @@
 /** \brief Ejecuta la operacion seleccionada por el usuario
  *
  * \param userMenuInput recibe un int con la opcion del menu que elijio el usuario
- * \param valueA
- * \param valueB
+ * \param valueA direccion de memoria del primer operando
+ * \param valueB direccion de memoria del segundo operando
  * \return void imprime en pantalla el resultado de la operacion solicitada
  *
  */
@@ -102,53 +102,53 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
     }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Realiza la suma de dos numeros de tipo float
+/** \brief Realiza la suma de dos numeros
  *
- * \param operator1 recibe un operador de tipo float
- * \param operator2 recibe un operador de tipo float
- * \return result almacena y devuelve un resultado de tipo float
+ * \param operator1 recibe el primer operador
+ * \param operator2 recibe el segundo operador
+ * \return result devuelve el resultado de la suma
  *
  */
-float addFloat(float *operator1, float *operator2)    /**< Realiza la suma de dos numeros de tipo float */
+float addFloat(float *operator1, float *operator2)    /**< Realiza la suma de dos numeros */
 {
     float result = *operator1 + *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Realiza la resta de dos numeros de tipo float
+/** \brief Realiza la resta de dos numeros
  *
- * \param operator1 recibe un operador de tipo float
- * \param operator2 recibe un operador de tipo float
- * \return result almacena y devuelve un resultado de tipo float
+ * \param operator1 recibe el primer operador
+ * \param operator2 recibe el segundo operador
+ * \return result devuelve la resta de dos numeros
  *
  */
-float subtractFloat(float *operator1, float *operator2)   /**< Realiza la resta de dos numeros de tipo float */
+float subtractFloat(float *operator1, float *operator2)   /**< Realiza la resta de dos numeros */
 {
     float result = *operator1 - *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Realiza la multiplicacion de dos numeros de tipo float
+/** \brief Realiza la multiplicacion de dos numeros
  *
- * \param operator1 recibe un operador de tipo float
- * \param operator2 recibe un operador de tipo float
- * \return result almacena y devuelve un resultado de tipo float
+ * \param operator1 recibe el primer operador
+ * \param operator2 recibe el segundo operador
+ * \return result devuelve la multiplicacion de dos numeros
  *
  */
-float multiplyFloat(float *operator1, float *operator2)   /**< Realiza la multiplicacion de dos numeros de tipo float */
+float multiplyFloat(float *operator1, float *operator2)   /**< Realiza la multiplicacion de dos numeros*/
 {
     float result = *operator1 * *operator2;
     return result;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Realiza la division de dos numeros de tipo float excepto cuando *operator2 sea igual a 0
+/** \brief Realiza la division de dos numeros, excepto cuando *operator2 sea igual a 0
  *
- * \param operator1 dividendo
- * \param operator2 divisor
+ * \param operator1 recibe el primer operador
+ * \param operator2 recibe el segundo operador
  * \return La división de operator1 sobre operator2 o '0' cuando operator2 es igual a 0
  *
  */
-float divideFloat(float *operator1, float *operator2) /**<  Realiza la division de dos numeros de tipo float excepto cuando *operator2 sea igual a 0*/
+float divideFloat(float *operator1, float *operator2) /**<  Realiza la division de dos numeros, excepto cuando *operator2 sea igual a 0*/
 {
     if(*operator2!=0)
     {
@@ -161,13 +161,13 @@ float divideFloat(float *operator1, float *operator2) /**<  Realiza la division 
     }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
-/** \brief Calcula el factorial de un numero de tipo float
+/** \brief Calcula el factorial de un numero
  *
- * \param operator1 recibe un operador de tipo float
- * \return result almacena y devuelve un resultado de tipo int
+ * \param operator1 recibe un operador
+ * \return result devuelve el factorial de un numero
  *
  */
-long factorialFloat (float *operator1)  /**< Calcula el factorial de un numero de tipo float */
+long factorialFloat (float *operator1)  /**< Calcula el factorial de un numero */
 {
     int counter;
     int operInt1 = (int)*operator1; // SE CASTEA EL FLOAT INGRESADO POR EL USUARIO A UN INT PARA SER EVALUADO POR LA FUNCION

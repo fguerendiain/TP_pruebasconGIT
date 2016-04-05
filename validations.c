@@ -112,7 +112,7 @@ int getMenuUserInput()
 /*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief Solicita al usuario ingresar dos valores para continuar o no
  *
- * \return devuelve un int con el dato ingresado por el usuario
+ * \return devuelve la respuesta del usuario 1 para continuar, 2 para salir
  *
  */
 
@@ -147,7 +147,7 @@ int getUserConfirmToContinue()
 
     return userAnswer;
 }
-
+/*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief Consume todo el stdin hasta encontrar un EOF o un "\n", se utiliza en reemplazo del fflush().
  * \return void
  */

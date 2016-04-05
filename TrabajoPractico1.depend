@@ -60,3 +60,19 @@
 	<stdio.h>
 	<stdlib.h>
 
+1459894279 source:d:\fguerendiain\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"operaciones.h"
+	"validations.h"
+
+1459894198 d:\fguerendiain\tp_laboratorio_1\operaciones.h
+
+1459893507 d:\fguerendiain\tp_laboratorio_1\validations.h
+
+1459894198 source:d:\fguerendiain\tp_laboratorio_1\operaciones.c
+	<stdio.h>
+	<stdlib.h>
+	"operaciones.h"
+	"validations.h"
+
