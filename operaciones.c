@@ -20,10 +20,11 @@
  * \param userMenuInput recibe un int con la opcion del menu que elijio el usuario
  * \param valueA direccion de memoria del primer operando
  * \param valueB direccion de memoria del segundo operando
+ * \param userWillToContinue direccion de memoria de la variable que determina el fin del programa
  * \return void imprime en pantalla el resultado de la operacion solicitada
  *
  */
-void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta la operacion seleccionada por el usuario */
+void runFunction(int userMenuInput,float *valueA,float *valueB, int *userWillToContinue)   /**< Ejecuta la operacion seleccionada por el usuario */
 {
     float result = 0;
     long resultFactorial = 0;
@@ -42,12 +43,14 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
             cleanScreen();
             result = addFloat(valueA,valueB);
             printf("%.2f + %.2f = %.2f\n\n",*valueA, *valueB, result);
+            pauseScreen();
         break;
 
         case SUBTRACT :
             cleanScreen();
             result = subtractFloat(valueA,valueB);
             printf("%.2f - %.2f = %.2f\n\n",*valueA, *valueB, result);
+            pauseScreen();
         break;
 
         case DIVISION :
@@ -61,18 +64,21 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
             {
                 printf("Por favor ingrese un divisor distinto de 0\n");
             }
+            pauseScreen();
        break;
 
         case MULTIPLICATION :
             cleanScreen();
             result = multiplyFloat(valueA,valueB);
             printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
+            pauseScreen();
         break;
 
         case FACTORIAL :
             cleanScreen();
             resultFactorial = factorialFloat(valueA);
             printf("%.2f! = %.2ld\n\n",*valueA, resultFactorial);
+            pauseScreen();
         break;
 
         case ALLOPERATIONS :
@@ -94,12 +100,15 @@ void runFunction(int userMenuInput,float *valueA,float *valueB)   /**< Ejecuta l
             printf("%.2f x %.2f = %.2f\n\n",*valueA, *valueB, result);
             resultFactorial = factorialFloat(valueA);
             printf("%.2f! = %.2ld\n\n",*valueA, resultFactorial);
+            pauseScreen();
         break;
 
         case EXIT :
-            exit(0);
+            *userWillToContinue = 0;
+            return;
         break;
     }
+    *userWillToContinue = 1;
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
 /** \brief Realiza la suma de dos numeros

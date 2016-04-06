@@ -16,3 +16,5 @@ int getMenuUserInput(); /**< Solicita ingresar una opcion del menu validando la 
 int getUserConfirmToContinue(); /**< Solicita al usuario ingresar dos valores para continuar o no */
 
 void erradicateStdin();  /**<Consume todo el stdin hasta encontrar un EOF o un "\n", se utiliza en reemplazo del fflush().*/
+
+void pauseScreen();  /**< Pausa el programa hasta que se presiona Enter */

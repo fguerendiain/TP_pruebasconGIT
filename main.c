@@ -41,9 +41,8 @@ void main(void)
     {
         printAwesomeMenu(valueA, valueB);
         userMenuInput = getMenuUserInput();
-        runFunction(userMenuInput, &valueA, &valueB);
-        userWillToContinue = getUserConfirmToContinue();
+        runFunction(userMenuInput, &valueA, &valueB, &userWillToContinue);
     }
-    while(userWillToContinue == 1);
+    while(userWillToContinue);
     return;
 }

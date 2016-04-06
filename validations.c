@@ -159,3 +159,12 @@ void erradicateStdin()
 
     return;
 }
+/*-------------------------------------------------------------------------------------------------------------------*/
+/** \brief Pausa el programa hasta que se presiona Enter.
+ * \return void
+ */
+void pauseScreen()  /**< Pausa el programa hasta que se presiona Enter */
+{
+    printf("\nPresione Enter para continuar: ... ");
+    while ( getchar() != '\n');
+}
