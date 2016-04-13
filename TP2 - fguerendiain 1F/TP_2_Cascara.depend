@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1460505290 source:e:\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+
+1460504292 e:\tp_laboratorio_1\tp2 - fguerendiain 1f\struct.h
+
+1460504298 e:\tp_laboratorio_1\tp2 - fguerendiain 1f\validations.h
+
+1460504428 e:\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.h
+
+1460505154 source:e:\tp_laboratorio_1\tp2 - fguerendiain 1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+
+1460504518 source:e:\tp_laboratorio_1\tp2 - fguerendiain 1f\validations.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+
