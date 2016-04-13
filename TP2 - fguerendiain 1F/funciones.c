@@ -29,6 +29,7 @@ int runFunctionMenu(int opcion) /**< Ejecuta la opcion elegida por el usuario */
     switch(opcion)
     {
         case 1:
+
         break;
         case 2:
         break;

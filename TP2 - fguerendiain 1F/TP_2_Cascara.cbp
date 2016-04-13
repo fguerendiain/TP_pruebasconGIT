@@ -31,12 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="funciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="funciones.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="struct.h" />
+		<Unit filename="validations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validations.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
