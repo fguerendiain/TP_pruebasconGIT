@@ -31,6 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../ownLibraries/screenSystemShow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../ownLibraries/screenSystemShow.h" />
+		<Unit filename="../ownLibraries/userInputOutput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../ownLibraries/userInputOutput.h" />
 		<Unit filename="funciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -41,10 +49,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="struct.h" />
-		<Unit filename="validations.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="validations.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

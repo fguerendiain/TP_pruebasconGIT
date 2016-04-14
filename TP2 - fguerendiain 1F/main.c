@@ -41,6 +41,9 @@
 #include "struct.h"
 #include "validations.h"
 #include "funciones.h"
+#inlcude "../ownLibraries/screenSystemShow.h"
+#inlcude "../ownLibraries/userInputOutput.h"
+
 
 void main()
 {
@@ -51,7 +54,11 @@ void main()
 
     do
     {
-        printMenu();
+        printAwesomeMenu("1- Agregar persona\n"
+        "2- Borrar persona\n"
+        "3- Imprimir lista ordenada por  nombre\n"
+        "4- Imprimir grafico de edades\n"
+        "5- Salir\n");
         userImput = getMenuUserInput();
         exit = runFunctionMenu(userImput);
     }
