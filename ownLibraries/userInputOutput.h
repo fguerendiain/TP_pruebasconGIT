@@ -3,7 +3,8 @@
 #include "struct.h"
 
 
-int getUserInputInt(int *userInput,char *msgFirstTime, int min, int max, char *msgError);
+
+int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int trays);
 
 
 float getUserInputFloat(float *userInput,char *msgFirstTime, int min, int max, char *msgError);

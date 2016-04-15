@@ -26,3 +26,31 @@
 	"validations.h"
 	"funciones.h"
 
+1460694070 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+	<stdio.h>
+
+1460694776 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1460694180 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+
+1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+
+1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/validations.h
+
+1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+
+1460694699 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+

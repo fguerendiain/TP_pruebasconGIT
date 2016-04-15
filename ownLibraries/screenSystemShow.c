@@ -1,6 +1,4 @@
-#inlcude "../ownLibraries/screenSystemShow.h"
-#inlcude "../ownLibraries/userInputOutput.h"
-
+#include <stdio.h>
 
 /** \brief Imprime el menu
  * \return void Imprime menu en pantalla

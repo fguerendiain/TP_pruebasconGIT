@@ -1,20 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#inlcude "../ownLibraries/screenSystemShow.h"
-#inlcude "../ownLibraries/userInputOutput.h"
 
+/** \brief recibe un entero del usuario validando lo ingresado
+ *
+ * \param (userinput) direccion de memoria de la variable donde guardar el dato ingresado por el usuario
+ * \param (min) control de rango a validar, numero entero minimo permitido
+ * \param (max) control de rango a validar, numero entero maximo permitido
+ * \param (msgFirstTime) mensaje que se le muestra al usuario en el primer intento
+ * \param (msgError) mensaje que se le muestra al usuario a partir del segundo intento
+ * \param (trays) cantidad maxima de intentos
+ *
+ * \return (0 = dato correcto dentro del rango | -1 = dato incorrecto o igual a 0 | -2 dato correcto fuera de rango)
+ *
+ */
 
-
-int getUserInputInt(int *userInput,char *msgFirstTime, int min, int max, char *msgError)
+int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int trays)
 {
     {
-    int ret = -1;
+    int ret;
+    char auxBuffer[4000];
     int flagFirstInput = 0;
     int validateUserInput;
+    int endOfTrays = 0;
 
     do
     {
+        endOfTrays++;
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
@@ -25,18 +37,35 @@ int getUserInputInt(int *userInput,char *msgFirstTime, int min, int max, char *m
             printf("%s",msgError);
         }
 
-        validateUserInput = scanf("%d", userInput);
+        scanf("%s",auxBuffer);
+        validateUserInput = atoi(auxBuffer);
 
-        if(validateUserInput == 0 || userInput < min || userInput > max)
+        if(validateUserInput != 0)
         {
-            return ret;
+            if(validateUserInput < min || validateUserInput > max)
+            {
+                ret = -2; // la funcion indica que el usuario ingreso un numero fuera del rango establecido
+                *userInput = 0;
+            }
+            else
+            {
+                ret = 0;  // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+                *userInput = validateUserInput;
+                endOfTrays=trays;
+            }
+        }
+        else
+        {
+            ret = -1; //el usuario no ingreso un numero o ingreso 0
+            *userInput = 0;
         }
         erradicateStdin();
-    }
-    return 0;
+    }while(endOfTrays != trays);
+    return ret;
     }
 }
-/*---------------------------------------------------------------------------------------------*/
+/*
+
 float getUserInputFloat(float *userInput,char *msgFirstTime, int min, int max, char *msgError)
 {
     {
@@ -67,7 +96,8 @@ float getUserInputFloat(float *userInput,char *msgFirstTime, int min, int max, c
     return 0;
     }
 }
-/*---------------------------------------------------------------------------------------------*/
+
+
 char getUserInputChar(char *userInput,char *msgFirstTime, char *msgError)
 {
     {
@@ -98,7 +128,8 @@ char getUserInputChar(char *userInput,char *msgFirstTime, char *msgError)
     return 0;
     }
 }
-/*---------------------------------------------------------------------------------------------*/
+
+
 char getUserInputString(char *userImput,char *msgFirstTime, cantMinLetras,cantMaxLetras,char *msgError)
 {
     printf(msgFirstTime);
@@ -111,3 +142,4 @@ char getUserInputString(char *userImput,char *msgFirstTime, cantMinLetras,cantMa
 
 }
 
+*/

@@ -41,15 +41,15 @@
 #include "struct.h"
 #include "validations.h"
 #include "funciones.h"
-#inlcude "../ownLibraries/screenSystemShow.h"
-#inlcude "../ownLibraries/userInputOutput.h"
+#define MSGFIRSTTIME "Eliga una opcion:\n"
+#define MSGERROR "Por favor eliga una opcion valida: \n"
 
 
 void main()
 {
-    short int userImput;
+    int userImput;
     short int exit;
-
+    int control;
     Epersona persona[20];
 
     do
@@ -58,8 +58,11 @@ void main()
         "2- Borrar persona\n"
         "3- Imprimir lista ordenada por  nombre\n"
         "4- Imprimir grafico de edades\n"
-        "5- Salir\n");
-        userImput = getMenuUserInput();
+        "5- Salir\n\n");
+        control = getUserInputInt(&userImput,1,5,MSGFIRSTTIME,MSGERROR,3);
+
+        printf("valor %d\n", userImput);
+        printf("funcion %d\n\n", control);
         exit = runFunctionMenu(userImput);
     }
     while(exit);

@@ -1,3 +1,5 @@
+#define SCREENSYSTEMSHOW_H_INCLUDED
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "screenSystemShow.h"
