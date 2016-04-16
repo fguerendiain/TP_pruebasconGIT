@@ -31,3 +31,5 @@ int runFunctionMenu(int opcion) /**< Ejecuta la opcion elegida por el usuario */
     return seguir;
 }
 
+
+//funcion para controlar errores

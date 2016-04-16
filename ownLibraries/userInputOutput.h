@@ -4,7 +4,7 @@
 
 
 
-int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int trays);
+int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int maxTries);    /**< recibe y valida el ingreso de un entero por parte del usuario */
 
 
 float getUserInputFloat(float *userInput,char *msgFirstTime, int min, int max, char *msgError);
