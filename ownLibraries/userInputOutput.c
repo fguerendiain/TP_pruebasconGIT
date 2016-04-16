@@ -15,18 +15,22 @@
  *
  */
 
-int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int trays)
+int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int maxTries)
 {
     {
     int ret;
     char auxBuffer[4000];
     int flagFirstInput = 0;
-    int validateUserInput;
-    int endOfTrays = 0;
+    int validUserInput = 0;
+    int tryCount = 0;
 
-    do
-    {
-        endOfTrays++;
+    do{
+        if (maxTries != 0){
+            tryCount++;
+        }else{
+            tryCount = -1;
+        }
+
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
@@ -38,7 +42,33 @@ int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *
         }
 
         scanf("%s",auxBuffer);
-        validateUserInput = atoi(auxBuffer);
+
+        validUserInput = 1;
+        for (int p=0; p < sizeof auxBuffer; p++){
+            if (auxBuffer[p]!='0' && atoi(auxBuffer) == 0){
+                validUserInput = 0;
+                break;
+            }
+        }
+
+        *userInput = atoi(auxBuffer);
+
+        if (validUserInput==1){
+
+        }
+
+
+
+
+        if (auxBuffer[0] == '0'){
+            validUserInput = 1;
+            *userInput = 0;
+        }else{
+            validUserInput = atoi(auxBuffer);
+            if (validUserInput != 0){
+                *userInput = validUserInput;
+            }
+        }
 
         if(validateUserInput != 0)
         {
@@ -60,7 +90,9 @@ int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *
             *userInput = 0;
         }
         erradicateStdin();
-    }while(endOfTrays != trays);
+    }while(tryCount < maxTries){
+
+
     return ret;
     }
 }
