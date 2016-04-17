@@ -39,18 +39,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "struct.h"
-#include "validations.h"
-#include "funciones.h"
+#define EPEOPLELENGTH 3
 #define MSGFIRSTTIME "Eliga una opcion:\n"
 #define MSGERROR "Por favor eliga una opcion valida: \n"
 
 
 void main()
 {
-    int userImput;
+    int userInput;
     short int exit;
-    int control;
-    Epersona persona[20];
+    Epeople person[EPEOPLELENGTH];
+
+    intializeArrayState(person,EPEOPLELENGTH);
 
     do
     {
@@ -59,11 +59,9 @@ void main()
                             "3- Imprimir lista ordenada por  nombre\n"
                             "4- Imprimir grafico de edades\n"
                             "5- Salir\n\n");
-        control = getUserInputInt(&userImput,1,5,MSGFIRSTTIME,MSGERROR,5);
+        getUserInputInt(&userInput,1,5,MSGFIRSTTIME,MSGERROR,2);
+        exit = runFunctionMenu(userInput,person,EPEOPLELENGTH);
 
-        printf("valor %d\n", userImput);
-        printf("funcion %d\n\n", control);
-        exit = runFunctionMenu(userImput);
     }
     while(exit);
 }

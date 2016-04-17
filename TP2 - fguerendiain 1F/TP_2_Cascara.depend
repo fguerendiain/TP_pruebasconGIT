@@ -26,31 +26,40 @@
 	"validations.h"
 	"funciones.h"
 
-1460694070 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+1460887558 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
 	<stdio.h>
+	<stdlib.h>
 
-1460788862 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+1460889251 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1460694180 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+1460889162 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
 	"validations.h"
 	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
 
-1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+1460887802 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
 
 1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/validations.h
 
-1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+1460888888 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
 
-1460788905 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+1460888832 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
-	"validations.h"
-	"funciones.h"
+
+1460878449 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+	<stdio.h>
+	<stdlib.h>
+
+1460881207 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+
+1460881207 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
 

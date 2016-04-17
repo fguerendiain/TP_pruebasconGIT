@@ -2,8 +2,9 @@
 
 typedef struct
 {
-    char nombre[31];
-    short int edad;
-    long int dni;
-    short int flagActive; //1 para ocupado
-}Epersona;
+    char name[31];
+    char lastName[31];
+    int age;
+    char dni[10];
+    short int state; //1 para ocupado
+}Epeople;

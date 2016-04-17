@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../ownLibraries/aritmeticBasics.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../ownLibraries/aritmeticBasics.h" />
 		<Unit filename="../ownLibraries/screenSystemShow.c">
 			<Option compilerVar="CC" />
 		</Unit>
