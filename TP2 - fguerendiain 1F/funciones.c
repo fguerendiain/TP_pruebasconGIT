@@ -75,7 +75,7 @@ int addNewPerson(Epeople *person, long int personLenght)
         checkName = getUserInputString(person[index].name,3,30,"Ingrese el nombre de la persona:\n","Por favor ingrese un nombre valido:\n",STRINGBUFFER,MAXTRIES);
         checkLastName = getUserInputString(person[index].lastName,3,30,"Ingrese el apellido de la persona:\n","Por favor ingrese un apellido valido:\n",STRINGBUFFER,MAXTRIES);
         checkAge = getUserInputShortInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
-        checkDni = getUserInputLongInt(&person[index].dni,999999,99999999,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",MAXTRIES);
+        checkDni = getUserInputString(&person[index].dni,9,10,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",STRINGBUFFER,MAXTRIES);
 
         if (checkName != 0)
         {
@@ -149,11 +149,24 @@ long searchFreeIndex(Epeople *person, long int personLenght)
 void intializeArrayState(Epeople *person, long int personLenght)
 {
     long int i;
+    long int j;
+    long int k;
 
     for(i=0; i < personLenght; i++)
     {
         person[i].state = 0;
         person[i].age = 0;
+
+        for(j=0; j<31; j++)
+        {
+            person[i].name[j] = '\0';
+            person[i].lastName[j] = '\0';
+
+            for(k=0;k<11; k++)
+            {
+                person[i].dni[k] = '\0';
+            }
+        }
     }
 }
 
@@ -202,7 +215,7 @@ void printListOfPeople(Epeople *person, long int personLenght)
     {
             if(person[i].state != 0)
             {
-                printf("%ld\t\t%s\t\t%s\t\t%hi\t\t%ld\n",i,person[i].name,person[i].lastName,person[i].age,person[i].dni);
+                printf("%ld\t\t%s\t\t%s\t\t%hi\t\t%s\n",i,person[i].name,person[i].lastName,person[i].age,person[i].dni);
             }
     }
     pauseScreen();
