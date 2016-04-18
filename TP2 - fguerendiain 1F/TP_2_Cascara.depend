@@ -26,16 +26,19 @@
 	"validations.h"
 	"funciones.h"
 
-1460887558 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+1460957250 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
+	"string.h"
 
-1460889251 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+1460956232 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 
-1460889162 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+1460956744 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
@@ -44,13 +47,13 @@
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1460887802 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+1460956391 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
 
 1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/validations.h
 
-1460888888 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+1460954016 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
 
-1460888832 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+1460954272 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
@@ -59,7 +62,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1460881207 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+1460949553 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
 
-1460881207 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
+1460955937 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
 

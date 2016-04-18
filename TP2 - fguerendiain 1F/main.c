@@ -56,7 +56,7 @@ void main()
     {
         printAwesomeMenu(   "1- Agregar persona\n"
                             "2- Borrar persona\n"
-                            "3- Imprimir lista ordenada por  nombre\n"
+                            "3- Imprimir lista ordenada por nombre\n"
                             "4- Imprimir grafico de edades\n"
                             "5- Salir\n\n");
         getUserInputInt(&userInput,1,5,MSGFIRSTTIME,MSGERROR,2);

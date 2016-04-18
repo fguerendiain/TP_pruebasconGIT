@@ -6,7 +6,7 @@ int getUserInputShortInt(short int *userInput, short int min, short int max, cha
 
 int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *msgError, int maxTries);  /**< recibe y valida el ingreso de un **INT** por parte del usuario */
 
-int getUserInputLongInt(long int *userInput, long min, long max, char *msgFirstTime, char *msgError, int maxTries);   /**< recibe y valida el ingreso de un **LONG INT** por parte del usuario */
+int getUserInputLongInt(long int *userInput, long int min, long int max, char *msgFirstTime, char *msgError, int maxTries);   /**< recibe y valida el ingreso de un **LONG INT** por parte del usuario */
 
 int getUserInputFloat(float *userInput, float min, float max, char *msgFirstTime, char *msgError, int maxTries);  /**< recibe y valida el ingreso de un **FLOAT** por parte del usuario */
 

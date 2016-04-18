@@ -5,42 +5,47 @@
 #include "funciones.h"
 #include "../ownLibraries/userInputOutput.h"
 #include "../ownLibraries/screenSystemShow.h"
-#define MAXTRIES 0
+
+#define MAXTRIES 3
 #define STRINGBUFFER 4000
 
-
-/*
-        1. Agregar una persona
-        2. Borrar una persona
-        3. Imprimir lista ordenada por nombre
-        4. Imprimir gráfico de edades
-        5. Salir
-*/
+#define ADD 1
+#define ERREASE 2
+#define PRINTLIST 3
+#define PRINTGRAPHIC 4
+#define EXIT 5
 
 /** \brief Ejecuta la opcion elegida por el usuario
  * \param opcion recibe un int con la opcion ingresada por el usuario
  * \return luego de ejecutar la opcion devuelve el valor par continuar o no
  */
 
-int runFunctionMenu(int option, Epeople *person, long personLenght)
+int runFunctionMenu(int option, Epeople *person, long int personLenght)
 {
     int exit = 1;
+
     switch(option)
     {
-        case 1:
+        case ADD:
+            cleanScreen();
             addNewPerson(person,personLenght);
           break;
 
-        case 2:
+        case ERREASE:
+            cleanScreen();
+            delPerson(person,personLenght);
         break;
 
-        case 3:
+        case PRINTLIST:
+            cleanScreen();
+            printListOfPeople(person,personLenght);
         break;
 
-        case 4:
+        case PRINTGRAPHIC:
+            cleanScreen();
         break;
 
-        case 5:
+        case EXIT:
             exit = 0;
         break;
     }
@@ -55,15 +60,13 @@ int runFunctionMenu(int option, Epeople *person, long personLenght)
  *
  */
 
-int addNewPerson(Epeople *person, long personLenght)
+int addNewPerson(Epeople *person, long int personLenght)
 {
-    long index;
+    long int index;
     int checkName;
     int checkLastName;
     int checkAge;
     int checkDni;
-
-    cleanScreen();
 
     index=searchFreeIndex(person,personLenght);
 
@@ -71,26 +74,44 @@ int addNewPerson(Epeople *person, long personLenght)
     {
         checkName = getUserInputString(person[index].name,3,30,"Ingrese el nombre de la persona:\n","Por favor ingrese un nombre valido:\n",STRINGBUFFER,MAXTRIES);
         checkLastName = getUserInputString(person[index].lastName,3,30,"Ingrese el apellido de la persona:\n","Por favor ingrese un apellido valido:\n",STRINGBUFFER,MAXTRIES);
-        checkAge = getUserInputInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
-        checkDni = getUserInputString(person[index].dni,7,8,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",STRINGBUFFER,MAXTRIES);
+        checkAge = getUserInputShortInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
+        checkDni = getUserInputLongInt(&person[index].dni,999999,99999999,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",MAXTRIES);
 
-        if (checkName == -1 || checkLastName == -1 || checkAge == -1 || checkDni == -1)
+        if (checkName != 0)
         {
-            printf("Uno o mas datos no fueron ingresados correctamente, por favor vuelva a intentarlo\n");
+            printf("\nNombre invalido, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+        }
+        else if (checkLastName != 0)
+        {
+            printf("\nApellido invalido, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+        }
+        else if (checkAge != 0)
+        {
+            printf("\nEdad invalida, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+        }
+        else if (checkDni != 0)
+        {
+            printf("\nDNI invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
         }
         else
         {
             person[index].state = 1;
-            printf("Los datos se cargaron correctamente\n");
+            printf("\nLos datos se cargaron correctamente\n");
             erradicateStdin();
             pauseScreen();
         }
     }
     else
     {
-        printf("No existen posiciones libres, por favor borre alguna\n posicion para poder ingresar nuevos datos\n\n");
+        printf("No existen posiciones libres, por favor borre alguna\n para poder ingresar nuevos datos\n\n");
         erradicateStdin();
         pauseScreen();
         return -1;
@@ -106,9 +127,9 @@ int addNewPerson(Epeople *person, long personLenght)
  *
  */
 
-long searchFreeIndex(Epeople *person, long personLenght)
+long searchFreeIndex(Epeople *person, long int personLenght)
 {
-    long i;
+    long int i;
 
     for(i=0; i < personLenght; i++)
     {
@@ -125,13 +146,91 @@ long searchFreeIndex(Epeople *person, long personLenght)
  *
  */
 
-void intializeArrayState(Epeople *person, long personLenght)
+void intializeArrayState(Epeople *person, long int personLenght)
 {
-    long i;
+    long int i;
 
     for(i=0; i < personLenght; i++)
     {
         person[i].state = 0;
         person[i].age = 0;
+    }
+}
+
+/** \brief borrado logido de un elemento de la estructura person
+ *
+ * \param array donde se encuentra el elemento
+ * \param tamaño del array
+ *
+ */
+
+void delPerson(Epeople *person, long int personLenght)
+{
+    long int index;
+
+    getUserInputLongInt(&index,0,personLenght,"Ingrese la posicion a eliminar:\n","Por favor, ingrese una posicion valida:\n",MAXTRIES);
+
+    if(person[index].state != 0)
+    {
+        person[index].state = 0;
+        printf("Se eliminaron los datos de la posicion %ld\n", index);
+        pauseScreen();
+    }
+    else
+    {
+        printf("La posicion %ld se encuentra libre\n", index);
+        pauseScreen();
+    }
+}
+
+/** \brief imprime todos los elementos del array
+ *
+ * \param array a recorrer
+ * \param tamaño del array
+ *
+ */
+
+void printListOfPeople(Epeople *person, long int personLenght)
+{
+    long int i;
+
+    sortArrayByName(person,personLenght);
+
+    printf("INDICE\t\tNOMBRE\t\tAPELLIDO\t\tEDAD\t\tDNI\n");
+
+    for(i=0 ; i< personLenght; i++)
+    {
+            if(person[i].state != 0)
+            {
+                printf("%ld\t\t%s\t\t%s\t\t%hi\t\t%ld\n",i,person[i].name,person[i].lastName,person[i].age,person[i].dni);
+            }
+    }
+    pauseScreen();
+}
+
+/** \brief Ordena los elementos alfabeticamente por nombre de persona
+ *
+ * \param array a recorrer
+ * \param tamaño del array
+ *
+ */
+
+void sortArrayByName(Epeople *person, long int personLenght)
+{
+    long i;
+    long j;
+    Epeople auxPerson;
+
+    for(i=0; i<personLenght-1; i++)
+    {
+        for(j=i+1; j<personLenght; j++)
+        {
+            if(strcmp(person[i].name,person[j].name)>0)
+            {
+                auxPerson = person[i];
+                person[i] = person[j];
+                person[j] = auxPerson;
+            }
+        }
     }
 }

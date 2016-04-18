@@ -7,3 +7,5 @@ void erradicateStdin();  /**<Consume todo el stdin hasta encontrar un EOF o un "
 void pauseScreen();  /**< Pausa el programa hasta que se presiona Enter */
 
 void cleanScreen(); /**< Limpia la pantalla */
+
+void stringToUpperCase(char *stringToConvert, long int stringLenght);  /**< convirte a mayuscula una cadena de caracteres */

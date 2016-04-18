@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /** \brief recibe y valida el ingreso de un **SHORT INT** por parte del usuario
  *
@@ -36,14 +37,14 @@ int getUserInputShortInt(short int *userInput, short int min, short int max, cha
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
             printf("%s",msgError);
         }
 
-        validUserInput = scanf("%d", userInput);
+        validUserInput = scanf("%hi", userInput);
 
         if(validUserInput == 0)
         {
@@ -56,6 +57,7 @@ int getUserInputShortInt(short int *userInput, short int min, short int max, cha
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -98,7 +100,7 @@ int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -118,6 +120,7 @@ int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -139,7 +142,7 @@ int getUserInputInt(int *userInput, int min, int max, char *msgFirstTime, char *
  *
  */
 
-int getUserInputLongInt(long int *userInput, long min, long max, char *msgFirstTime, char *msgError, int maxTries)
+int getUserInputLongInt(long int *userInput, long int min, long int max, char *msgFirstTime, char *msgError, int maxTries)
 {
     int ret = 0;
     short int flagFirstInput = 0;
@@ -160,14 +163,14 @@ int getUserInputLongInt(long int *userInput, long min, long max, char *msgFirstT
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
             printf("%s",msgError);
         }
 
-        validUserInput = scanf("%l", userInput);
+        validUserInput = scanf("%ld", userInput);
 
         if(validUserInput == 0)
         {
@@ -180,6 +183,7 @@ int getUserInputLongInt(long int *userInput, long min, long max, char *msgFirstT
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -222,7 +226,7 @@ int getUserInputFloat(float *userInput, float min, float max, char *msgFirstTime
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -242,6 +246,7 @@ int getUserInputFloat(float *userInput, float min, float max, char *msgFirstTime
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -284,7 +289,7 @@ int getUserInputDouble(double *userInput, double min, double max, char *msgFirst
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -304,6 +309,7 @@ int getUserInputDouble(double *userInput, double min, double max, char *msgFirst
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un numero dentro del rango establecido
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -344,7 +350,7 @@ int getUserInputChar(char *userInput, char *msgFirstTime, char *msgError, int ma
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -360,6 +366,7 @@ int getUserInputChar(char *userInput, char *msgFirstTime, char *msgError, int ma
         else
         {
             ret = 0;    // la funcion indica que el usuario ingreso un caracter
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -404,7 +411,7 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -420,7 +427,9 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
         else
         {
             strcpy(userInput, auxBuffer);
+            stringToUpperCase(userInput,strlen(userInput));
             ret = 0;    // la funcion indica que el usuario ingreso un string dentro de la longitud permitida
+            erradicateStdin();
             return ret;
         }
         erradicateStdin();
@@ -466,7 +475,7 @@ int getUserConfirmToContinue(int intYes, int intNo, char charYes, char charNo, c
         if(flagFirstInput == 0)
         {
             printf("%s",msgFirstTime);
-            flagFirstInput++;
+            flagFirstInput = 1;
         }
         else
         {
@@ -484,15 +493,15 @@ int getUserConfirmToContinue(int intYes, int intNo, char charYes, char charNo, c
             else if (userAnswerInt==intYes)
             {
                 ret = 1;     //el usuario ingreso intYes
+                erradicateStdin();
                 return ret;
             }
             else
             {
                 ret = 2;     //el usuario ingreso intNo
+                erradicateStdin();
                 return ret;
             }
-
-            erradicateStdin();
         }
         else
         {
@@ -508,14 +517,17 @@ int getUserConfirmToContinue(int intYes, int intNo, char charYes, char charNo, c
             else if (userAnswerChar=="S")
             {
                 ret = 3; //el usuario ingreso charYes
+                erradicateStdin();
                 return ret;
             }
             else
             {
                 ret = 4;
+                erradicateStdin();
                 return ret;  // el usuario ingreso charNo
             }
         }
+        erradicateStdin();
     }
     while(tryCount < maxTries);
     return ret;
