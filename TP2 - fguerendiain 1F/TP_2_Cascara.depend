@@ -106,3 +106,43 @@
 
 1460993012 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
 
+1461103876 source:e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"validations.h"
+	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
+
+1461103882 e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\struct.h
+
+1460588312 e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\validations.h
+
+1461103878 e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.h
+
+1461103884 e:\tp_laboratorio_1\tp_laboratorio_1\ownlibraries\userinputoutput.h
+
+1461106464 e:\tp_laboratorio_1\tp_laboratorio_1\ownlibraries\screensystemshow.h
+
+1461103878 source:e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+
+1461103882 source:e:\tp_laboratorio_1\tp_laboratorio_1\ownlibraries\aritmeticbasics.c
+	<stdio.h>
+	<stdlib.h>
+
+1461106464 source:e:\tp_laboratorio_1\tp_laboratorio_1\ownlibraries\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+
+1461106464 source:e:\tp_laboratorio_1\tp_laboratorio_1\ownlibraries\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

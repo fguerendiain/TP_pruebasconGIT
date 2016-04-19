@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include "string.h"
 
-#define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
+#define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
 
 /** \brief Imprime el menu
  * \return void Imprime menu en pantalla
@@ -52,14 +52,12 @@ void cleanScreen()
  *
  */
 
-void stringToUpperCase(char *stringToConvert, long int stringLenght)
+void stringToUpperCase(char *stringToConvert)
 {
-    char newString[stringLenght];
     long int i;
 
-    for(i=0; i<stringLenght; i++)
+    for(i=0; stringToConvert[i]!='\0'; i++)
     {
-        newString[i] = toupper(stringToConvert[i]);
+        stringToConvert[i] = toupper(stringToConvert[i]);
     }
-    strcpy(stringToConvert,newString);
 }

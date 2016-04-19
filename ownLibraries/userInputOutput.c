@@ -427,7 +427,7 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
         else
         {
             strcpy(userInput, auxBuffer);
-            stringToUpperCase(userInput,strlen(userInput));
+            stringToUpperCase(userInput);
             ret = 0;    // la funcion indica que el usuario ingreso un string dentro de la longitud permitida
             erradicateStdin();
             return ret;

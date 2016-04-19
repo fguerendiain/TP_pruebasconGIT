@@ -8,4 +8,4 @@ void pauseScreen();  /**< Pausa el programa hasta que se presiona Enter */
 
 void cleanScreen(); /**< Limpia la pantalla */
 
-void stringToUpperCase(char *stringToConvert, long int stringLenght);  /**< convirte a mayuscula una cadena de caracteres */
+void stringToUpperCase(char *stringToConvert);  /**< convirte a mayuscula una cadena de caracteres */
