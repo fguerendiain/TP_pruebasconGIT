@@ -262,66 +262,85 @@ void definePercentageOfAges(Epeople *person, long int personLenght)
     int more35Count = 0;
     int totalCount = 0;
     char graficSpace[3][7];
-
+    int flagNoData = 0;
 
     for(i=0; i<personLenght; i++)
     {
         if(person[i].state != 0)
         {
-            if(person[i].age < 18)
+            flagNoData = 1;
+        }
+    }
+
+    if(flagNoData == 0)
+    {
+        cleanScreen();
+        printf("Por favor ingrese al menos una persona\n");
+        pauseScreen();
+    }
+    else
+    {
+        for(i=0; i<personLenght; i++)
+        {
+            if(person[i].state != 0)
             {
-                under18Count++;
+                if(person[i].age < 18)
+                {
+                    under18Count++;
+                }
+                else if(person[i].age >35)
+                {
+                    more35Count++;
+                }
+                else
+                {
+                    between19_35Count++;
+                }
             }
-            else if(person[i].age >35)
+        }
+
+        totalCount = under18Count + between19_35Count + more35Count;
+
+        under18Count = 100 / totalCount * under18Count / 7; //el ultimo divisor define el valor para dibujarlo en el grafico
+        between19_35Count = 100 / totalCount * between19_35Count / 7;    //para un maximo de * de altura
+        more35Count = 100 / totalCount * more35Count / 7;
+
+        for(i = 0; i < 7;i++)
+        {
+            if(i < under18Count)
             {
-                more35Count++;
+                graficSpace[0][i] = '*';
             }
             else
             {
-                between19_35Count++;
+                graficSpace[0][i] = ' ';
+            }
+
+            if(i < between19_35Count)
+            {
+                graficSpace[1][i] = '*';
+            }
+            else
+            {
+                graficSpace[1][i] = ' ';
+            }
+            if(i < more35Count)
+            {
+                graficSpace[2][i] = '*';
+            }
+            else
+            {
+                graficSpace[2][i] = ' ';
             }
         }
+
+        for(i=6; i >= 0; i--)
+        {
+            printf("%c\t  %c  \t%c\n",graficSpace[0][i],graficSpace[1][i],graficSpace[2][i]);
+        }
+        printf("<18\t19-35\t>35\n");
+        pauseScreen();
     }
-
-    totalCount = under18Count + between19_35Count + more35Count;
-
-    under18Count = 100 / totalCount * under18Count / 7; //el ultimo divisor define el valor para dibujarlo en el grafico
-    between19_35Count = 100 / totalCount * between19_35Count / 7;    //para un maximo de * de altura
-    more35Count = 100 / totalCount * more35Count / 7;
-
-    for(i = 0; i < 7;i++)
-    {
-        if(i < under18Count)
-        {
-            graficSpace[0][i] = '*';
-        }
-        else
-        {
-            graficSpace[0][i] = ' ';
-        }
-
-        if(i < between19_35Count)
-        {
-            graficSpace[1][i] = '*';
-        }
-        else
-        {
-            graficSpace[1][i] = ' ';
-        }
-        if(i < more35Count)
-        {
-            graficSpace[2][i] = '*';
-        }
-        else
-        {
-            graficSpace[2][i] = ' ';
-        }
-    }
-    for(i=6; i >= 0; i--)
-    {
-        printf("%c\t  %c  \t%c\n",graficSpace[0][i],graficSpace[1][i],graficSpace[2][i]);
-    }
-    printf("<18\t19-35\t>35\n");
-    pauseScreen();
 }
+
 
