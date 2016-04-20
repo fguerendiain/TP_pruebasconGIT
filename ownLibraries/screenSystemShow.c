@@ -6,7 +6,7 @@
 #define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
 
 /** \brief Imprime el menu
- * \return void Imprime menu en pantalla
+ * \param (menu) recibe el texto a imprimir
  */
 void printAwesomeMenu(char *menu)
 {
@@ -15,7 +15,7 @@ void printAwesomeMenu(char *menu)
 }
 
 /** \brief Consume todo el stdin hasta encontrar un EOF o un "\n", se utiliza en reemplazo del fflush().
- * \return void
+ *
  */
 void erradicateStdin()
 {
@@ -26,7 +26,7 @@ void erradicateStdin()
 }
 
 /** \brief Pausa el programa hasta que se presiona Enter.
- * \return void
+ *
  */
 void pauseScreen()
 {
@@ -36,8 +36,6 @@ void pauseScreen()
 
 /** \brief Limpia la pantalla
  *
- * \return void
- *
  */
 
 void cleanScreen()
@@ -46,9 +44,7 @@ void cleanScreen()
 }
 
 /** \brief convirte a mayuscula una cadena de caracteres
- *
- * \param array de la cadena
- * \param longitud de la cadena
+ * \param (stringToConvert) cadena de caracter a convertir
  *
  */
 

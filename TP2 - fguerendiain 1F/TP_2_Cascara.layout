@@ -1,39 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="..\ownLibraries\aritmeticBasics.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10637" topLine="378" />
+		</Cursor>
+		<Folding>
+			<Collapse line="16" />
+			<Collapse line="30" />
+			<Collapse line="44" />
+			<Collapse line="58" />
+			<Collapse line="72" />
+			<Collapse line="104" />
+			<Collapse line="118" />
+		</Folding>
+	</File>
+	<File name="..\ownLibraries\aritmeticBasics.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2976" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2150" topLine="49" />
+		</Cursor>
+	</File>
 	<File name="..\ownLibraries\screenSystemShow.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="371" topLine="0" />
+			<Cursor1 position="427" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="..\ownLibraries\userInputOutput.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="13023" topLine="372" />
+			<Cursor1 position="13023" topLine="68" />
 		</Cursor>
 		<Folding>
 			<Collapse line="19" />
+			<Collapse line="82" />
+			<Collapse line="145" />
+			<Collapse line="208" />
+			<Collapse line="271" />
+			<Collapse line="332" />
+			<Collapse line="391" />
+			<Collapse line="456" />
 		</Folding>
 	</File>
-	<File name="..\ownLibraries\screenSystemShow.c" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\ownLibraries\screenSystemShow.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1230" topLine="36" />
+			<Cursor1 position="1036" topLine="5" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
 			<Collapse line="20" />
+			<Collapse line="31" />
+			<Collapse line="41" />
+			<Collapse line="51" />
 		</Folding>
 	</File>
-	<File name="funciones.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funciones.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2242" topLine="38" />
+			<Cursor1 position="3497" topLine="72" />
 		</Cursor>
 		<Folding>
-			<Collapse line="23" />
+			<Collapse line="25" />
+			<Collapse line="130" />
+			<Collapse line="148" />
+			<Collapse line="178" />
+			<Collapse line="203" />
+			<Collapse line="227" />
 		</Folding>
 	</File>
 	<File name="funciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="819" topLine="0" />
+			<Cursor1 position="881" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="struct.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -43,76 +82,7 @@
 	</File>
 	<File name="..\ownLibraries\userInputOutput.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1162" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\ownLibraries\aritmeticBasics.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9454" topLine="39" />
-		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="16" />
-			<Collapse line="21" />
-			<Collapse line="30" />
-			<Collapse line="35" />
-			<Collapse line="44" />
-			<Collapse line="49" />
-			<Collapse line="58" />
-			<Collapse line="63" />
-			<Collapse line="72" />
-			<Collapse line="81" />
-			<Collapse line="90" />
-			<Collapse line="95" />
-			<Collapse line="104" />
-			<Collapse line="109" />
-			<Collapse line="118" />
-			<Collapse line="123" />
-			<Collapse line="132" />
-			<Collapse line="137" />
-			<Collapse line="146" />
-			<Collapse line="155" />
-			<Collapse line="164" />
-			<Collapse line="169" />
-			<Collapse line="178" />
-			<Collapse line="183" />
-			<Collapse line="192" />
-			<Collapse line="197" />
-			<Collapse line="206" />
-			<Collapse line="211" />
-			<Collapse line="220" />
-			<Collapse line="229" />
-			<Collapse line="237" />
-			<Collapse line="249" />
-			<Collapse line="257" />
-			<Collapse line="269" />
-			<Collapse line="277" />
-			<Collapse line="289" />
-			<Collapse line="297" />
-			<Collapse line="309" />
-			<Collapse line="317" />
-			<Collapse line="333" />
-			<Collapse line="340" />
-			<Collapse line="344" />
-			<Collapse line="350" />
-			<Collapse line="357" />
-			<Collapse line="367" />
-			<Collapse line="374" />
-			<Collapse line="384" />
-			<Collapse line="391" />
-			<Collapse line="395" />
-			<Collapse line="401" />
-			<Collapse line="408" />
-		</Folding>
-	</File>
-	<File name="..\ownLibraries\aritmeticBasics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2976" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1834" topLine="44" />
+			<Cursor1 position="1482" topLine="1" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

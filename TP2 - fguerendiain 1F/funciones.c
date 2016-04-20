@@ -15,9 +15,11 @@
 #define PRINTGRAPHIC 4
 #define EXIT 5
 
-/** \brief Ejecuta la opcion elegida por el usuario
- * \param opcion recibe un int con la opcion ingresada por el usuario
- * \return luego de ejecutar la opcion devuelve el valor par continuar o no
+/** \brief ejecuta la opcion elegida por el usuario
+ * \param (option) recibe opcion ingresada por el usuario
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
+ * \return (0 = finaliza el programa | 1 = continua ejecutando)
  */
 
 int runFunctionMenu(int option, Epeople *person, long int personLenght)
@@ -52,11 +54,10 @@ int runFunctionMenu(int option, Epeople *person, long int personLenght)
     return exit;
 }
 
-/** \brief permite dar de alta una nueva persona siempre que se encuentren posiciones disponibles
- *
- * \param array donde realizar la carga
- * \param tamaño del array
- * \return 0 se realizo la carga correctamente, -1 no se pudo realizar la carga
+/** \brief realiza el alta de una nueva persona validando disponibilidad
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
+ * \return 0 se realizo la carga, -1 no se pudo realizar la carga
  *
  */
 
@@ -111,7 +112,7 @@ int addNewPerson(Epeople *person, long int personLenght)
     }
     else
     {
-        printf("No existen posiciones libres, por favor borre alguna\n para poder ingresar nuevos datos\n\n");
+        printf("No existen posiciones libres,\npor favor borre alguna para poder ingresar nuevos datos\n\n");
         erradicateStdin();
         pauseScreen();
         return -1;
@@ -119,10 +120,9 @@ int addNewPerson(Epeople *person, long int personLenght)
     return 0;
 }
 
-/** \brief recorre el array buscando el primer indice libre
- *
- * \param array donde buscar
- * \param  extencion del array
+/** \brief busca el primer indice libre
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
  * \return devuelve el numero del indice o -1 en caso que no haya posiciones libres
  *
  */
@@ -139,10 +139,9 @@ long searchFreeIndex(Epeople *person, long int personLenght)
     return -1;
 }
 
-/** \brief inicializa en 0 los campos de estado y edad del array
- *
- * \param Array a recorrer
- * \param tamaño del array
+/** \brief inicializa en 0 los campos state y age del array person
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
  *
  */
 
@@ -171,9 +170,8 @@ void intializeArrayState(Epeople *person, long int personLenght)
 }
 
 /** \brief borrado logido de un elemento de la estructura person
- *
- * \param array donde se encuentra el elemento
- * \param tamaño del array
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
  *
  */
 
@@ -196,10 +194,9 @@ void delPerson(Epeople *person, long int personLenght)
     }
 }
 
-/** \brief imprime todos los elementos del array
- *
- * \param array a recorrer
- * \param tamaño del array
+/** \brief imprime todos los elementos de person con state en 1
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
  *
  */
 
@@ -222,9 +219,8 @@ void printListOfPeople(Epeople *person, long int personLenght)
 }
 
 /** \brief Ordena los elementos alfabeticamente por nombre de persona
- *
- * \param array a recorrer
- * \param tamaño del array
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
  *
  */
 
