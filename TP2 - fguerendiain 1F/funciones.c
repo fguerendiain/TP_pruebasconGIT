@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "struct.h"
-#include "validations.h"
 #include "funciones.h"
+#include "string.h"
 #include "../ownLibraries/userInputOutput.h"
 #include "../ownLibraries/screenSystemShow.h"
 
@@ -45,6 +45,7 @@ int runFunctionMenu(int option, Epeople *person, long int personLenght)
 
         case PRINTGRAPHIC:
             cleanScreen();
+            definePercentageOfAges(person,personLenght);
         break;
 
         case EXIT:
@@ -57,7 +58,7 @@ int runFunctionMenu(int option, Epeople *person, long int personLenght)
 /** \brief realiza el alta de una nueva persona validando disponibilidad
  * \param (person) recibe la estructura persona
  * \param (personLenght) recibe el tamaño del array persona
- * \return 0 se realizo la carga, -1 no se pudo realizar la carga
+ * \return 0 se realizo la carga, -1 no se pudo realizar la carga, -2 el usuario ingreso mal un dato
  *
  */
 
@@ -74,33 +75,36 @@ int addNewPerson(Epeople *person, long int personLenght)
     if (index!= -1)
     {
         checkName = getUserInputString(person[index].name,3,30,"Ingrese el nombre de la persona:\n","Por favor ingrese un nombre valido:\n",STRINGBUFFER,MAXTRIES);
-        checkLastName = getUserInputString(person[index].lastName,3,30,"Ingrese el apellido de la persona:\n","Por favor ingrese un apellido valido:\n",STRINGBUFFER,MAXTRIES);
-        checkAge = getUserInputShortInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
-        checkDni = getUserInputString(&person[index].dni,9,10,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",STRINGBUFFER,MAXTRIES);
-
         if (checkName != 0)
         {
             printf("\nNombre invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
+            return -2;
         }
-        else if (checkLastName != 0)
+        checkLastName = getUserInputString(person[index].lastName,3,30,"Ingrese el apellido de la persona:\n","Por favor ingrese un apellido valido:\n",STRINGBUFFER,MAXTRIES);
+        if (checkLastName != 0)
         {
             printf("\nApellido invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
+            return -2;
         }
-        else if (checkAge != 0)
+        checkAge = getUserInputShortInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
+        if (checkAge != 0)
         {
             printf("\nEdad invalida, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
+            return -2;
         }
-        else if (checkDni != 0)
+        checkDni = getUserInputString(person[index].dni,9,10,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",STRINGBUFFER,MAXTRIES);
+        if(checkDni != 0)
         {
             printf("\nDNI invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
+            return -2;
         }
         else
         {
@@ -243,3 +247,81 @@ void sortArrayByName(Epeople *person, long int personLenght)
         }
     }
 }
+
+/** \brief grafica el porcentaje de las edades <18 19-35 >35
+ * \param (person) recibe la estructura persona
+ * \param (personLenght) recibe el tamaño del array persona
+ *
+ */
+
+void definePercentageOfAges(Epeople *person, long int personLenght)
+{
+    long int i;
+    int under18Count = 0;
+    int between19_35Count = 0;
+    int more35Count = 0;
+    int totalCount = 0;
+    char graficSpace[3][7];
+
+
+    for(i=0; i<personLenght; i++)
+    {
+        if(person[i].state != 0)
+        {
+            if(person[i].age < 18)
+            {
+                under18Count++;
+            }
+            else if(person[i].age >35)
+            {
+                more35Count++;
+            }
+            else
+            {
+                between19_35Count++;
+            }
+        }
+    }
+
+    totalCount = under18Count + between19_35Count + more35Count;
+
+    under18Count = 100 / totalCount * under18Count / 7; //el ultimo divisor define el valor para dibujarlo en el grafico
+    between19_35Count = 100 / totalCount * between19_35Count / 7;    //para un maximo de * de altura
+    more35Count = 100 / totalCount * more35Count / 7;
+
+    for(i = 0; i < 7;i++)
+    {
+        if(i < under18Count)
+        {
+            graficSpace[0][i] = '*';
+        }
+        else
+        {
+            graficSpace[0][i] = ' ';
+        }
+
+        if(i < between19_35Count)
+        {
+            graficSpace[1][i] = '*';
+        }
+        else
+        {
+            graficSpace[1][i] = ' ';
+        }
+        if(i < more35Count)
+        {
+            graficSpace[2][i] = '*';
+        }
+        else
+        {
+            graficSpace[2][i] = ' ';
+        }
+    }
+    for(i=6; i >= 0; i--)
+    {
+        printf("%c\t  %c  \t%c\n",graficSpace[0][i],graficSpace[1][i],graficSpace[2][i]);
+    }
+    printf("<18\t19-35\t>35\n");
+    pauseScreen();
+}
+

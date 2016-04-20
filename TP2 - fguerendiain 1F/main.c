@@ -24,7 +24,7 @@
         Ejemplo:
 
                                 *
-                                *     *
+                                *           *
                                 *     *     *
                                 *     *     *
                                 *     *     *
@@ -39,7 +39,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "struct.h"
-#define EPEOPLELENGTH 3
+#include "funciones.h"
+#include "../ownLibraries/userInputOutput.h"
+#include "../ownLibraries/screenSystemShow.h"
+
+#define EPEOPLELENGTH 20
 #define MSGFIRSTTIME "Eliga una opcion:\n"
 #define MSGERROR "Por favor eliga una opcion valida: \n"
 
@@ -61,7 +65,6 @@ void main()
                             "5- Salir\n\n");
         getUserInputInt(&userInput,1,5,MSGFIRSTTIME,MSGERROR,2);
         exit = runFunctionMenu(userInput,person,EPEOPLELENGTH);
-
     }
     while(exit);
 }

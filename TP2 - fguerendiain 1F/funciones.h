@@ -14,6 +14,8 @@ void printListOfPeople(Epeople *person, long int personLenght); /**< imprime tod
 
 void sortArrayByName(Epeople *person, long int personLenght);    /**< Ordena los elementos alfabeticamente por nombre de persona */
 
+void definePercentageOfAges(Epeople *person, long int personLenght); /**< grafica el porcentaje de las edades <18 19-35 >35 */
+
 
 
 
