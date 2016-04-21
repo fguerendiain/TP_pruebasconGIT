@@ -28,74 +28,115 @@
 	"validations.h"
 	"funciones.h"
 
-1460957250 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+1461128332 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	"string.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibraries/screenSystemShow.h"
 
 1461106464 
 
-1460956232 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1460956744 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+1461130000 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
 	"validations.h"
 	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"funciones.h"
+	"string.h"
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
 
 1461103876 raries/screenSystemShow.h"
 
-1460956391 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
 
 1460689091 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/validations.h
 
-1460954016 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+1461128926 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
 
-1460954272 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+1461128926 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
 
-1460878449 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+	<stdio.h>
+	<stdlib.h>
 	<stdio.h>
 	<stdlib.h>
 
-1460949553 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
 
-1460955937 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
+1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
 
-1460993012 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+	<stdio.h>
+	<stdlib.h>
 	<stdio.h>
 	<stdlib.h>
 
-1460993012 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	"string.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibraries/screenSystemShow.h"
 
-1460995939 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1460993012 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
 
-1460995188 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
 
-1460995049 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
@@ -103,14 +144,21 @@
 	"funciones.h"
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+	"funciones.h"
+	"string.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
 
 1460638371 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/validations.h
 
-1460993012 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
 
-1460993012 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
 
-1460993012 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
+1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
 
 1461103876 source:e:\tp_laboratorio_1\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
 	<stdio.h>
@@ -152,24 +200,26 @@
 	<string.h>
 	<ctype.h>
 
-1461128332 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+1461192709 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\aritmeticbasics.c
+	<stdio.h>
+	<stdlib.h>
+
+1461192709 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\screensystemshow.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	"string.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
-	<stdio.h>
-	<stdlib.h>
+1461192709 d:\fguerendiain\tp_laboratorio_1\ownlibraries\screensystemshow.h
 
-1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+1461192709 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1461130000 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+1461192709 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
@@ -178,61 +228,17 @@
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+1461192709 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\struct.h
 
-1461128926 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+1461192709 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.h
 
-1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+1461192709 d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.h
 
-1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
-
-1461128926 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+1461192709 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
 	"funciones.h"
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
-
-1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-	"string.h"
-	"../ownLibraries/screenSystemShow.h"
-
-1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
-
-1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-
-1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
-	<stdio.h>
-	<stdlib.h>
-	"struct.h"
-	"funciones.h"
-	"string.h"
-	"../ownLibraries/userInputOutput.h"
-	"../ownLibraries/screenSystemShow.h"
-
-1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
-
-1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
-
-1461164158 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
-
-1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
-	<stdio.h>
-	<stdlib.h>
-	"struct.h"
-	"funciones.h"
-	"../ownLibraries/userInputOutput.h"
-	"../ownLibraries/screenSystemShow.h"
-
-1461164158 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
-	<stdio.h>
-	<stdlib.h>
 

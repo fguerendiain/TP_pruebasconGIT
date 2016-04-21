@@ -14,6 +14,16 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+    int id;
+    char name[51];
+    char lastName[51];
+    float salary;
+    int sector;
+    int isEmpty;
+
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,8 +40,21 @@
  */
 int initEmployees(employee* pEmployee, int length)
 {
+    int i;
+    int ret = 0;
 
-    return 0;
+    if(pEmployee == NULL ||  length <1 )
+    {
+        ret = -1;
+    }
+    else
+    {
+        for(i=0; i < length; i++)
+        {
+            pEmployee[i].isEmpty = 1;
+        }
+    }
+    return ret;
 }
 
 
@@ -49,9 +72,43 @@ int initEmployees(employee* pEmployee, int length)
  */
 int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
 {
+    int i;
+    int ret=0;
 
+    if(pEmployee == NULL ||  length <1 )
+    {
+        return -1;
+    }
+    else
+    {
+        for(i=0; i<length; i++)
+        {
+            if(pEmployee[i].isEmpty == 1)
+            {
+                pEmployee[i].id=id;
+                strcpy(pEmployee[i].name,name);
+                strcpy(pEmployee[i].lastName,lastName);
+                pEmployee[i].salary=salary;
+                pEmployee[i].sector=sector;
+                pEmployee[i].isEmpty = 0;
+
+                return 0;
+            }
+        }
+    }
     return -1;
 }
+
+
+/*    int id;
+    char name[51];
+    char lastName[51];
+    float salary;
+    int sector;
+    int isEmpty;
+
+    return ret;*/
+
 
 
 /** \brief find a Employee by Id
