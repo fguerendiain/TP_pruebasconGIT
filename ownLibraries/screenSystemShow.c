@@ -49,6 +49,9 @@ void cleanScreen()
  *
  */
 
+
+ // modificar la funcion para que pueda elegir entre tolower y toupper, capital
+
 void stringToUpperCase(char *stringToConvert)
 {
     long int i;
