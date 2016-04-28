@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "screenSystemShow.h"
 
 /** \brief recibe y valida el ingreso de un **SHORT INT** por parte del usuario
  *

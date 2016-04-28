@@ -200,7 +200,7 @@
 	<string.h>
 	<ctype.h>
 
-1461192709 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\aritmeticbasics.c
+1461190320 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\aritmeticbasics.c
 	<stdio.h>
 	<stdlib.h>
 
@@ -211,15 +211,15 @@
 	"string.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1461192709 d:\fguerendiain\tp_laboratorio_1\ownlibraries\screensystemshow.h
+1461190320 d:\fguerendiain\tp_laboratorio_1\ownlibraries\screensystemshow.h
 
-1461192709 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.c
+1461190320 source:d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1461192709 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
+1461190320 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
@@ -228,13 +228,13 @@
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1461192709 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\struct.h
+1461190320 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\struct.h
 
-1461192709 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.h
+1461190320 d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\funciones.h
 
-1461192709 d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.h
+1461190320 d:\fguerendiain\tp_laboratorio_1\ownlibraries\userinputoutput.h
 
-1461192709 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\main.c
+1461190320 source:d:\fguerendiain\tp_laboratorio_1\tp2 - fguerendiain 1f\main.c
 	<stdio.h>
 	<stdlib.h>
 	"struct.h"
