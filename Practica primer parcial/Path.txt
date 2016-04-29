@@ -1,7 +1,0 @@
-[Proyecto de Code::Blocks]
-
-PracticaPrimerExamen\examples\example_4\src\utest.cbp
-
-o
-
-PracticaPrimerExamen/examples/example_4/src/utest.cbp
