@@ -1,4 +1,5 @@
-
+#ifndef __SCREENSYSTEMSHOW
+#define __SCREENSYSTEMSHOW
 
 void printAwesomeMenu(char *menu);   /**< Imprime el menu */
 
@@ -8,4 +9,6 @@ void pauseScreen();  /**< Pausa el programa hasta que se presiona Enter */
 
 void cleanScreen(); /**< Limpia la pantalla */
 
-void stringToUpperCase(char *stringToConvert);  /**< convirte a mayuscula una cadena de caracteres */
+int stringSetCase(char *stringToConvert,int option);  /**< convierte una cadena de carateres en mayuscula, minuscula o capital */
+
+#endif //__SCREENSYSTEMSHOW

@@ -39,7 +39,9 @@
 	"string.h"
 	"../ownLibraries/screenSystemShow.h"
 
-1461106464 
+1461190320 raries/screenSystemShow.h"
+
+1461190320 
 
 1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
 	<stdio.h>
@@ -66,8 +68,6 @@
 	"string.h"
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
-
-1461103876 raries/screenSystemShow.h"
 
 1461125244 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
 
@@ -241,4 +241,45 @@
 	"funciones.h"
 	"../ownLibraries/userInputOutput.h"
 	"../ownLibraries/screenSystemShow.h"
+
+1461125244 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/aritmeticBasics.c
+	<stdio.h>
+	<stdlib.h>
+
+1461905830 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"string.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
+
+1461901566 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/struct.h
+
+1461905952 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/funciones.h
+
+1461901888 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.h
+
+1461901888 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.h
+
+1461905883 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP2 - fguerendiain 1F/main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"../ownLibraries/userInputOutput.h"
+	"../ownLibraries/screenSystemShow.h"
+
+1461902334 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/screenSystemShow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"../ownLibraries/screenSystemShow.h"
+
+1461901942 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/ownLibraries/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
 

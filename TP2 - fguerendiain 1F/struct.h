@@ -1,4 +1,5 @@
-
+/*#ifdef __STRUCT
+#define
 
 typedef struct
 {
@@ -8,3 +9,6 @@ typedef struct
     char dni[11];
     short int state; //1 para ocupado
 }Epeople;
+
+#endif //__STRUCT
+*/

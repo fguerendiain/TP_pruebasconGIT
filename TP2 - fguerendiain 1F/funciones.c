@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "struct.h"
 #include "funciones.h"
 #include "string.h"
 #include "../ownLibraries/userInputOutput.h"
@@ -8,6 +7,7 @@
 
 #define MAXTRIES 3
 #define STRINGBUFFER 4000
+#define EPEOPLELENGTH 20
 
 #define ADD 1
 #define ERREASE 2
@@ -28,27 +28,27 @@ int runFunctionMenu(int option, Epeople *person, long int personLenght)
 
     switch(option)
     {
-        case ADD:
+        case ADD:   //opcion 1 para la carga de personas
             cleanScreen();
             addNewPerson(person,personLenght);
           break;
 
-        case ERREASE:
+        case ERREASE:   //opcion 2 para borrar personas cargadas
             cleanScreen();
             delPerson(person,personLenght);
         break;
 
-        case PRINTLIST:
+        case PRINTLIST: //opcion 3 para imprimir un listado de las personas cargadas
             cleanScreen();
             printListOfPeople(person,personLenght);
         break;
 
-        case PRINTGRAPHIC:
+        case PRINTGRAPHIC:  //opcion 4 para imprimir el grafico
             cleanScreen();
             definePercentageOfAges(person,personLenght);
         break;
 
-        case EXIT:
+        case EXIT: //opcion 5 para salir del programa
             exit = 0;
         break;
     }
@@ -69,44 +69,103 @@ int addNewPerson(Epeople *person, long int personLenght)
     int checkLastName;
     int checkAge;
     int checkDni;
+    int flagString = 0;
+    int i;
 
-    index=searchFreeIndex(person,personLenght);
+
+    index=searchFreeIndex(person,personLenght); //Busca la primer posicion libre del array de personas
 
     if (index!= -1)
     {
         checkName = getUserInputString(person[index].name,3,30,"Ingrese el nombre de la persona:\n","Por favor ingrese un nombre valido:\n",STRINGBUFFER,MAXTRIES);
-        if (checkName != 0)
+        if (checkName != 0) //valida el ingreso del string bajo los parametros establecidos
         {
             printf("\nNombre invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
             return -2;
         }
+        else //valida que dentro del string no se hayan ingresado numeros
+        {
+            for(i=0; person[index].name[i]!='\0'; i++)
+            {
+                if( person[index].name[i] >= '0' && person[index].name[i] <='9' )
+                {
+                    flagString = 1;
+                }
+            }
+
+            if(flagString)
+            {
+            printf("\nNombre invalido, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+            return -2;
+            }
+        }
+
         checkLastName = getUserInputString(person[index].lastName,3,30,"Ingrese el apellido de la persona:\n","Por favor ingrese un apellido valido:\n",STRINGBUFFER,MAXTRIES);
-        if (checkLastName != 0)
+        if (checkLastName != 0)     //valida el ingreso del string bajo los parametros establecidos
         {
             printf("\nApellido invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
             return -2;
         }
+        else
+        {
+            for(i=0; person[index].lastName[i]!='\0'; i++) //valida que dentro del string no se hayan ingresado numeros
+            {
+                if( person[index].lastName[i] >= '0' && person[index].lastName[i] <='9' )
+                {
+                    flagString = 1;
+                }
+            }
+
+            if(flagString)
+            {
+            printf("\nNombre invalido, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+            return -2;
+            }
+        }
+
         checkAge = getUserInputShortInt(&person[index].age,0,120,"Ingrese la edad de la persona:\n","Por favor ingrese una edad valida:\n",MAXTRIES);
-        if (checkAge != 0)
+        if (checkAge != 0) //valida el ingreso de un int bajo los parametros establecidos
         {
             printf("\nEdad invalida, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
             return -2;
         }
-        checkDni = getUserInputString(person[index].dni,9,10,"Ingrese el DNI de la persona:\n","Por favor ingrese DNI valido:\n",STRINGBUFFER,MAXTRIES);
-        if(checkDni != 0)
+        checkDni = getUserInputString(person[index].dni,7,8,"Ingrese el DNI de la persona (solo numeros):\n","Por favor ingrese DNI valido (solo numeros):\n",STRINGBUFFER,MAXTRIES);
+        if(checkDni != 0)   //valida el ingreso del string bajo los parametros establecidos
         {
             printf("\nDNI invalido, por favor vuelva a intentarlo\n");
             erradicateStdin();
             pauseScreen();
             return -2;
         }
-        else
+        else if(checkDni = 0)
+        {
+            for(i=0; person[index].dni[i]!='\0'; i++)   //valida que dentro del string se hayan ingresado solo numeros
+            {
+                if( !(person[index].dni[i] >= '0' && person[index].dni[i] <='9') )
+                {
+                    flagString = 1;
+                }
+            }
+
+            if(flagString)
+            {
+            printf("\nNombre invalido, por favor vuelva a intentarlo\n");
+            erradicateStdin();
+            pauseScreen();
+            return -2;
+            }
+        }
+        else // al ser la ultima instancia de carga se determina la carga correcta de todos los campos
         {
             person[index].state = 1;
             printf("\nLos datos se cargaron correctamente\n");
@@ -143,7 +202,7 @@ long searchFreeIndex(Epeople *person, long int personLenght)
     return -1;
 }
 
-/** \brief inicializa en 0 los campos state y age del array person
+/** \brief inicializa en '0' y '\0' los campos del array person
  * \param (person) recibe la estructura persona
  * \param (personLenght) recibe el tamaño del array persona
  *
@@ -216,6 +275,9 @@ void printListOfPeople(Epeople *person, long int personLenght)
     {
             if(person[i].state != 0)
             {
+                stringSetCase(person[i].name,3);
+                stringSetCase(person[i].lastName,3);
+
                 printf("%ld\t\t%s\t\t%s\t\t%hi\t\t%s\n",i,person[i].name,person[i].lastName,person[i].age,person[i].dni);
             }
     }
@@ -260,8 +322,7 @@ void definePercentageOfAges(Epeople *person, long int personLenght)
     int under18Count = 0;
     int between19_35Count = 0;
     int more35Count = 0;
-    int totalCount = 0;
-    char graficSpace[3][7];
+    char graficSpace[3][EPEOPLELENGTH];
     int flagNoData = 0;
 
     for(i=0; i<personLenght; i++)
@@ -299,13 +360,7 @@ void definePercentageOfAges(Epeople *person, long int personLenght)
             }
         }
 
-        totalCount = under18Count + between19_35Count + more35Count;
-
-        under18Count = 100 / totalCount * under18Count / 7; //el ultimo divisor define el valor para dibujarlo en el grafico
-        between19_35Count = 100 / totalCount * between19_35Count / 7;    //para un maximo de * de altura
-        more35Count = 100 / totalCount * more35Count / 7;
-
-        for(i = 0; i < 7;i++)
+        for(i = 0; i < EPEOPLELENGTH;i++)
         {
             if(i < under18Count)
             {
@@ -334,7 +389,7 @@ void definePercentageOfAges(Epeople *person, long int personLenght)
             }
         }
 
-        for(i=6; i >= 0; i--)
+        for(i=EPEOPLELENGTH-1; i >= 0; i--)
         {
             printf("%c\t  %c  \t%c\n",graficSpace[0][i],graficSpace[1][i],graficSpace[2][i]);
         }

@@ -1,3 +1,18 @@
+/********************************************************************
+*********************************************************************
+****
+****    PRORGAMACION I / LABORATORIO I
+****    DIVISION 1#F
+****    ALUMNO: GUERENDIAIN, FRANCO JAVIER
+****
+****    TRABAJO PRACTICO #2
+****
+****    FECHA DE ENTREGA - 29/04/2016
+****
+*********************************************************************
+*********************************************************************/
+
+
 /*      Definir una estructura que represente una persona,
         con los campos nombre, edad, dni y un flag de estado.
 
@@ -38,7 +53,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "struct.h"
 #include "funciones.h"
 #include "../ownLibraries/userInputOutput.h"
 #include "../ownLibraries/screenSystemShow.h"
@@ -48,7 +62,7 @@
 #define MSGERROR "Por favor eliga una opcion valida: \n"
 
 
-void main()
+int main()
 {
     int userInput;
     short int exit;
@@ -67,4 +81,7 @@ void main()
         exit = runFunctionMenu(userInput,person,EPEOPLELENGTH);
     }
     while(exit);
+
+    return 0;
 }
+

@@ -44,20 +44,45 @@ void cleanScreen()
     system(LIMPIARPANTALLA);
 }
 
-/** \brief convirte a mayuscula una cadena de caracteres
+/** \brief convierte una cadena de carateres en mayuscula, minuscula o capital
  * \param (stringToConvert) cadena de caracter a convertir
+ * \param (option) (1 = mayuscula | 2 = minuscula | 3 = capital)
  *
  */
 
-
- // modificar la funcion para que pueda elegir entre tolower y toupper, capital
-
-void stringToUpperCase(char *stringToConvert)
+int stringSetCase(char *stringToConvert,int option)
 {
     long int i;
+    int ret = -1;
 
-    for(i=0; stringToConvert[i]!='\0'; i++)
+    if(stringToConvert != NULL && (option > 0 && option <4 ))
     {
-        stringToConvert[i] = toupper(stringToConvert[i]);
+        switch(option)
+        {
+            case 1 :
+                for(i=0; stringToConvert[i]!='\0'; i++)
+                {
+                    stringToConvert[i] = toupper(stringToConvert[i]);
+                }
+            break;
+
+            case 2 :
+                for(i=0; stringToConvert[i]!='\0'; i++)
+                {
+                    stringToConvert[i] = tolower(stringToConvert[i]);
+                }
+            break;
+
+            case 3 :
+                stringToConvert[0] = toupper(stringToConvert[0]);
+                for(i=1; stringToConvert[i]!='\0'; i++)
+                {
+                    stringToConvert[i] = tolower(stringToConvert[i]);
+                }
+            break;
+
+            ret = 0;
+        }
     }
+    return ret;
 }

@@ -428,7 +428,7 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
         else
         {
             strcpy(userInput, auxBuffer);
-            stringToUpperCase(userInput);
+            stringSetCase(userInput,1);
             ret = 0;    // la funcion indica que el usuario ingreso un string dentro de la longitud permitida
             erradicateStdin();
             return ret;
@@ -507,15 +507,15 @@ int getUserConfirmToContinue(int intYes, int intNo, char charYes, char charNo, c
         else
         {
             scanf("%c",&userAnswerChar);
-            toupper(userAnswerChar);
-            toupper(charYes);
-            toupper(charNo);
+            stringSetCase(&userAnswerChar,1);
+            stringSetCase(&charYes,1);
+            stringSetCase(&charNo,1);
 
             if(userAnswerChar!=charYes && userAnswerChar!=charNo)
             {
                 ret = -2; // el usuario ingreso un caracter invalido
             }
-            else if (userAnswerChar=="S")
+            else if (userAnswerChar=='S')
             {
                 ret = 3; //el usuario ingreso charYes
                 erradicateStdin();
