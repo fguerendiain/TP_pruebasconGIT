@@ -2,82 +2,22 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="../ownLibraries/screenSystemShow.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="374" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="../ownLibraries/userInputOutput.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="52" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="../ownLibraries/userInputOutput.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funciones.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="15731" topLine="0" />
+			<Cursor1 position="5063" topLine="69" />
 		</Cursor>
 		<Folding>
-			<Collapse line="6" />
-			<Collapse line="20" />
-			<Collapse line="69" />
-			<Collapse line="83" />
-			<Collapse line="132" />
-			<Collapse line="146" />
-			<Collapse line="195" />
-			<Collapse line="209" />
-			<Collapse line="258" />
-			<Collapse line="272" />
-			<Collapse line="321" />
-			<Collapse line="333" />
-			<Collapse line="378" />
-			<Collapse line="392" />
-			<Collapse line="441" />
-			<Collapse line="457" />
-		</Folding>
-	</File>
-	<File name="funciones.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5063" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="17" />
 			<Collapse line="25" />
-			<Collapse line="57" />
-			<Collapse line="65" />
-			<Collapse line="185" />
-			<Collapse line="193" />
-			<Collapse line="204" />
-			<Collapse line="211" />
-			<Collapse line="234" />
-			<Collapse line="241" />
-			<Collapse line="259" />
-			<Collapse line="266" />
-			<Collapse line="286" />
-			<Collapse line="293" />
-			<Collapse line="312" />
-			<Collapse line="319" />
 		</Folding>
 	</File>
-	<File name="../ownLibraries/screenSystemShow.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1839" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="8" />
-			<Collapse line="12" />
-			<Collapse line="17" />
-			<Collapse line="21" />
-			<Collapse line="28" />
-			<Collapse line="32" />
-			<Collapse line="37" />
-			<Collapse line="42" />
-			<Collapse line="46" />
-			<Collapse line="53" />
-		</Folding>
-	</File>
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="313" topLine="47" />
+			<Cursor1 position="2477" topLine="44" />
 		</Cursor>
 	</File>
 	<File name="funciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -104,5 +44,29 @@
 			<Collapse line="118" />
 		</Folding>
 	</File>
-	<EditorTabsLayout layout="06aad8005722d1c90095c5ac00000002=*0;TP_2_Cascara:main.c,1;TP_2_Cascara:funciones.c,2;TP_2_Cascara:funciones.h,3;TP_2_Cascara:../ownLibraries/screenSystemShow.c,4;TP_2_Cascara:../ownLibraries/screenSystemShow.h,5;TP_2_Cascara:../ownLibraries/userInputOutput.c,6;TP_2_Cascara:../ownLibraries/userInputOutput.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=855;besth=378;minw=855;minh=378;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=06aad8005722d1c90095c5ac00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="../ownLibraries/screenSystemShow.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="374" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="../ownLibraries/screenSystemShow.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1839" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="21" />
+			<Collapse line="32" />
+			<Collapse line="42" />
+		</Folding>
+	</File>
+	<File name="../ownLibraries/userInputOutput.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="15731" topLine="21" />
+		</Cursor>
+		<Folding>
+			<Collapse line="20" />
+		</Folding>
+	</File>
+	<EditorTabsLayout layout="06de9a605722f1050074ea3b00000002=0;TP_2_Cascara:main.c,*1;TP_2_Cascara:funciones.c,2;TP_2_Cascara:funciones.h,3;TP_2_Cascara:../ownLibraries/screenSystemShow.c,4;TP_2_Cascara:../ownLibraries/screenSystemShow.h,5;TP_2_Cascara:../ownLibraries/userInputOutput.c,6;TP_2_Cascara:../ownLibraries/userInputOutput.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=855;besth=405;minw=855;minh=405;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=06de9a605722f1050074ea3b00000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
 </CodeBlocks_layout_file>
