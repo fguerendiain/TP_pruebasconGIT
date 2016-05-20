@@ -419,7 +419,7 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
             printf("%s",msgError);
         }
 
-        scanf("%s",auxBuffer);
+        scanf("%[^\n]s",auxBuffer);
 
         if(strlen(auxBuffer) < min || strlen(auxBuffer) > max)
         {

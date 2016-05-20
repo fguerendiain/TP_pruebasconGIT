@@ -15,6 +15,7 @@ int state;
 
 /*--------------------------------------------------------------------------------------------------------------*/
 
+int runFunctionMenu(int menu, Movies *film, int lenght);    /**< Ejecuta la opcion seleccionada por el usuario */
 
 int initializeEmptyFlagArray(Movies *film, int length);  /**< inicializa todos los campos del array */
 

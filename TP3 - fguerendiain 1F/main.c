@@ -30,6 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "userInputOutput.h"
+#include "screenSystemShow.h"
 #include "functions.h"
 
 #define QUANTITY 100
@@ -41,7 +42,7 @@ int main()
 
     Movies film[QUANTITY];
 
-    do  // SE REPITE LA ACCION DE INICIALIZAR EN CASO QUE user SEA UN PUNTERO A NULL
+    do  // SE REPITE LA ACCION DE INICIALIZAR EN CASO QUE film SEA UN PUNTERO A NULL
     {
         exit = initializeEmptyFlagArray(film,QUANTITY);
     }while(exit);
@@ -55,10 +56,7 @@ int main()
                          "5. Salir\n\n");
         getUserInputInt(&userOptionMenu,1,5,"Elija una opcion del menu\n","Por favor ingrese una opcion valida\n",0);
         exit = runFunctionMenu(userOptionMenu,&film,QUANTITY);
-
     }while(exit);
-
-
 
     return 0;
 }

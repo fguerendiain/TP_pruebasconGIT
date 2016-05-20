@@ -5,7 +5,9 @@
 #include "functions.h"
 #include "string.h"
 
+#define HTML_FILE "./template/index.html"
 #define SRTINGBUFFER 4000
+
 #define ADD 1
 #define DEL 2
 #define MODIFY 3
@@ -49,7 +51,7 @@ int runFunctionMenu(int menu, Movies *film, int lenght)
 
             case MAKEWEBPAGE :
                 cleanScreen();
-                makeHtml(film, lenght,"./template/index.html");
+                makeHtml(film, lenght,HTML_FILE);
                 pauseScreen();
             break;
 
@@ -64,7 +66,6 @@ int runFunctionMenu(int menu, Movies *film, int lenght)
     }
     return ret;
 }
-
 
 /** \brief inicializa todos los campos del array
  *
@@ -95,7 +96,6 @@ int initializeEmptyFlagArray(Movies *film,int length)
     return ret;
 }
 
-
 /** \brief Permite agregar una pelicula
  *
  * \param (film) array de peliculas
@@ -114,7 +114,6 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
     int auxRunTime; //duración
     char auxDescription[140];
     int auxScore;
-    char auxImgPreviewLink[140];
 
     if(film!=NULL && lenght>0)
     {
@@ -127,7 +126,6 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
             getUserInputInt(&auxRunTime,0,999,"Ingrese la duracion de la pelicula en minutos\n","Por favor ingrese una duracion valida\n",0);
             getUserInputString(auxDescription,3,140,"Synopsis de la pelicula\n","Por favor ingrese una descripcion valida\n",SRTINGBUFFER,0);
             getUserInputInt(&auxScore,0,100,"Ingrese el puntaje de la pelicula del 1 al 100\n","Por favor ingrese un puntaje valido\n",0);
-            getUserInputString(auxImgPreviewLink,3,140,"Link o URL de la imagen portada\n","Por favor ingrese una direccion valida\n",SRTINGBUFFER,0);
 
 
             strcpy(film[index].title,auxTitle);
@@ -135,7 +133,7 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
             film[index].runTime = auxRunTime;
             strcpy(film[index].description,auxDescription);
             film[index].score = auxScore;
-            strcpy(film[index].imgPreviewLink,auxImgPreviewLink);
+            strcpy(film[index].imgPreviewLink,auxTitle);
             film[index].state = 0;
 
             ret = 0;
@@ -198,7 +196,7 @@ int modifyMovie(Movies *film, int lenght)
                 getUserInputInt(&film[i].runTime,0,999,"Ingrese la duracion de la pelicula en minutos\n","Por favor ingrese una duracion valida\n",0);
                 getUserInputString(film[i].description,3,140,"Synopsis de la pelicula\n","Por favor ingrese una descripcion valida\n",SRTINGBUFFER,0);
                 getUserInputInt(&film[i].score,0,100,"Ingrese el puntaje de la pelicula del 1 al 100\n","Por favor ingrese un puntaje valido\n",0);
-                getUserInputString(film[i].imgPreviewLink,3,140,"Link o URL de la imagen portada\n","Por favor ingrese una direccion valida\n",SRTINGBUFFER,0);
+                strcpy(film[i].imgPreviewLink,film[i].title);
                 flagModifyOk = 0;
                 break;
             }
@@ -321,7 +319,7 @@ int makeHtml(Movies *film, int lenght, char *urlhtmlFile)
 
         dynamicTemplate = "<article class='col-md-4 article-intro'>"
                            "     <a href='#'>"
-                           "         <img class='img-responsive img-rounded' src='%s' alt=''>" //  mascara %s para el link de la imagen
+                           "         <img class='img-responsive img-rounded' src='%s.jpg' alt=''>" //  mascara %s para el link de la imagen
                            "     </a>"
                            "     <h3>"
                            "         <a href='#'>%s</a>" //mascara %s para el titulo
@@ -338,6 +336,10 @@ int makeHtml(Movies *film, int lenght, char *urlhtmlFile)
         {
             if(film[i].state==0)
             {
+                stringSetCase(film[i].title,3);
+                stringSetCase(film[i].genres,3);
+                stringSetCase(film[i].description,3);
+
                 fprintf(indexHtmlFile,"%s",staticTemplate_1);
                 fprintf(indexHtmlFile,dynamicTemplate,film[i].imgPreviewLink,film[i].title,film[i].genres,film[i].score,film[i].runTime,film[i].description);
                 fprintf(indexHtmlFile,"%s",staticTemplate_2);
