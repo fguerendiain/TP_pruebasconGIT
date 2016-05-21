@@ -6,6 +6,8 @@
 #include "string.h"
 
 #define HTML_FILE "./template/index.html"
+#define DB_FILE "./movieDataBase.bin"
+
 #define SRTINGBUFFER 4000
 
 #define ADD 1
@@ -77,10 +79,10 @@ int runFunctionMenu(int menu, Movies *film, int lenght)
 int initializeEmptyFlagArray(Movies *film,int length)
 {
     int ret = -1;
+    int i;
 
     if(film != NULL && length > 0)
     {
-        int i;
         for(i=0 ; i<length ; i++)
         {
             strcpy(film[i].title,"none");
@@ -115,18 +117,20 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
     char auxDescription[140];
     int auxScore;
 
+
+
     if(film!=NULL && lenght>0)
     {
         index = searchFirstEmpty(film,lenght);
 
         if(index!=-1)
         {
+
             getUserInputString(auxTitle,3,31,"Ingrese el nombre de la pelicula\n","Por favor ingrese un nombre valido\n",SRTINGBUFFER,0);
             getUserInputString(auxGenres,3,15,"Ingrese el genero de la pelicula\n","Por favor ingrese un genero valido\n",SRTINGBUFFER,0);
             getUserInputInt(&auxRunTime,0,999,"Ingrese la duracion de la pelicula en minutos\n","Por favor ingrese una duracion valida\n",0);
             getUserInputString(auxDescription,3,140,"Synopsis de la pelicula\n","Por favor ingrese una descripcion valida\n",SRTINGBUFFER,0);
             getUserInputInt(&auxScore,0,100,"Ingrese el puntaje de la pelicula del 1 al 100\n","Por favor ingrese un puntaje valido\n",0);
-
 
             strcpy(film[index].title,auxTitle);
             strcpy(film[index].genres,auxGenres);
@@ -135,6 +139,8 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
             film[index].score = auxScore;
             strcpy(film[index].imgPreviewLink,auxTitle);
             film[index].state = 0;
+
+            printf("Se guardo la pelicula %s\n", auxTitle);
 
             ret = 0;
         }
@@ -273,6 +279,8 @@ int makeHtml(Movies *film, int lenght, char *urlhtmlFile)
     int ret = -1;
     int flagWriteOk = 0;
 
+
+
     FILE *indexHtmlFile;
     indexHtmlFile = fopen(urlhtmlFile,"w");
 
@@ -358,4 +366,50 @@ int makeHtml(Movies *film, int lenght, char *urlhtmlFile)
     }
     fclose(indexHtmlFile);
     return ret;
+}
+
+/** \brief Guarda todos los datos de la estructura Movie en un archivo binario
+ *
+ * \param (film) array de peliculas
+ * \param (lenght) longitud del array
+ * \return -1 si no puede leer el archivo, 0 si funciona correctamente
+ *
+ */
+
+int writeDataBaseFile(Movies *film, int lenght)
+{
+    FILE *dataBaseFile;
+
+    dataBaseFile = fopen(DB_FILE, "wb");
+    if(dataBaseFile == NULL)
+    {
+        printf("Error al intentar escribir en la base de datos\n");
+        return -1;
+    }
+    fwrite(&film, sizeof(Movies), lenght,dataBaseFile);
+    fclose(dataBaseFile);
+    return 0;
+}
+
+/** \brief Carga todos los datos existentes de la estructura Movie desde un archivo binario
+ *
+ * \param (film) array de peliculas
+ * \param (lenght) longitud del array
+ * \return -1 si no puede leer el archivo, 0 si funciona correctamente
+ *
+ */
+
+int readDataBaseFile(Movies *film, int lenght)
+{
+    FILE *dataBaseFile;
+
+    dataBaseFile = fopen(DB_FILE, "rb");
+    if(dataBaseFile == NULL)
+    {
+        printf("Error al intentar leer la base de datos\n");
+        return -1;
+    }
+    fread(&film, sizeof(Movies), lenght,dataBaseFile);
+    fclose(dataBaseFile);
+    return 0;
 }

@@ -29,6 +29,10 @@ int delMovie(Movies *film, int lenght);  /**< realiza el borrado logico de pelic
 
 int makeHtml(Movies *film, int lenght, char *urlhtmlFile); /**< genera un archivo index.html con el contenido de las peliculas */
 
+int writeDataBaseFile(Movies *film, int lenght);    /**< Guarda todos los datos de la estructura Movie en un archivo binario */
+
+int readDataBaseFile(Movies *film, int lenght); /**< Carga todos los datos existentes de la estructura Movie desde un archivo binario */
+
 #endif // __FUNCTIONS
 
 

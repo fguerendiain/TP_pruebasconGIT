@@ -37,15 +37,17 @@
 
 int main()
 {
-    int exit;
+    int exit=1;
     int userOptionMenu;
 
     Movies film[QUANTITY];
 
     do  // SE REPITE LA ACCION DE INICIALIZAR EN CASO QUE film SEA UN PUNTERO A NULL
     {
-        exit = initializeEmptyFlagArray(film,QUANTITY);
+//        exit = initializeEmptyFlagArray(film,QUANTITY);
     }while(exit);
+
+    readDataBaseFile(film,QUANTITY);
 
     do
     {
@@ -55,8 +57,10 @@ int main()
                          "4. Generar página web\n"
                          "5. Salir\n\n");
         getUserInputInt(&userOptionMenu,1,5,"Elija una opcion del menu\n","Por favor ingrese una opcion valida\n",0);
-        exit = runFunctionMenu(userOptionMenu,&film,QUANTITY);
+        exit = runFunctionMenu(userOptionMenu,film,QUANTITY);
     }while(exit);
+
+    writeDataBaseFile(film,QUANTITY);
 
     return 0;
 }

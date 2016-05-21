@@ -38,3 +38,42 @@
 	<ctype.h>
 	"screenSystemShow.h"
 
+1463860733 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/aritmeticBasics.c
+	<stdio.h>
+	<stdlib.h>
+
+1463863979 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/functions.c
+	<stdio.h>
+	<stdlib.h>
+	"userInputOutput.h"
+	"screenSystemShow.h"
+	"functions.h"
+	"string.h"
+
+1463860733 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/userInputOutput.h
+
+1463860733 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/screenSystemShow.h
+
+1463863979 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/functions.h
+
+1463860733 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/screenSystemShow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"screenSystemShow.h"
+
+1463860733 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
+1463864431 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP3 - fguerendiain 1F/main.c
+	<stdio.h>
+	<stdlib.h>
+	"userInputOutput.h"
+	"screenSystemShow.h"
+	"functions.h"
+
