@@ -33,7 +33,7 @@
 #include "screenSystemShow.h"
 #include "functions.h"
 
-#define QUANTITY 100
+#define QUANTITY 5
 
 int main()
 {
@@ -44,7 +44,7 @@ int main()
 
     do  // SE REPITE LA ACCION DE INICIALIZAR EN CASO QUE film SEA UN PUNTERO A NULL
     {
-//        exit = initializeEmptyFlagArray(film,QUANTITY);
+        exit = initializeEmptyFlagArray(film,QUANTITY);
     }while(exit);
 
     readDataBaseFile(film,QUANTITY);

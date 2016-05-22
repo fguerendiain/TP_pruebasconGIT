@@ -140,7 +140,8 @@ int addMovie(Movies *film, int lenght, int modifyFlag)
             strcpy(film[index].imgPreviewLink,auxTitle);
             film[index].state = 0;
 
-            printf("Se guardo la pelicula %s\n", auxTitle);
+            stringSetCase(auxTitle,3);
+            printf("\n\nSe guardo la pelicula %s\n", auxTitle);
 
             ret = 0;
         }
@@ -195,6 +196,7 @@ int modifyMovie(Movies *film, int lenght)
 
         for(i=0;i<lenght;i++)
         {
+            stringSetCase(film[i].title,1);
             if(film[i].state==0 && strcmp(film[i].title,modTitle)==0)
             {
                 getUserInputString(film[i].title,3,31,"Ingrese el nombre de la pelicula\n","Por favor ingrese un nombre valido\n",SRTINGBUFFER,0);
@@ -213,7 +215,8 @@ int modifyMovie(Movies *film, int lenght)
         }
         else
         {
-            printf("La pelicula fue modificada con exito\n");
+            stringSetCase(modTitle,3);
+            printf("\n\nLa pelicula fue modificada con exito\n");
         }
         ret = 0;
     }
@@ -241,6 +244,7 @@ int delMovie(Movies *film, int lenght)
 
         for(i=0;i<lenght;i++)
         {
+            stringSetCase(film[i].title,1);
             if(film[i].state==0 && strcmp(film[i].title,delTitle)==0)
             {
                 film[i].state = 1;
@@ -254,7 +258,8 @@ int delMovie(Movies *film, int lenght)
         }
         else
         {
-            printf("La pelicula fue eliminada con exito\n");
+            stringSetCase(delTitle,3);
+            printf("\n\nLa pelicula fue eliminada con exito\n");
         }
         ret = 0;
     }
@@ -386,7 +391,7 @@ int writeDataBaseFile(Movies *film, int lenght)
         printf("Error al intentar escribir en la base de datos\n");
         return -1;
     }
-    fwrite(&film, sizeof(Movies), lenght,dataBaseFile);
+    fwrite(film, sizeof(Movies), lenght,dataBaseFile);
     fclose(dataBaseFile);
     return 0;
 }
@@ -409,7 +414,11 @@ int readDataBaseFile(Movies *film, int lenght)
         printf("Error al intentar leer la base de datos\n");
         return -1;
     }
-    fread(&film, sizeof(Movies), lenght,dataBaseFile);
+    rewind(dataBaseFile);
+    while(!feof(dataBaseFile))
+    {
+        fread(film, sizeof(Movies), lenght,dataBaseFile);
+    }
     fclose(dataBaseFile);
     return 0;
 }
