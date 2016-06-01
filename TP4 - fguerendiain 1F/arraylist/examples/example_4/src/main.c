@@ -46,9 +46,9 @@ int main(void)
 {
 
     #ifdef TEST
-    //          startTesting(1); //hecho por davila
-    //          startTesting(2); //hecho pero al testing tira segmentation fault
-    //          startTesting(3);
+    //          startTesting(1); // hecho por davila
+    //          startTesting(2); // hecho pero al testing tira segmentation fault, aunque comente toda la funcion
+              startTesting(3); // arroja conflicto con el prototipo, no lo encuentro para agregar el parametro pElement
     //          startTesting(4); // dice que no devuelve el largo del array pero el unico valor de retorno es size
     //          startTesting(5);
     //          startTesting(6);
