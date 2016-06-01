@@ -71,6 +71,20 @@ int al_add(ArrayList* pList,void* pElement)
 {
     int returnAux = -1;
 
+    if(pList != NULL || pElement != NULL)
+    {
+        pList = (ArrayList**)malloc(sizeof(*pElement)*pList->reservedSize);
+
+        if(pList->size >= pList->reservedSize)
+        {
+            pList->reservedSize++;
+            pList = (ArrayList**)realloc(pList,sizeof(*pElement)*pList->reservedSize);
+        }
+
+        returnAux = 0;
+    }
+
+
     return returnAux;
 }
 
@@ -79,14 +93,19 @@ int al_add(ArrayList* pList,void* pElement)
  * \return int Return (-1) if Error [pList is NULL pointer] - (0) if Ok
  *
  */
-int al_deleteArrayList(ArrayList* pList)
+int al_deleteArrayList(ArrayList* pList,void* pElement)
 {
     int returnAux = -1;
+
+    if(pList!=NULL)
+    {
+        while(plis)
+    }
 
     return returnAux;
 }
 
-/** \brief  Delete arrayList
+/** \brief  Get Array Length arrayList
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return length of array or (-1) if Error [pList is NULL pointer]
  *
@@ -94,6 +113,11 @@ int al_deleteArrayList(ArrayList* pList)
 int al_len(ArrayList* pList)
 {
     int returnAux = -1;
+
+    if(pList!=NULL)
+    {
+        returnAux=pList->size;
+    }
 
     return returnAux;
 }
