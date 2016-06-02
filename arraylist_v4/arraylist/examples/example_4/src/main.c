@@ -46,23 +46,23 @@ int main(void)
 {
 
     #ifdef TEST
-//        startTesting(1);      //new arraylist
+//        startTesting(1);      // new arraylist
 //        startTesting(2);      // add
-//        startTesting(3);      // delete (ver invercion de validaciones)
+//        startTesting(3);      // delete
 //        startTesting(4);      // len
 //        startTesting(5);      // get
 //        startTesting(6);      // contains
 //        startTesting(7);      // set
-        startTesting(8);
-//        startTesting(9);
-//        startTesting(10);
-//        startTesting(11);
-//        startTesting(12);
-//        startTesting(13);
-//        startTesting(14);
-//        startTesting(15);
-//        startTesting(16);
-//        startTesting(17);
+//        startTesting(8);      // remove
+//        startTesting(9);      // clear
+//        startTesting(10);     //*******clone
+//        startTesting(11);     //push      // 1 error de utest
+//        startTesting(12);     //indexOf
+//        startTesting(13);     //isEmpty   // 1 error de utest
+//        startTesting(14);     //pop       // 1 error de utest
+//        startTesting(15);     //******subList
+//        startTesting(16);     //containsAll   //segmentation fault
+//        startTesting(17);     //******sort
     #else
         //run();
         run2();

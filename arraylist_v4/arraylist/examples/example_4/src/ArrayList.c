@@ -235,7 +235,6 @@ int al_remove(ArrayList* pList,int index)
 {
     int returnAux = -1;
     int i;
-    int auxSize = 0;
 
     if(pList !=NULL && (index>=0 && index < pList->size))
     {
@@ -243,14 +242,14 @@ int al_remove(ArrayList* pList,int index)
         {
             if(pList->pElements[i] == pList->pElements[index])
             {
-                free(pList->pElements[i]);
-                returnAux = 0;
+                pList->pElements[i]=NULL;
 
                 for(i=i ; i<pList->size-1 ; i++)
                 {
                     pList->pElements[i] = pList->pElements[i+1];
                 }
-                pList->size-1; // ver cuando restar
+                pList->size-=1;
+                returnAux = 0;
             }
         }
     }
@@ -267,7 +266,18 @@ int al_remove(ArrayList* pList,int index)
 int al_clear(ArrayList* pList)
 {
     int returnAux = -1;
+    int i;
 
+    if(pList !=NULL)
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            pList->pElements[i]=NULL;
+        }
+        pList->size=0;
+        returnAux = 0;
+
+    }
     return returnAux;
 }
 
@@ -282,6 +292,11 @@ ArrayList* al_clone(ArrayList* pList)
 {
     ArrayList* returnAux = NULL;
 
+ /*   if(pList != NULL)
+    {
+        returnAux = pList;
+    }
+*/
     return returnAux;
 }
 
@@ -298,7 +313,24 @@ ArrayList* al_clone(ArrayList* pList)
 int al_push(ArrayList* pList, int index, void* pElement)
 {
     int returnAux = -1;
+    int i;
+    int j;
 
+    if(pList !=NULL && pElement != NULL && (index>=0 && index < pList->size))
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            if (pList->pElements[i] == pList->pElements[index])
+            {
+                for(j=pList->size ; j>=i ; j--)
+                {
+                    pList->pElements[j+1] = pList->pElements[j];
+                }
+                pList->set(pList,i+1,pElement);
+                returnAux = 0;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -312,6 +344,18 @@ int al_push(ArrayList* pList, int index, void* pElement)
 int al_indexOf(ArrayList* pList, void* pElement)
 {
     int returnAux = -1;
+    int i;
+
+    if(pList != NULL && pElement != NULL)
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            if(pList->pElements[i]==pElement)
+            {
+                return i;
+            }
+        }
+    }
 
     return returnAux;
 }
@@ -325,7 +369,23 @@ int al_indexOf(ArrayList* pList, void* pElement)
 int al_isEmpty(ArrayList* pList)
 {
     int returnAux = -1;
+    int i;
 
+    if(pList != NULL)
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            if(pList->pElements[i] != NULL)
+            {
+                returnAux = 0;
+                break;
+            }
+            else
+            {
+                returnAux =  1;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -341,6 +401,19 @@ int al_isEmpty(ArrayList* pList)
 void* al_pop(ArrayList* pList,int index)
 {
     void* returnAux = NULL;
+    int i;
+
+    if(pList !=NULL && (index>=0 && index < pList->size))
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            if(pList->pElements[i]==pList->pElements[index])
+            {
+                returnAux = pList->pElements[i];
+                pList->remove(pList,i);
+            }
+        }
+    }
 
     return returnAux;
 }
@@ -374,6 +447,32 @@ ArrayList* al_subList(ArrayList* pList,int from,int to)
 int al_containsAll(ArrayList* pList,ArrayList* pList2)
 {
     int returnAux = -1;
+    int elementCounter = 0;
+    int i;
+    int j;
+
+    if(pList != NULL && pList2 != NULL)
+    {
+        for(i=0 ; i<pList->size ; i++)
+        {
+            for(j=0 ; j<pList2->size ; i++)
+            {
+                if(pList->pElements[i] == pList2->pElements[j])
+                {
+                    elementCounter++;
+                }
+            }
+        }
+        if(elementCounter == pList2->size)
+        {
+            returnAux = 1;
+        }
+        else
+        {
+            returnAux = 0;
+        }
+    }
+
 
     return returnAux;
 }
