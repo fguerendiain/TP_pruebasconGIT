@@ -71,14 +71,14 @@ int al_add(ArrayList* pList,void* pElement)
 {
     int returnAux = -1;
 
-    if(pList != NULL || pElement != NULL)
+    if(pList != NULL && pElement != NULL)
     {
-        pList = (ArrayList*)malloc(sizeof(*pElement)*pList->reservedSize);
+        pList = (ArrayList*)malloc(sizeof(pElement)*pList->reservedSize);
 
         if(pList->size >= pList->reservedSize)
         {
             pList->reservedSize++;
-            pList = (ArrayList*)realloc(pList,sizeof(*pElement)*pList->reservedSize);
+            pList = (ArrayList*)realloc(pList,sizeof(pElement)*pList->reservedSize);
         }
 
         returnAux = 0;
@@ -97,7 +97,7 @@ int al_deleteArrayList(ArrayList* pList/*,void* pElement*/)
 {
     int returnAux = -1;
 
-
+/*
     int index = 0;
 
     if(pList!=NULL)
@@ -112,7 +112,7 @@ int al_deleteArrayList(ArrayList* pList/*,void* pElement*/)
             index++;
         }
     }
-
+*/
 
     return returnAux;
 }
