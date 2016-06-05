@@ -46,7 +46,7 @@ int main(void)
 {
 
     #ifdef TEST
-//        startTesting(1);      // new arraylist
+//        startTesting(1);      // newArraylist
 //        startTesting(2);      // add
 //        startTesting(3);      // delete
 //        startTesting(4);      // len
@@ -55,14 +55,14 @@ int main(void)
 //        startTesting(7);      // set
 //        startTesting(8);      // remove
 //        startTesting(9);      // clear
-//        startTesting(10);     //*******clone
-//        startTesting(11);     //push      // 1 error de utest
-//        startTesting(12);     //indexOf
-//        startTesting(13);     //isEmpty   // 1 error de utest
-//        startTesting(14);     //pop       // 1 error de utest
-//        startTesting(15);     //******subList
-//        startTesting(16);     //containsAll   //segmentation fault
-//        startTesting(17);     //******sort
+//        startTesting(10);     // clone   //segmentation fault
+//        startTesting(11);     // push      // 2 errores de utest
+//        startTesting(12);     // indexOf
+//        startTesting(13);     // isEmpty   // 1 error de utest
+//        startTesting(14);     // pop       // 1 error de utest
+//        startTesting(15);     // subList    // 2 errores de utest
+//        startTesting(16);     // containsAll   //segmentation fault
+//        startTesting(17);     // ******sort
     #else
         //run();
         run2();
