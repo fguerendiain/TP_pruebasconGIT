@@ -235,4 +235,6 @@ int contract(ArrayList* pList,int index);
 int resizeUp(ArrayList* pList);
 int expand(ArrayList* pList,int index);
 int contract(ArrayList* pList,int index);
+int swapArrayElements(void* pElementA, void* pElementB);
+
 //___________________
