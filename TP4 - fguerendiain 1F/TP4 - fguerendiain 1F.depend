@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1465477274 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/arrayList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arrayList.h"
+
+1465477690 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/arrayList.h
+
+1465500240 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.c
+	<stdio.h>
+	<stdlib.h>
+	"userInputOutput.h"
+	"arrayList.h"
+	"screenSystemShow.h"
+	"lib.h"
+
+1465474873 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/screenSystemShow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"screenSystemShow.h"
+
+1464794299 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/screenSystemShow.h
+
+1465474873 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/userInputOutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+
+1465500214 source:/mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/main.c
+	<stdio.h>
+	<stdlib.h>
+	"userInputOutput.h"
+	"lib.h"
+	"arrayList.h"
+
+1464794299 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/userInputOutput.h
+
+1465500030 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.h
+	"arrayList.h"
+

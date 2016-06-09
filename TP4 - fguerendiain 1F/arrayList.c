@@ -111,7 +111,7 @@ int al_deleteArrayList(ArrayList* pList)
     return returnAux;
 }
 
-/** \brief  Delete arrayList
+/** \brief  Quantity of elements on pList
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return length of array or (-1) if Error [pList is NULL pointer]
  *

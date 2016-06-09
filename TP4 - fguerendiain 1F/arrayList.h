@@ -45,7 +45,7 @@ int al_add(ArrayList* pList,void* pElement);     /**< Add an element to arrayLis
 
 int al_deleteArrayList(ArrayList* pList);     /**< Delete arrayList */
 
-int al_len(ArrayList* pList);     /**< Delete arrayList */
+int al_len(ArrayList* pList);     /**< Quantity of elements on pList */
 
 void* al_get(ArrayList* pList , int index);     /**< Get an element by index */
 
