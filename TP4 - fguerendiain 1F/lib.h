@@ -7,12 +7,16 @@ typedef struct
 {
     char* title; //nombre de nota
     char* textBox; //cuerpo de nota
-    int priority; // 1 al 10
 
 }Memo;
 
 
 int runFunctionMenu(int menuOption,ArrayList *pNotesList, Memo* Note);     /**< Excecute option menu */
+
+
+int removeNote(ArrayList *pNotesList, Memo* Note);  /**< remove Note on spcified index */
+
+int modifyNote(ArrayList *pNotesList, Memo* Note);  /**< modify Note on spcified index */
 
 int addNote(ArrayList *pNotesList, Memo* Note,int userMenuOption);  /**< add new Note on spcified index or last index */
 

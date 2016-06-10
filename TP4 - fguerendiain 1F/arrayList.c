@@ -210,6 +210,7 @@ int al_remove(ArrayList* pList,int index)
     {
         pList->pElements[index]=NULL;
         pList->size-=1;
+        contract(pList,index);
         resizeDown(pList);
         returnAux = 0;
     }
