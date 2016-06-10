@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "screenSystemShow.h"
 #include "userInputOutput.h"
 #include "lib.h"
 #include "arrayList.h"
@@ -14,21 +15,21 @@ int main()
     pNotesList = al_newArrayList();
 
     Memo* Note;
-    Note = malloc(sizeof(Memo)*1);
+    Note = (Memo*)malloc(sizeof(Memo)*1);
 
-    importDB(pNotesList,Note);
+ //   importDB(pNotesList,Note);
 
     do
     {
         printAwesomeMenu("\tNOTE MANNAGER 2016\n\n"
-                         "1 - AGREGAR NOTA\n\ta) Indice\n\tb) Automatico\n" //al_add // push //sort //verificar si el indice esta vacio y preguntar para continuar //nota = pelement
-                         "2 - MODIFICAR NOTA\n" //al_set //al_is_Empty //sort
-                         "3 - ELIMINAR NOTA\n" //al_pop //al_remove //al_is_Empty //contract
-                         "4 - ELIMINAR CUADERNO\n" //al_delete //cuaderno == array list
-                         "5 - CANTIDAD DE NOTAS\n" //al_len
-                         "6 - BUSCAR NOTA\n\ta) Indice\n\tb) Titulo\n" //sort //al_get //al_contains //indexOf //al_is_Empty
-                         "7 - EXPORTAR NOTAS A TXT\n\ta) Completo\n\tb) Parcial\n" //sort // al_clone // al_sublist //al_is_Empty //fopen backup.dat
-                         "8 - SALIR\n\n"); //exit=0 //fopen wr //al_clear
+                         "1 - AGREGAR NOTA\n\t[1.1] Indice\n\t[1.2] Automatico\n" //Utiliza: add | push
+                         "2 - MODIFICAR NOTA\n" //Utiliza: set | is_Empty
+                         "3 - ELIMINAR NOTA\n" //Utiliza: pop->remove->contract | is_Empty
+                         "4 - ELIMINAR CUADERNO\n" //Utiliza: clear
+                         "5 - CANTIDAD DE NOTAS\n" //Utiliza: len
+                         "6 - BUSCAR NOTA\n\t[1.1] Indice\n\t[1.2] Titulo\n" //Utiliza: indexOf | is_Empty
+                         "7 - EXPORTAR NOTAS A TXT\n\t[1.1] Completo\n\t[1.2] Parcial\n" //Utiliza: ***sort // al_clone // al_sublist //al_is_Empty
+                         "8 - SALIR\n\n"); //Utiliza: //fopen wr //al_clear
 
         getUserInputInt(&userMenuOption,1,8,"Elija una opcion del menu:\n\n","Por favor ingrese una opcion valida:\n\n",0);
         exit = runFunctionMenu(userMenuOption,pNotesList,Note);

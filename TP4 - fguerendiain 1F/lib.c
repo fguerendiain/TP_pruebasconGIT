@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "userInputOutput.h"
 #include "arrayList.h"
 #include "screenSystemShow.h"
 #include "lib.h"
 
 #define DB_FILE "notesDatabase.bin"
-#define DB_BKFILE "bakNotesDataBase.txt"
+#define BKP_COMFILE "bakNotesComplete.txt"
+#define BKP_PARTFILE "bakNotesPartial.txt"
 
 #define AGREGAR 1 //a) Indice //b) Automatico\n"
 #define MODIFICAR 2
@@ -24,7 +26,6 @@
  * \param (Note) struct Memo type
  * \return [0] case of EXIT
  */
-
 int runFunctionMenu(int menuOption,ArrayList *pNotesList, Memo* Note)
 {
     switch(menuOption)
@@ -50,7 +51,7 @@ int runFunctionMenu(int menuOption,ArrayList *pNotesList, Memo* Note)
         case ELIMNOTA :
         {
             cleanScreen();
-            removeNote(pNotesList,Note);
+            removeNote(pNotesList);
             pauseScreen();
         }
         break;
@@ -67,61 +68,167 @@ int runFunctionMenu(int menuOption,ArrayList *pNotesList, Memo* Note)
         case CANTNOTAS :
         {
             cleanScreen();
-            printf("%d notas cargadas en el sistema\n\n",pNotesList->size);
+            printf("%d notas cargadas en el sistema\n\n",pNotesList->len(pNotesList)+1);
             pauseScreen();
         }
         break;
 
         case BUSCAR :
         {
-          cleanScreen();
-
-          pauseScreen();
+            cleanScreen();
+            printAwesomeMenu("1) Indice\n2) Titulo\n\n");
+            getUserInputInt(&menuOption,1,2,"Elija una opcion del menu:\n\n","Por favor ingrese una opcion valida:\n\n",0);
+            seekNote(pNotesList,menuOption);
+            pauseScreen();
         }
         break;
 
         case EXPORTAR :
         {
-          cleanScreen();
-
-          pauseScreen();
+            cleanScreen();
+            printAwesomeMenu("1) Completo\n2) Parcial\n\n");
+            getUserInputInt(&menuOption,1,2,"Elija una opcion del menu:\n\n","Por favor ingrese una opcion valida:\n\n",0);
+            exportBakupToFile(pNotesList,menuOption);
+            pauseScreen();
         }
         break;
 
         case SALIR :
         {
             pNotesList->deleteArrayList(pNotesList);
-            exportToDataBaseFile(pNotesList,Note);
+   //         exportToDataBaseFile(pNotesList);
             return 0;
         }
         break;
-
     }
     return 1;
 }
 
+/** \brief export Notes to txt file, complete or parcial
+ * \param (menuOption) int with user selection
+ * \param (pNotesList) ArrayList
+ * \return
+ */
+int exportBakupToFile(ArrayList *pNotesList,int userMenuOption)
+{
+    if(pNotesList == NULL)return -1;
+    if(userMenuOption != 1 && userMenuOption != 2)return -1;
 
+    FILE *bkpFile;
+    ArrayList* pNotesBkp = NULL;
+    Memo *AuxNote = NULL;
+    int to = 0;
+    int from = 0;
+    int i;
+
+    if(pNotesList->isEmpty(pNotesList)!=0)
+    {
+        printf("No existen notas cargadas\n\n");
+        pauseScreen();
+        return -1;
+    }
+
+    if(userMenuOption == 1)
+    {
+        pNotesBkp = pNotesList->clone(pNotesList);
+    }
+    else
+    {
+        getUserInputInt(&to,0,pNotesList->size,"Ingrese el indice desde:\n\n","Por favor ingrese un indice valido:\n\n",0);
+        getUserInputInt(&from,to,pNotesList->size,"Ingrese el indice hasta:\n\n","Por favor ingrese un indice valido:\n\n",0);
+        pNotesBkp = pNotesList->subList(pNotesList);
+    }
+
+    bkpFile = fopen(BKP_COMFILE, "w");
+
+    if(bkpFile == NULL)
+    {
+        printf("Error al intentar escribir en la base de datos\n");
+        return -1;
+    }
+
+    //el quilombo esta apartir de aca//////////////////////////////////////////////////////////
+    for(i=0 ; i<pNotesBkp->size ; i++)
+    {
+        AuxNote = pNotesBkp->pElements[i];
+        fwrite(AuxNote, sizeof(Memo),pNotesBkp->size-1,bkpFile);
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    fclose(bkpFile);
+
+    return 0;
+}
+
+/** \brief Search Note by index or title
+ * \param (menuOption) int with user selection
+ * \param (pNotesList) ArrayList
+ * \return
+ */
+int seekNote(ArrayList *pNotesList, int userMenuOption)
+{
+    if(pNotesList == NULL)return -1;
+    if(userMenuOption != 1 && userMenuOption != 2)return -1;
+
+    int auxIndex;
+    char auxTitle[15];
+    int i;
+
+    Memo* AuxNote;
+
+    if(pNotesList->isEmpty!=0)
+    {
+        if(userMenuOption == 1)//a) Indice //b) Titulo
+        {
+            getUserInputInt(&auxIndex,0,pNotesList->size,"Ingrese el indice de la Nota a buscar:\n\n","Por favor ingrese un indice valido:\n\n",0);
+        }
+        else
+        {
+            getUserInputString(auxTitle,1,15,"Ingrese el titulo de la nota a buscar:\n\n","Por favor, ingrese un titulo valido:\n\n",4000,0);
+            for(i=0 ; i < pNotesList->size ; i++)
+            {
+                AuxNote = pNotesList->pElements[i];
+                if(strcmp(AuxNote->title,auxTitle)==0);
+                {
+                    auxIndex = pNotesList->indexOf(pNotesList,AuxNote);
+                    break;
+                }
+            }
+        }
+
+        AuxNote = pNotesList->pElements[auxIndex];
+
+        if(AuxNote!=NULL)
+        {
+            stringSetCase(AuxNote->title,3);
+            stringSetCase(AuxNote->textBox,3);
+            cleanScreen();
+            printf("Nota %d\t%s\n\n\t%s\n\n",auxIndex,AuxNote->title,AuxNote->textBox);
+        }
+        else
+        {
+            printf("La nota no existe");
+        }
+
+    }
+    return 0;
+}
 
 /** \brief remove Note on spcified index
  * \param (menuOption) int with user selection
- * \param (Note) struct Memo type
  * \return
- *
  */
-
-int removeNote(ArrayList *pNotesList, Memo* Note)
+int removeNote(ArrayList *pNotesList)
 {
     if(pNotesList == NULL)return -1;
-    if(Note == NULL)return -1;
 
     int auxIndex = 0;
-    int ret= 0;
+    void* ret= NULL;
 
-    if(pNotesList->isEmpty !=1)
+    if(pNotesList->isEmpty(pNotesList) != 1)
     {
         getUserInputInt(&auxIndex,0,pNotesList->size,"Ingrese el indice de la Nota a eliminar:\n\n","Por favor ingrese un indice valido:\n\n",0);
-        ret = pNotesList->remove(pNotesList,auxIndex);
-        if(ret != 0)
+        ret = pNotesList->pop(pNotesList,auxIndex);
+        if(ret == NULL)
         {
             printf("Indice invalido, la nota no fue eliminada\n\n");
         }
@@ -130,6 +237,10 @@ int removeNote(ArrayList *pNotesList, Memo* Note)
             printf("La nota fue eliminada con exito\n\n");
         }
     }
+    else
+    {
+        printf("No existen notas cargadas\n\n");
+    }
     return 0;
 }
 
@@ -137,9 +248,7 @@ int removeNote(ArrayList *pNotesList, Memo* Note)
  * \param (menuOption) int with user selection
  * \param (Note) struct Memo type
  * \return
- *
  */
-
 int modifyNote(ArrayList *pNotesList, Memo* Note)
 {
     if(pNotesList == NULL)return -1;
@@ -149,7 +258,7 @@ int modifyNote(ArrayList *pNotesList, Memo* Note)
     char auxTextBox[2500]; //cuerpo de nota
     int auxIndex = 0;
 
-    if(pNotesList->isEmpty !=0)
+    if(pNotesList->isEmpty(pNotesList) !=0)
     {
         getUserInputInt(&auxIndex,0,pNotesList->size,"Ingrese el indice de la nueva Nota:\n\n","Por favor ingrese un indice valido:\n\n",0);
         getUserInputString(auxTitle,1,15,"Ingrese el nuevo titulo de la nota:\n\n","Por favor, ingrese un titulo valido:\n\n",4000,0);
@@ -163,7 +272,6 @@ int modifyNote(ArrayList *pNotesList, Memo* Note)
     return 0;
 }
 
-
 /** \brief add new Note on spcified index or last index
  * \param (menuOption) int with user selection
  * \param (pNotesList) ArrayList
@@ -171,7 +279,6 @@ int modifyNote(ArrayList *pNotesList, Memo* Note)
  * \return
  *
  */
-
 int addNote(ArrayList *pNotesList, Memo* Note,int userMenuOption)
 {
     if(pNotesList == NULL)return -1;
@@ -196,7 +303,7 @@ int addNote(ArrayList *pNotesList, Memo* Note,int userMenuOption)
     if(userMenuOption == 1)
     {
         ret = getUserInputInt(&auxIndex,0,pNotesList->size,"Ingrese el indice de la nueva Nota:\n\n","Por favor ingrese un indice valido:\n\n",3);
-        if(ret != 0 && pNotesList->isEmpty !=0)
+        if(ret != 0 && pNotesList->isEmpty(pNotesList) !=0)
         {
             pNotesList->add(pNotesList,Note);
         }
@@ -236,16 +343,14 @@ int importDB(ArrayList *pNotesList, Memo* Note)
     return 0;
 }
 
-
 /** \brief Export DataBase from memory to archive
  * \param (pNotesList) ArrayList
  * \param (Note) struct Memo type
  * \return [-1] can't import [0] succeed
  */
-int exportToDataBaseFile(ArrayList *pNotesList, Memo* Note)
+int exportToDataBaseFile(ArrayList *pNotesList)
 {
     if(pNotesList == NULL)return -1;
-    if(Note == NULL)return -1;
 
     FILE *dataBaseFile;
 
