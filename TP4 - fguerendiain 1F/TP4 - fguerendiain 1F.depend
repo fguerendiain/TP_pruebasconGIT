@@ -45,7 +45,7 @@
 1465591323 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.h
 	"arrayList.h"
 
-1465530609 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/arrayList.c
+1465715308 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/arrayList.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,9 +53,10 @@
 
 1465527120 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/arrayList.h
 
-1465532804 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.c
+1465798085 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"userInputOutput.h"
 	"arrayList.h"
 	"screenSystemShow.h"
@@ -65,7 +66,7 @@
 
 1465527120 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/screenSystemShow.h
 
-1465530936 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.h
+1465783052 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/lib.h
 	"arrayList.h"
 
 1465527120 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/screenSystemShow.c
@@ -82,9 +83,10 @@
 	<ctype.h>
 	"screenSystemShow.h"
 
-1465532462 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/main.c
+1465797162 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/TP4 - fguerendiain 1F/main.c
 	<stdio.h>
 	<stdlib.h>
+	"screenSystemShow.h"
 	"userInputOutput.h"
 	"lib.h"
 	"arrayList.h"

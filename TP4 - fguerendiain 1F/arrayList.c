@@ -122,7 +122,7 @@ int al_len(ArrayList* pList)
 
     if(pList != NULL)
     {
-        return pList->size; //size equivale a la cantidad de indices en uso
+        return pList->size;
     }
     return returnAux;
 }
@@ -258,7 +258,6 @@ ArrayList* al_clone(ArrayList* pList)
         for(i=0 ; i<pList->size ; i++)
         {
             returnAux->add(returnAux,pList->pElements[i]);
-            returnAux->size++;
         }
 
         if(!returnAux->containsAll(returnAux,pList))

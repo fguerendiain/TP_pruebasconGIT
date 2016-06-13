@@ -14,10 +14,8 @@ int main()
     ArrayList* pNotesList;
     pNotesList = al_newArrayList();
 
-    Memo* Note;
-    Note = (Memo*)malloc(sizeof(Memo)*1);
 
- //   importDB(pNotesList,Note);
+    importDB(pNotesList);
 
     do
     {
@@ -29,12 +27,15 @@ int main()
                          "5 - CANTIDAD DE NOTAS\n" //Utiliza: len
                          "6 - BUSCAR NOTA\n\t[1.1] Indice\n\t[1.2] Titulo\n" //Utiliza: indexOf | is_Empty
                          "7 - EXPORTAR NOTAS A TXT\n\t[1.1] Completo\n\t[1.2] Parcial\n" //Utiliza: ***sort // al_clone // al_sublist //al_is_Empty
-                         "8 - SALIR\n\n"); //Utiliza: //fopen wr //al_clear
+                         "8 - SALIR\n\n");
 
         getUserInputInt(&userMenuOption,1,8,"Elija una opcion del menu:\n\n","Por favor ingrese una opcion valida:\n\n",0);
-        exit = runFunctionMenu(userMenuOption,pNotesList,Note);
+        exit = runFunctionMenu(userMenuOption,pNotesList);
     }
     while(exit);
+
+    pNotesList->deleteArrayList(pNotesList);
+    exportToDataBaseFile(pNotesList);
 
     return exit;
 }

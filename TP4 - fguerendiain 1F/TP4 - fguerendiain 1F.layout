@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="userInputOutput.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="72" />
+		</Cursor>
+	</File>
+	<File name="arrayList.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="237" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1079" topLine="17" />
+			<Cursor1 position="150" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="lib.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="132" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screenSystemShow.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="arrayList.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="446" topLine="7" />
 		</Cursor>
 	</File>
 	<File name="userInputOutput.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -11,51 +37,13 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="arrayList.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="9781" topLine="373" />
-		</Cursor>
-	</File>
 	<File name="lib.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2735" topLine="79" />
+			<Cursor1 position="10937" topLine="382" />
 		</Cursor>
 		<Folding>
-			<Collapse line="22" />
-			<Collapse line="106" />
-			<Collapse line="112" />
-			<Collapse line="161" />
-			<Collapse line="167" />
-			<Collapse line="215" />
-			<Collapse line="220" />
-			<Collapse line="246" />
-			<Collapse line="252" />
-			<Collapse line="274" />
-			<Collapse line="282" />
-			<Collapse line="318" />
-			<Collapse line="324" />
-			<Collapse line="345" />
-			<Collapse line="351" />
+			<Collapse line="123" />
 		</Folding>
 	</File>
-	<File name="screenSystemShow.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="120" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="lib.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="214" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="arrayList.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2676" topLine="53" />
-		</Cursor>
-	</File>
-	<File name="userInputOutput.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="72" />
-		</Cursor>
-	</File>
+	<EditorTabsLayout layout="060278d0575e48aa0088cb2900000002=0;TP4 - fguerendiain 1F:main.c,*1;TP4 - fguerendiain 1F:lib.c,2;TP4 - fguerendiain 1F:lib.h,3;TP4 - fguerendiain 1F:screenSystemShow.h,4;TP4 - fguerendiain 1F:userInputOutput.h,5;TP4 - fguerendiain 1F:arrayList.h,6;TP4 - fguerendiain 1F:arrayList.c@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=855;besth=405;minw=855;minh=405;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=060278d0575e48aa0088cb2900000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
 </CodeBlocks_layout_file>

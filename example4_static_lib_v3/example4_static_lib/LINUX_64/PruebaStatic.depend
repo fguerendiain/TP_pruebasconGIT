@@ -40,3 +40,19 @@
 
 1463604777 /mnt/Datos/Develop/LINUX/codeblocks/tp_laboratorio_1/example4_static_lib_v3/example4_static_lib/LINUX_64/ArrayList.h
 
+1465527120 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/example4_static_lib_v3/example4_static_lib/LINUX_64/Employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1465527120 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/example4_static_lib_v3/example4_static_lib/LINUX_64/Employee.h
+
+1465527120 source:/mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/example4_static_lib_v3/example4_static_lib/LINUX_64/main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1465527120 /mnt/datos/Develop/LINUX/codeblocks/tp_laboratorio_1/example4_static_lib_v3/example4_static_lib/LINUX_64/ArrayList.h
+
