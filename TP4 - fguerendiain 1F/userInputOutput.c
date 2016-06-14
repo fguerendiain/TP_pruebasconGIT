@@ -428,7 +428,6 @@ int getUserInputString(char *userInput, long min, long max, char *msgFirstTime, 
         else
         {
             strcpy(userInput, auxBuffer);
-            stringSetCase(userInput,1);
             ret = 0;    // la funcion indica que el usuario ingreso un string dentro de la longitud permitida
             erradicateStdin();
             return ret;

@@ -379,11 +379,6 @@ ArrayList* al_subList(ArrayList* pList,int from,int to)
         {
             returnAux->add(returnAux,pList->get(pList,i));
         }
-
-        if(pList->pElements[i-1] != returnAux->pElements[i-1])
-        {
-            returnAux = NULL;
-        }
     }
     return returnAux;
 }

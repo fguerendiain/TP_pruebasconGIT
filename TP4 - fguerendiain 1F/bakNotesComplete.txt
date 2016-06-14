@@ -1,10 +1,65 @@
-Titulo: --ZOE--
-  Nota: Zoe
+Titulo: --ALGO--
+  Nota: mas
 
 ------------------------------------------
 
-Titulo: --HOLA--
-  Nota: Kljadlkfjasdklfj
+Titulo: --EVER--
+  Nota: udo
+
+------------------------------------------
+
+Titulo: --LENTES--
+  Nota: de sol
+
+------------------------------------------
+
+Titulo: --LINUX--
+  Nota: releee
+
+------------------------------------------
+
+Titulo: --NOTA--
+  Nota: al pedo
+
+------------------------------------------
+
+Titulo: --PELEA--
+  Nota: marvel vs capcom
+
+------------------------------------------
+
+Titulo: --PEREZ--
+  Nota: compam
+
+------------------------------------------
+
+Titulo: --PALOMA--
+  Nota: sanbasilio
+
+------------------------------------------
+
+Titulo: --PARAQUE--
+  Nota: paraguayo
+
+------------------------------------------
+
+Titulo: --SILVIO--
+  Nota: rodriguez
+
+------------------------------------------
+
+Titulo: --TELEFONO--
+  Nota: blanco
+
+------------------------------------------
+
+Titulo: --VOZ--
+  Nota: quieras
+
+------------------------------------------
+
+Titulo: --WINDOWS--
+  Nota: vista
 
 ------------------------------------------
 

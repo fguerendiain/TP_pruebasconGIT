@@ -1,3 +1,27 @@
+/**************************************************************************************************************
+***************************************************************************************************************
+****    LABORATORIO I
+****    DIVISION 1#F
+****    ALUMNO: GUERENDIAIN, FRANCO JAVIER
+****
+****    TRABAJO PRACTICO #4
+****
+****    FECHA DE ENTREGA - 15/06/2016
+****
+***************************************************************************************************************
+****
+****     Etapa 1:
+****             Se deberá desarrollar una biblioteca ArrayList.c y ArrayList.h la cual contendrá el tipo
+****             de dato ArrayList, tal que cumpla con la especificación del documento, con las funciones
+****             mínimas requeridas.
+****
+****     Etapa 2:
+****             Realizar una aplicación que dé uso del ArrayList (usando todas las funciones) y que
+****             permita interactuar con estructuras de datos almacenadas en archivos.
+****
+***************************************************************************************************************/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "screenSystemShow.h"
@@ -19,15 +43,17 @@ int main()
 
     do
     {
-        printAwesomeMenu("\tNOTE MANNAGER 2016\n\n"
-                         "1 - AGREGAR NOTA\n\t[1.1] Indice\n\t[1.2] Automatico\n" //Utiliza: add | push
-                         "2 - MODIFICAR NOTA\n" //Utiliza: set | is_Empty
-                         "3 - ELIMINAR NOTA\n" //Utiliza: pop->remove->contract | is_Empty
-                         "4 - ELIMINAR CUADERNO\n" //Utiliza: clear
-                         "5 - CANTIDAD DE NOTAS\n" //Utiliza: len
-                         "6 - BUSCAR NOTA\n\t[6.1] Indice\n\t[6.2] Titulo\n" //Utiliza: indexOf | is_Empty
-                         "7 - EXPORTAR NOTAS A TXT\n\t[7.1] Completo\n\t[7.2] Parcial\n" //Utiliza: ***sort // al_clone // al_sublist //al_is_Empty
-                         "8 - SALIR\n\n");
+        printAwesomeMenu("*****************************************************\n"
+                         "****************  NOTE MANNAGER 2016  ***************\n"
+                         "*****************************************************\n\n"
+                         "\t[1] - AGREGAR NOTA\n\t\t[1.1] Indice\n\t\t[1.2] Automatico\n" //Utiliza: add | push
+                         "\t[2] - MODIFICAR NOTA\n" //Utiliza: set | is_Empty
+                         "\t[3] - ELIMINAR NOTA\n" //Utiliza: pop->remove->contract | is_Empty
+                         "\t[4] - ELIMINAR CUADERNO\n" //Utiliza: clear
+                         "\t[5] - CANTIDAD DE NOTAS\n" //Utiliza: len
+                         "\t[6] - BUSCAR NOTA\n\t\t[6.1] Indice\n\t\t[6.2] Titulo\n" //Utiliza: indexOf | is_Empty
+                         "\t[7] - ORDENAR ALFABETICAMENTE Y EXPORTAR NOTAS A TXT\n\t\t[7.1] Completo\n\t\t[7.2] Parcial\n" //Utiliza: ***sort // al_clone // al_sublist //al_is_Empty
+                         "\t[8] - SALIR\n\n");
 
         getUserInputInt(&userMenuOption,1,8,"Elija una opcion del menu:\n\n","Por favor ingrese una opcion valida:\n\n",0);
         exit = runFunctionMenu(userMenuOption,pNotesList);

@@ -34,4 +34,6 @@ Memo* newNote();  /**< Create a new Note */
 
 int compareNotes(void* Note1, void* Note2); /**< Compare Notes */
 
+int showNotesIndexAndTitle(ArrayList *pNotesList);   /**< List Index and Title of Notes */
+
 #endif // __LIB
