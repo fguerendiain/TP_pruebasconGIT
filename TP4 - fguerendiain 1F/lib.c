@@ -380,15 +380,7 @@ int addNote(ArrayList *pNotesList, int userMenuOption)
 
         else
         {
-            cleanScreen();
-            printf("NOTAS\n");
-
-            for(i=0;i<pNotesList->len(pNotesList);i++)
-            {
-                Note = pNotesList->get(pNotesList,i);
-                stringSetCase(Note->title,3);
-                printf("%d - %s | ",i,Note->title);
-            }
+            showNotesIndexAndTitle(pNotesList);
             printf("\n\n");
             getUserInputInt(&auxIndex,0,pNotesList->len(pNotesList)-1,"Ingrese el indice de la nueva Nota:\n\n","Por favor ingrese un indice valido:\n\n",0);
         }

@@ -65,3 +65,48 @@ int main()
 
     return exit;
 }
+
+
+/*******************************************************************************************************
+*****   DETALLE DE FUNCIONES DEL ARRAYLIST UTILIZADAS SEGUN MENU Y CORRESPONDIENTE FUNCION  ************
+*****
+*****   MAIN :
+*****   [al_newArrayList - deleteArrayList]
+*****
+*****   AGREGAR :   addNote(pNotesList,menuOption);
+*****   [isEmpty - len - add - push]
+*****
+*****   MODIFICAR : modifyNote(pNotesList);
+*****   [isEmpty - len - set]
+*****
+*****   ELIMINAR NOTA : removeNote(pNotesList);
+*****   [isEmpty - len - pop]
+*****
+*****   ELIMINAR CUADERNO : deleteAllNotes(pNotesList);
+*****   [isEmpty - clear]
+*****
+*****   CANTIDAD DE NOTAS : showHowManyNotes(pNotesList);
+*****   [isEmpty - len]
+*****
+*****   BUSCAR : seekNote(pNotesList,menuOption);
+*****   [isEmpty - len - get - indexOf]
+*****
+*****   EXPORTAR :  exportBakupToFile(pNotesList,menuOption);
+*****   [isEmpty - sort - clone - len - sublist - get]
+*****
+************************************************************************************************************
+*****
+*****   al_newArrayList
+*****   deleteArrayList
+*****   isEmpty
+*****   len
+*****   add
+*****   push
+*****   set
+*****   pop
+*****   clear
+*****   get
+*****   indexOf
+*****   sort
+*****   clone
+*****   sublist
