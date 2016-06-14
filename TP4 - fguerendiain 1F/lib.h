@@ -32,5 +32,6 @@ int exportToDataBaseFile(ArrayList *pNotesList);    /**< Export DataBase from me
 
 Memo* newNote();  /**< Create a new Note */
 
+int compareNotes(void* Note1, void* Note2); /**< Compare Notes */
 
 #endif // __LIB

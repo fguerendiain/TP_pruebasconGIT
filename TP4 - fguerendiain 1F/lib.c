@@ -8,7 +8,6 @@
 
 #define DB_FILE "notesDatabase.bin"
 #define BKP_COMFILE "bakNotesComplete.txt"
-#define BKP_PARTFILE "bakNotesPartial.txt"
 
 #define AGREGAR 1 //a) Indice //b) Automatico\n"
 #define MODIFICAR 2
@@ -201,6 +200,8 @@ int exportBakupToFile(ArrayList *pNotesList,int userMenuOption)
         printf("Error al intentar escribir en la base de datos\n");
         return -1;
     }
+
+    pNotesBkp->sort(pNotesBkp,compareNotes(pNotesBkp->pElements,pNotesBkp->pElements),1);
 
 
     for(i=0 ; i<pNotesBkp->len(pNotesBkp) ; i++)
@@ -395,17 +396,19 @@ int importDB(ArrayList *pNotesList)
 {
     if(pNotesList == NULL)return -1;
 
-    Memo* Note;
-    Note = (Memo*)malloc(sizeof(Memo));
-
-
-    FILE *dataBaseFile;
+    Memo* Note = newNote();
+    FILE* dataBaseFile;
+    int memoCount = -1;
+    int i=0;
 
     dataBaseFile = fopen(DB_FILE, "rb");
-
-    int memoCount = 0;
+    if(dataBaseFile == NULL)return -1;
 
     fread(&memoCount, sizeof(int), 1, dataBaseFile);
+
+    if(memoCount == 0)return 0; //en caso que se hallan guardado 0 notas
+
+//    if(memoCount==0)return 0;
 
 /*  int memosToRead = 4;
     Memo memoBuffer[memosToRead];
@@ -422,10 +425,12 @@ int importDB(ArrayList *pNotesList)
     fread(&memoBuffer, sizeof(Memo), memosLeft, dataBaseFile);
     pNotesList->addAll(memoBuffer);*/
 
-    while(!feof(dataBaseFile))
+
+    while(i<memoCount)
     {
-        fread(Note, sizeof(Memo),pNotesList->len(pNotesList)+1,dataBaseFile);
+        fread(Note, sizeof(Memo),1,dataBaseFile);
         pNotesList->add(pNotesList,Note);
+        i++;
     }
     fclose(dataBaseFile);
     return 0;
@@ -451,9 +456,34 @@ int exportToDataBaseFile(ArrayList *pNotesList)
         return -1;
     }
 
-    fwrite(&memoCount, sizeof(int), 1, dataBaseFile);
-    fwrite(pNotesList->pElements, sizeof(Memo),pNotesList->size,dataBaseFile);
+    fwrite(&memoCount,sizeof(int),1,dataBaseFile);
+    fwrite(pNotesList->pElements, sizeof(Memo),memoCount,dataBaseFile);
     fclose(dataBaseFile);
 
     return 0;
+}
+
+/** \brief Compare Notes
+ * \param Note
+ * \param (Note) struct Memo type
+ * \return [0] equals elements [-1] Note1 bigger [1] Note2 Bigger [-2]Null pointers
+ */
+int compareNotes(void* Note1, void* Note2)
+{
+    if(Note1 == NULL)return -2;
+    if(Note2 == NULL)return -2;
+
+    if(strcmp(Note1,Note2)==0)
+    {
+        return 0;
+    }
+    if(strcmp(Note1,Note2)<0)
+    {
+        return -1;
+    }
+    else
+    {
+        return 1;
+    }
+
 }
