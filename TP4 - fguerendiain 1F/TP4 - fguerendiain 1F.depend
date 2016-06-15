@@ -91,3 +91,49 @@
 	"lib.h"
 	"arrayList.h"
 
+1465950231 source:d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arrayList.h"
+
+1465942498 d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\arraylist.h
+
+1465951074 source:d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"userInputOutput.h"
+	"arrayList.h"
+	"screenSystemShow.h"
+	"lib.h"
+
+1465942498 d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\userinputoutput.h
+
+1465942498 d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\screensystemshow.h
+
+1465942498 d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\lib.h
+	"arrayList.h"
+
+1465946652 source:d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	"screenSystemShow.h"
+	"userInputOutput.h"
+	"lib.h"
+	"arrayList.h"
+
+1465951074 source:d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\screensystemshow.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"screenSystemShow.h"
+
+1465942498 source:d:\fguerendiain\tp_laboratorio_1\tp4 - fguerendiain 1f\userinputoutput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"screenSystemShow.h"
+

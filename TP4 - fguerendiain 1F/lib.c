@@ -174,7 +174,7 @@ int exportBakupToFile(ArrayList *pNotesList,int userMenuOption)
     int toIndex = 0;
     int fromIndex = 0;
     int i;
-    ArrayList* pNotesBkp = al_newArrayList();
+    ArrayList* pNotesBkp;
     Memo* Note = NULL;
 
     if(pNotesList->isEmpty(pNotesList)!=0)
@@ -184,16 +184,22 @@ int exportBakupToFile(ArrayList *pNotesList,int userMenuOption)
         return 0;
     }
 
+    bkpFile = fopen(BKP_COMFILE, "w");
+
+    if(bkpFile == NULL)
+    {
+        printf("Error al intentar exportar el archivo\n");
+        return -2;
+    }
+
     pNotesList->sort(pNotesList,compareNotes,1);
 
     if(userMenuOption == 1)
     {
         pNotesBkp = pNotesList->clone(pNotesList);
-        toIndex = pNotesBkp->len(pNotesBkp);
     }
     else
     {
-
         showNotesIndexAndTitle(pNotesList);
 
         getUserInputInt(&fromIndex,0,pNotesList->len(pNotesList)-1,"\n\nIngrese el indice desde donde desea exportar:\n\n","Por favor ingrese un indice valido:\n\n",0);
@@ -201,21 +207,17 @@ int exportBakupToFile(ArrayList *pNotesList,int userMenuOption)
         pNotesBkp = pNotesList->subList(pNotesList,fromIndex,toIndex);
     }
 
-    bkpFile = fopen(BKP_COMFILE, "w");
-
-    if(bkpFile == NULL)
-    {
-        printf("Error al intentar escribir en la base de datos\n");
-        return -2;
+    if(pNotesBkp==NULL){
+        printf("LACONCHA DE TU HERM;AMA");
     }
 
     for(i=0 ; i<pNotesBkp->len(pNotesBkp) ; i++)
     {
-        if(pNotesBkp->get(pNotesBkp,i)!=NULL)
+         if(pNotesBkp->get(pNotesBkp,i)!=NULL)
         {
             Note = pNotesBkp->get(pNotesBkp,i);
             stringSetCase(Note->title,1);
-            fprintf(bkpFile,"Titulo: --%s--\n",Note->title);
+            fprintf(bkpFile,"Titulo: -- %s --\n\n",Note->title);
             fprintf(bkpFile,"  Nota: %s\n",Note->textBox);
             fprintf(bkpFile,"\n------------------------------------------\n\n");
         }
@@ -363,7 +365,6 @@ int addNote(ArrayList *pNotesList, int userMenuOption)
     char auxTitle[15];
     char auxTextBox[2500];
     int auxIndex = -1;
-    int i;
 
     Memo* Note = newNote();
     if(Note == NULL)return -1;

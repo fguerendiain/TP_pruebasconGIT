@@ -260,7 +260,7 @@ ArrayList* al_clone(ArrayList* pList)
             returnAux->add(returnAux,pList->pElements[i]);
         }
 
-        if(!returnAux->containsAll(returnAux,pList))
+        if(!returnAux->containsAll(pList,returnAux))
         {
             returnAux = NULL;
         }

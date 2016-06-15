@@ -11,12 +11,12 @@
 ***************************************************************************************************************
 ****
 ****     Etapa 1:
-****             Se deberÃ¡ desarrollar una biblioteca ArrayList.c y ArrayList.h la cual contendrÃ¡ el tipo
-****             de dato ArrayList, tal que cumpla con la especificaciÃ³n del documento, con las funciones
-****             mÃ­nimas requeridas.
+****             Se deberá desarrollar una biblioteca ArrayList.c y ArrayList.h la cual contendrá el tipo
+****             de dato ArrayList, tal que cumpla con la especificación del documento, con las funciones
+****             mínimas requeridas.
 ****
 ****     Etapa 2:
-****             Realizar una aplicaciÃ³n que dÃ© uso del ArrayList (usando todas las funciones) y que
+****             Realizar una aplicación que dé uso del ArrayList (usando todas las funciones) y que
 ****             permita interactuar con estructuras de datos almacenadas en archivos.
 ****
 ***************************************************************************************************************/
@@ -35,9 +35,7 @@ int main()
     int exit = 1;
     int userMenuOption = 0;
 
-    ArrayList* pNotesList;
-    pNotesList = al_newArrayList();
-
+    ArrayList* pNotesList = al_newArrayList();
 
     importDB(pNotesList);
 
@@ -60,8 +58,8 @@ int main()
     }
     while(exit);
 
-    pNotesList->deleteArrayList(pNotesList);
     exportToDataBaseFile(pNotesList);
+    pNotesList->deleteArrayList(pNotesList);
 
     return exit;
 }
@@ -110,3 +108,5 @@ int main()
 *****   sort
 *****   clone
 *****   sublist
+*****
+************************************************************************************************************/

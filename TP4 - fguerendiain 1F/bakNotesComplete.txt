@@ -1,65 +1,30 @@
-Titulo: --ALGO--
-  Nota: mas
+Titulo: --INGLES 1--
+
+  Nota: 1er Parcial 9, 2do Parcial 9 - Cursada aprobada
 
 ------------------------------------------
 
-Titulo: --EVER--
-  Nota: udo
+Titulo: --LABORATORIO 1--
+
+  Nota: 1er Parcial 10, 2do Parcial ?, TP1 8 TP2 8 TP3 10 - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --LENTES--
-  Nota: de sol
+Titulo: --MATEMATICA 1--
+
+  Nota: 1er Parcial 2, Recuperatorio 1er Parcial 4, 2do Parcial ? - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --LINUX--
-  Nota: releee
+Titulo: --PROGRAMACION 1--
+
+  Nota: 1er Parcial 5, 2do Parcial ? - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --NOTA--
-  Nota: al pedo
+Titulo: --SISPROCDATOS--
 
-------------------------------------------
-
-Titulo: --PELEA--
-  Nota: marvel vs capcom
-
-------------------------------------------
-
-Titulo: --PEREZ--
-  Nota: compam
-
-------------------------------------------
-
-Titulo: --PALOMA--
-  Nota: sanbasilio
-
-------------------------------------------
-
-Titulo: --PARAQUE--
-  Nota: paraguayo
-
-------------------------------------------
-
-Titulo: --SILVIO--
-  Nota: rodriguez
-
-------------------------------------------
-
-Titulo: --TELEFONO--
-  Nota: blanco
-
-------------------------------------------
-
-Titulo: --VOZ--
-  Nota: quieras
-
-------------------------------------------
-
-Titulo: --WINDOWS--
-  Nota: vista
+  Nota: 1er Parcial 5, 2do Parcial 6, TP ok - Cursada aprobada
 
 ------------------------------------------
 
