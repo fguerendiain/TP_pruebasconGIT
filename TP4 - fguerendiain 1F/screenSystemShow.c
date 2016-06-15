@@ -4,7 +4,7 @@
 #include "string.h"
 #include "screenSystemShow.h"
 
-#define LIMPIARPANTALLA "clear" // "cls" para windows | "clear" para linux
+#define LIMPIARPANTALLA "cls" // "cls" para windows | "clear" para linux
 
 /** \brief Imprime el menu
  * \param (menu) recibe el texto a imprimir

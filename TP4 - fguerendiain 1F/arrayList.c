@@ -236,7 +236,6 @@ int al_clear(ArrayList* pList)
         pList->size=0;
         resizeDown(pList);
         returnAux = 0;
-
     }
     return returnAux;
 }
@@ -420,6 +419,32 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2)
     return returnAux;
 }
 
+/** \brief Generate process Array from pList
+ * \param pList ArrayList* Pointer to arrayList
+ * \param General function which process the ArrayList
+ * \return new ArrayList [Null] in case of error
+ */
+ArrayList* extractProcessedArray(ArrayList* pList, int (*pFunc)(void*))
+{
+    ArrayList* returnAux = NULL;
+    int i;
+    void* auxPElement;
+
+    if(pList == NULL)return -1;
+
+    returnAux = al_newArrayList();
+
+    for(i=0 ; i<=pList->size ; i++)
+    {
+        auxPElement = pList->get(pList,i);
+        if(pFunc(auxPElement))
+        {
+            returnAux->add(returnAux,auxPElement);
+        }
+    }
+    return returnAux;
+}
+
 /** \brief Sorts objects of list, use compare pFunc
  * \param pList ArrayList* Pointer to arrayList
  * \param pFunc (*pFunc) Pointer to fuction to compare elements of arrayList
@@ -518,7 +543,7 @@ int resizeDown(ArrayList* pList)
 
     if(pList !=NULL)
     {
-        if((pList->reservedSize - pList->size) > 10)
+        if((pList->reservedSize - pList->size) > AL_INCREMENT)
         {
             auxNewSize = pList->size + AL_INCREMENT;
             auxSize = auxNewSize * sizeof(void*);

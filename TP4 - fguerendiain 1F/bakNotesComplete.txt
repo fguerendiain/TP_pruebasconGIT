@@ -1,28 +1,28 @@
-Titulo: --INGLES 1--
+Titulo: -- INGLES 1 --
 
   Nota: 1er Parcial 9, 2do Parcial 9 - Cursada aprobada
 
 ------------------------------------------
 
-Titulo: --LABORATORIO 1--
+Titulo: -- LABORATORIO 1 --
 
   Nota: 1er Parcial 10, 2do Parcial ?, TP1 8 TP2 8 TP3 10 - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --MATEMATICA 1--
+Titulo: -- MATEMATICA 1 --
 
   Nota: 1er Parcial 2, Recuperatorio 1er Parcial 4, 2do Parcial ? - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --PROGRAMACION 1--
+Titulo: -- PROGRAMACION 1 --
 
   Nota: 1er Parcial 5, 2do Parcial ? - Cursada en progreso
 
 ------------------------------------------
 
-Titulo: --SISPROCDATOS--
+Titulo: -- SISPROCDATOS --
 
   Nota: 1er Parcial 5, 2do Parcial 6, TP ok - Cursada aprobada
 

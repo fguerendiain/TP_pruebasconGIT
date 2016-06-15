@@ -73,4 +73,6 @@ int al_containsAll(ArrayList* pList,ArrayList* pList2);     /**< Returns true if
 
 int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order);     /**< Sorts objects of list, use compare pFunc */
 
+ArrayList* extractProcessedArray(ArrayList* pList, int (*pFunc)(void*)); /**< Generate process Array from pList */
+
 #endif //__ARRAYLIST
